@@ -111,16 +111,39 @@
     }
     .social-links {
       margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
     }
-    .social-links a {
-      display: inline-block;
-      margin-right: 1rem;
+    .social-icon {
+      width: 50px;
+      height: 50px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .social-icon i {
       font-size: 1.5rem;
       color: #0f172a;
-      transition: color 0.3s ease;
     }
-    .social-links a:hover {
-      color: #1d4ed8;
+    .social-icon:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .social-icon.facebook:hover i {
+      color: #1877f2;
+    }
+    .social-icon.instagram:hover i {
+      color: #e4405f;
+    }
+    .social-icon.linkedin:hover i {
+      color: #0077b5;
+    }
+    .social-icon.twitter:hover i {
+      color: #1da1f2;
     }
     .contact-form form {
       display: flex;
@@ -202,10 +225,18 @@
         Feel free to reach out regarding research collaborations, speaking engagements, or questions about my work. I'm always open to discussing new ideas and potential partnerships.
       </p>
       <div class="social-links">
-        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+          <div class="social-icon facebook"><i class="fab fa-facebook-f"></i></div>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+          <div class="social-icon instagram"><i class="fab fa-instagram"></i></div>
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+          <div class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></div>
+        </a>
+        <a href="https://www.twitter.com" target="_blank" aria-label="X (formerly Twitter)">
+          <div class="social-icon twitter"><i class="fab fa-twitter"></i></div>
+        </a>
       </div>
     </div>
     <div class="contact-form">
