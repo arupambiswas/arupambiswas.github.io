@@ -3,125 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arupam Biswas | Life Science Researcher</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
+  <title>Arupam Biswas | Neuroscience Research</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f4f4f9;
-      color: #333;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    header {
-      background-color: #1e293b;
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: #0f172a;
+    }
+    nav {
+      background: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    nav h1 {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+    }
+    nav ul li {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .hero {
+      position: relative;
+      text-align: right;
+      color: #fff;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('your-background-image.jpg') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 3rem;
+    }
+    .hero img {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 5px solid white;
+      margin-bottom: 1.2rem;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .hero h3 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .cta {
+      margin-top: 1.5rem;
+      display: inline-block;
+      padding: 1rem 2.2rem;
+      background: #1d4ed8;
       color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
-    }
-    h1, h2 {
-      color: #1e293b;
-    }
-    .skills, .projects {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    .card {
-      background-color: white;
-      border-radius: 1rem;
-      padding: 1.5rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    a {
-      color: #2563eb;
+      border-radius: 9999px;
       text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.3s ease;
     }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background-color: #e2e8f0;
-      font-size: 0.9rem;
+    .cta:hover {
+      background: #1e40af;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Arupam Biswas</h1>
-    <p>Life Science Researcher | Neuroscience & Bioinformatics</p>
-    <p><a href="mailto:arupambiswas007@gmail.com">arupambiswas007@gmail.com</a></p>
-  </header>
-
-  <section>
-    <h2>About Me</h2>
-    <p>Currently a research trainee at CSIR-CCMB, I explore CNS disorders, regenerative biology, and neurogenomics. I combine experimental neuroscience with computational tools to investigate axonal regeneration and behavioral data.</p>
-  </section>
-
-  <section>
-    <h2>Research Interests</h2>
+  <nav>
+    <h1>Welcome</h1>
     <ul>
-      <li>Spinal Cord Injury & Axon Regeneration</li>
-      <li>Stem Cell Biology & CNS Repair</li>
-      <li>Electrodermal Signal Processing</li>
-      <li>Bioinformatics of Neurological Disorders</li>
+      <li>About</li>
+      <li>Research</li>
+      <li>Publications</li>
+      <li>CV</li>
+      <li>Gallery</li>
+      <li>Contact</li>
     </ul>
-  </section>
+  </nav>
 
-  <section class="skills">
-    <div class="card">
-      <h3>Skills</h3>
-      <ul>
-        <li>Python, R, MATLAB</li>
-        <li>Neurokit2, MdRQA</li>
-        <li>High-Content Imaging</li>
-        <li>Bioinformatics Tools (Cytoscape, ClueGO, Ensembl)</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Techniques</h3>
-      <ul>
-        <li>Stereotactic Surgery</li>
-        <li>Neuronal Cell Culture</li>
-        <li>Confocal & High-Content Microscopy</li>
-        <li>Signal Analysis & Machine Learning</li>
-      </ul>
-    </div>
+  <section class="hero">
+    <img src="6AAE16E8-D81D-41D5-BE76-7C3E88152856_1_201_a.jpg" alt="Arupam Biswas">
+    <h2>Arupam Biswas</h2>
+    <h3>Integrated M.Sc in Life Sciences</h3>
+    <a href="mailto:arupambiswas007@gmail.com" class="cta">Get in Touch</a>
   </section>
-
-  <section>
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="card">
-        <h3>Neurite Image Analysis</h3>
-        <p>Python pipeline for evaluating gene treatments in spinal cord injury.</p>
-      </div>
-      <div class="card">
-        <h3>EDA Preprocessing</h3>
-        <p>Signal processing and machine learning on physiological synchrony data using Neurokit2.</p>
-      </div>
-      <div class="card">
-        <h3>ECM Bioinformatics</h3>
-        <p>Analyzed brain extracellular matrix in Alzheimer’s, Parkinson’s, and Huntington’s diseases.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Publications & Conferences</h2>
-    <ul>
-      <li><a href="https://doi.org/10.55544/jrasb.1.4.8">DIPG Molecular Analysis</a> — JRASB, 2022</li>
-      <li>IAN 2023 & 2024 Poster Presentations</li>
-      <li>CMMDR 2024 — Transcription Factors in Axon Growth</li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Arupam Biswas | Built with 💻 and 🧠</p>
-  </footer>
 </body>
 </html>
