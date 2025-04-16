@@ -47,49 +47,34 @@
     }
     .hero {
       position: relative;
-      text-align: right;
+      text-align: center;
       color: #fff;
       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('your-background-image.jpg') no-repeat center center;
       background-size: cover;
       height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
-      justify-content: flex-end;
+      align-items: center;
+      justify-content: center;
       padding: 3rem;
     }
     .hero img {
-      width: 250px; /* Increased size */
-      height: 250px; /* Increased size */
+      width: 230px; /* Slightly reduced width */
+      height: 230px; /* Slightly reduced height */
       border-radius: 50%;
       border: 5px solid white;
       margin-bottom: 1.5rem;
       object-fit: cover;
+      filter: none; /* Ensures there is no blur effect */
     }
     .hero h2 {
-      font-size: 4rem; /* Increased size */
+      font-size: 5rem; /* Made the name much larger */
       font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    .hero h3 {
-      font-size: 1.8rem; /* Slightly increased size */
-      font-weight: 500;
       margin-bottom: 1rem;
     }
-    .cta {
-      margin-top: 1.5rem;
-      display: inline-block;
-      padding: 1rem 2.2rem;
-      background: #1d4ed8;
-      color: white;
-      border-radius: 9999px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: background 0.3s ease;
-    }
-    .cta:hover {
-      background: #1e40af;
+    .hero h3 {
+      font-size: 2.5rem; /* Made the title much larger */
+      font-weight: 500;
     }
   </style>
 </head>
@@ -106,7 +91,6 @@
     <img src="your-profile-picture.jpg" alt="Profile Picture" />
     <h2>Arupam Biswas</h2>
     <h3>Neuroscience Researcher</h3>
-    <a href="#contact" class="cta">Get in Touch</a>
   </section>
 </body>
 </html>
