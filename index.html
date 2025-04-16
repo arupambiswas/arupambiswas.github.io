@@ -46,23 +46,66 @@
       color: #1d4ed8;
     }
     .hero {
-      position: relative;
-      text-align: center;
-      color: #fff;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('your-profile-picture.jpg') no-repeat center center;
-      background-size: 50%; /* Zoomed out */
-      background-position: center bottom; /* Ensures the face is not visible */
-      height: 100vh; /* Ensures it fits within one screen/page */
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      height: 100vh;
       padding: 3rem;
+      background: #f9fafb;
     }
-    .hero h2 {
-      font-size: 5rem; /* Made the name much larger */
+    .hero .about-me {
+      width: 50%;
+      text-align: left;
+    }
+    .hero .about-me h2 {
+      font-size: 3rem;
       font-weight: 700;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
-    .hero h3 {
-      font-size: 2.5rem; /* Made the title much larger
+    .hero .about-me p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+    .hero .profile-image {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero .profile-image img {
+      width: 90%; /* Adjusted size */
+      max-width: 500px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>Welcome</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research-interests">Research Interests</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#contact">Get in Touch</a></li>
+    </ul>
+  </nav>
+  <section class="hero">
+    <div class="about-me">
+      <h2>About Me</h2>
+      <p>
+        Welcome to my personal website! I am Arupam Biswas, a passionate Neuroscience researcher dedicated to advancing our understanding of the brain and its complexities. 
+        My work focuses on exploring innovative solutions to address challenges in neuroscience and related fields. On this platform, you'll find my projects, publications, 
+        and other resources that reflect my journey as a researcher.
+      </p>
+    </div>
+    <div class="profile-image">
+      <img src="your-profile-picture.jpg" alt="Profile Background Image" />
+    </div>
+  </section>
+</body>
+</html>
