@@ -111,23 +111,23 @@
     .social-links {
       margin-top: 2rem;
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
     }
     .social-links a {
       display: inline-block;
-      width: 100px; /* Default size for all logos */
-      height: 100px; /* Default size for all logos */
+      width: 120px; /* Larger container size */
+      height: 120px; /* Larger container size */
     }
     .social-links a img {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* Uniform scaling */
+      object-fit: cover; /* Ensures all logos fill the container */
       border-radius: 50%;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .social-links a img:hover {
       transform: scale(1.1);
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     }
     .contact-form form {
       display: flex;
@@ -221,7 +221,7 @@
         <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank">
           <img src="linkedIn.jpg" alt="LinkedIn Logo">
         </a>
-        <a href="https://x.com/arupamb07" class="twitter" target="_blank">
+        <a href="https://x.com/arupamb07" target="_blank">
           <img src="twitterFL.jpg" alt="X Logo">
         </a>
       </div>
