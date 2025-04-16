@@ -115,8 +115,13 @@
     }
     .social-links a {
       display: inline-block;
-      width: 70px; /* Uniform container size */
-      height: 70px; /* Uniform container size */
+      width: 70px; /* Default size for all logos */
+      height: 70px; /* Default size for all logos */
+    }
+    .social-links a.facebook img,
+    .social-links a.instagram img {
+      width: 80px; /* Slightly zoomed in */
+      height: 80px; /* Slightly zoomed in */
     }
     .social-links a img {
       width: 100%;
@@ -212,10 +217,10 @@
         Feel free to reach out regarding research collaborations, speaking engagements, or questions about my work. I'm always open to discussing new ideas and potential partnerships.
       </p>
       <div class="social-links">
-        <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank">
+        <a href="https://www.facebook.com/arupam.biswas.007/" class="facebook" target="_blank">
           <img src="facebook.jpg" alt="Facebook Logo">
         </a>
-        <a href="https://www.instagram.com/arupambiswas/" target="_blank">
+        <a href="https://www.instagram.com/arupambiswas/" class="instagram" target="_blank">
           <img src="instagram.jpg" alt="Instagram Logo">
         </a>
         <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank">
