@@ -111,17 +111,22 @@
     .social-links {
       margin-top: 2rem;
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
     }
     .social-links a {
       display: inline-block;
-      width: 120px; /* Larger container size */
-      height: 120px; /* Larger container size */
+      width: 100px; /* Default size for all logos */
+      height: 100px; /* Default size for all logos */
+    }
+    .social-links a.facebook, 
+    .social-links a.twitter {
+      width: 120px; /* Zoomed-in size for Facebook and Twitter */
+      height: 120px; /* Zoomed-in size for Facebook and Twitter */
     }
     .social-links a img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Ensures all logos fill the container */
+      object-fit: contain; /* Ensures logos fit uniformly */
       border-radius: 50%;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -212,7 +217,7 @@
         Feel free to reach out regarding research collaborations, speaking engagements, or questions about my work. I'm always open to discussing new ideas and potential partnerships.
       </p>
       <div class="social-links">
-        <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank">
+        <a href="https://www.facebook.com/arupam.biswas.007/" class="facebook" target="_blank">
           <img src="facebook.jpg" alt="Facebook Logo">
         </a>
         <a href="https://www.instagram.com/arupambiswas/" target="_blank">
@@ -221,7 +226,7 @@
         <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank">
           <img src="linkedIn.jpg" alt="LinkedIn Logo">
         </a>
-        <a href="https://x.com/arupamb07" target="_blank">
+        <a href="https://x.com/arupamb07" class="twitter" target="_blank">
           <img src="twitterFL.jpg" alt="X Logo">
         </a>
       </div>
