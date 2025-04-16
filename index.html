@@ -108,6 +108,18 @@
     .contact-info a:hover {
       text-decoration: underline;
     }
+    .social-links {
+      margin-top: 2rem;
+    }
+    .social-links a img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+    .social-links a img:hover {
+      transform: scale(1.1);
+    }
     .contact-form form {
       display: flex;
       flex-direction: column;
@@ -139,19 +151,10 @@
     .contact-form button:hover {
       background-color: #1e40af;
     }
-    .footer {
-      text-align: center;
-      padding: 2rem;
-      background: #f3f4f6;
-    }
-    .footer a img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      transition: transform 0.3s ease;
-    }
-    .footer a img:hover {
-      transform: scale(1.1);
+    @media (max-width: 768px) {
+      .contact-info, .contact-form {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -196,6 +199,11 @@
       <p>
         Feel free to reach out regarding research collaborations, speaking engagements, or questions about my work. I'm always open to discussing new ideas and potential partnerships.
       </p>
+      <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank">
+          <img src="instagram.jpg" alt="Instagram Logo">
+        </a>
+      </div>
     </div>
     <div class="contact-form">
       <h2>Contact Me</h2>
@@ -216,10 +224,5 @@
       </form>
     </div>
   </section>
-  <footer class="footer">
-    <a href="https://www.instagram.com" target="_blank">
-      <img src="instagram.jpg" alt="Instagram Logo">
-    </a>
-  </footer>
 </body>
 </html>
