@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arupam Biswas | Neuroscience Research</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -36,6 +37,14 @@
       font-weight: 600;
       font-size: 1rem;
     }
+    nav ul li a {
+      text-decoration: none;
+      color: #0f172a;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #1d4ed8;
+    }
     .hero {
       position: relative;
       text-align: right;
@@ -55,6 +64,7 @@
       border-radius: 50%;
       border: 5px solid white;
       margin-bottom: 1.2rem;
+      object-fit: cover;
     }
     .hero h2 {
       font-size: 3rem;
@@ -87,20 +97,16 @@
   <nav>
     <h1>Welcome</h1>
     <ul>
-      <li>About</li>
-      <li>Research</li>
-      <li>Publications</li>
-      <li>CV</li>
-      <li>Gallery</li>
-      <li>Contact</li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
     </ul>
   </nav>
-
   <section class="hero">
-    <img src="profile.jpg" alt="Arupam Biswas">
+    <img src="your-profile-picture.jpg" alt="Profile Picture" />
     <h2>Arupam Biswas</h2>
-    <h3>Integrated M.Sc in Life Sciences</h3>
-    <a href="mailto:arupambiswas007@gmail.com" class="cta">Get in Touch</a>
+    <h3>Neuroscience Researcher</h3>
+    <a href="#contact" class="cta">Get in Touch</a>
   </section>
 </body>
 </html>
