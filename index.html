@@ -28,6 +28,11 @@
       font-weight: 700;
       font-size: 1.5rem;
     }
+    nav .menu {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
     nav ul {
       list-style: none;
       display: flex;
@@ -45,135 +50,46 @@
     nav ul li a:hover {
       color: #1d4ed8;
     }
-    .hero {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      height: 100vh;
-      padding: 3rem;
-      background: #f9fafb;
-    }
-    .hero .introduction {
-      width: 50%;
-      text-align: left;
-    }
-    .hero .introduction h2 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-    }
-    .hero .introduction p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-    }
-    .hero .profile-image {
-      width: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .hero .profile-image img {
-      width: 90%;
-      max-width: 500px;
-      border-radius: 10px;
-      object-fit: cover;
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    }
-    .get-in-touch {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      padding: 3rem;
-      background: #ffffff;
-    }
-    .contact-info, .contact-form {
-      width: 48%;
-    }
-    .contact-info h2, .contact-form h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-    }
-    .contact-info p {
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 1rem;
-    }
-    .contact-info a {
-      color: #1d4ed8;
-      text-decoration: none;
-    }
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
-    .social-links {
-      margin-top: 2rem;
-      display: flex;
-      gap: 1.5rem;
-    }
-    .social-links a {
-      display: inline-block;
-      width: 100px; /* Default size for all logos */
-      height: 100px; /* Default size for all logos */
-    }
-    .social-links a img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* Ensures logos fit uniformly */
-      border-radius: 50%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .social-links a img:hover {
-      transform: scale(1.1);
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    }
-    .contact-form form {
-      display: flex;
-      flex-direction: column;
-    }
-    .contact-form label {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    .contact-form input, .contact-form textarea {
-      margin-bottom: 1rem;
-      padding: 0.8rem;
-      border: 1px solid #cbd5e1;
-      border-radius: 5px;
-      font-size: 1rem;
-      width: 100%;
-    }
-    .contact-form button {
-      padding: 0.8rem 2rem;
-      background-color: #1d4ed8;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      font-weight: 600;
-      font-size: 1rem;
+    .mobile-menu-icon {
+      display: none;
+      font-size: 1.8rem;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
-    .contact-form button:hover {
-      background-color: #1e40af;
+    .dropdown {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      background: white;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
-    footer {
-      margin-top: 2rem;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #475569;
-      background-color: #f1f5f9;
+    .dropdown li {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .dropdown li a {
+      text-decoration: none;
+      color: #0f172a;
+    }
+    .dropdown li a:hover {
+      color: #1d4ed8;
     }
     @media (max-width: 768px) {
-      .contact-info, .contact-form {
-        width: 100%;
+      .menu {
+        display: none;
       }
-      .social-links {
-        justify-content: center;
+      .mobile-menu-icon {
+        display: block;
+      }
+      .dropdown {
+        display: none;
+      }
+      .dropdown.active {
+        display: flex;
       }
     }
   </style>
@@ -181,8 +97,20 @@
 <body>
   <nav>
     <h1>Welcome</h1>
-    <ul>
-      <li><a href="#about me">About Me</a></li>
+    <div class="menu">
+      <ul>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#research-interests">Research Interests</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#contact">Get in Touch</a></li>
+      </ul>
+    </div>
+    <div class="mobile-menu-icon" id="menu-icon">☰</div>
+    <ul class="dropdown" id="dropdown-menu">
+      <li><a href="#about-me">About Me</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#research-interests">Research Interests</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -191,71 +119,14 @@
       <li><a href="#contact">Get in Touch</a></li>
     </ul>
   </nav>
-  <section class="hero">
-    <div class="about me" id="about me">
-      <h2>Hi !!</h2>
-      <p>
-        Welcome to my personal website! I'm Arupam Biswas, a passionate neuroscience researcher dedicated to advancing our understanding of the brain and its complexities. 
-        My work focuses on exploring innovative solutions to address challenges in neuroscience and related fields. On this platform, you'll find my projects, publications, 
-        and other resources that reflect my journey as a researcher.
-      </p>
-    </div>
-    <div class="profile-image">
-      <img src="your-profile-picture.jpg" alt="Profile Background Image" />
-    </div>
-  </section>
-  <section class="get-in-touch" id="contact">
-    <div class="contact-info">
-      <h2>Get in Touch</h2>
-      <p><strong>Email:</strong> arupambiswas007@gmail.com</p>
-      <p><strong>Lab:</strong> Dr Ishwariya Venkatesh, <a href="https://www.ccmb.res.in/research/labs/venkatesh-lab" target="_blank">Venkatesh Lab</a> CSIR-CCMB</p>
-      <p><strong>Address:</strong><br>
-        Institute for Developmental Biology and Neurobiology (iDN)<br>
-        Johannes Gutenberg University Mainz<br>
-        Biozentrum 1<br>
-        Hanns-Dieter-Hüsch-Weg 15<br>
-        55128 Mainz<br>
-        Germany
-      </p>
-      <p>
-        Feel free to reach out regarding research collaborations, speaking engagements, or questions about my work. I'm always open to discussing new ideas and potential partnerships.
-      </p>
-      <div class="social-links">
-        <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank">
-          <img src="facebookff.jpg" alt="Facebook Logo">
-        </a>
-        <a href="https://www.instagram.com/arupambiswas/" target="_blank">
-          <img src="instagram.jpg" alt="Instagram Logo">
-        </a>
-        <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank">
-          <img src="linkedIn.jpg" alt="LinkedIn Logo">
-        </a>
-        <a href="https://x.com/arupamb07" target="_blank">
-          <img src="twitterFL.jpg" alt="X Logo">
-        </a>
-      </div>
-    </div>
-    <div class="contact-form">
-      <h2>Contact Me</h2>
-      <form action="#" method="POST">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required placeholder="Your Name">
-        
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="Your Email">
-        
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" required placeholder="Subject">
-        
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
-        
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
-  <footer>
-    © 2025 Arupam Biswas. All rights reserved.
-  </footer>
+
+  <script>
+    const menuIcon = document.getElementById('menu-icon');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+
+    menuIcon.addEventListener('click', () => {
+      dropdownMenu.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
