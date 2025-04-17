@@ -82,43 +82,31 @@
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
     }
     .get-in-touch {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      gap: 3rem;
-      padding: 3rem;
+      padding: 5rem;
       background: #ffffff;
       margin-top: 3rem;
+      text-align: center;
     }
-    .get-in-touch .contact-info {
-      width: 50%;
-    }
-    .get-in-touch .contact-info h2 {
-      font-size: 2.5rem;
+    .get-in-touch h2 {
+      font-size: 3rem;
       font-weight: 700;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
-    .get-in-touch .contact-info p {
-      font-size: 1rem;
+    .get-in-touch p {
+      font-size: 1.2rem;
       line-height: 1.8;
-      margin-bottom: 1rem;
-    }
-    .get-in-touch .contact-info a {
-      color: #1d4ed8;
-      text-decoration: none;
-    }
-    .get-in-touch .contact-info a:hover {
-      text-decoration: underline;
+      margin-bottom: 2rem;
     }
     .social-links {
       display: flex;
-      gap: 1.5rem;
+      justify-content: center;
+      gap: 2rem;
       margin-top: 2rem;
     }
     .social-links a {
       display: inline-block;
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
     }
     .social-links a img {
       width: 100%;
@@ -131,45 +119,6 @@
       transform: scale(1.1);
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     }
-    .contact-form {
-      width: 50%;
-    }
-    .contact-form h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-    }
-    .contact-form form {
-      display: flex;
-      flex-direction: column;
-    }
-    .contact-form label {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    .contact-form input, .contact-form textarea {
-      margin-bottom: 1rem;
-      padding: 0.8rem;
-      border: 1px solid #cbd5e1;
-      border-radius: 5px;
-      font-size: 1rem;
-      width: 100%;
-    }
-    .contact-form button {
-      padding: 0.8rem 2rem;
-      background-color: #1d4ed8;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .contact-form button:hover {
-      background-color: #1e40af;
-    }
     footer {
       margin-top: 2rem;
       padding: 1rem;
@@ -180,15 +129,10 @@
     }
     @media (max-width: 768px) {
       .get-in-touch {
-        flex-direction: column;
-        gap: 2rem;
-        padding: 2rem 1rem;
-      }
-      .get-in-touch .contact-info, .contact-form {
-        width: 100%;
+        padding: 3rem 1rem;
       }
       .social-links {
-        justify-content: center;
+        flex-direction: row;
       }
     }
   </style>
@@ -207,9 +151,9 @@
   </nav>
   <section class="hero" id="about-me">
     <div class="about-me">
-      <h2>Hello,</h2>
+      <h2>Hello, I'm Arupam</h2>
       <p>
-        Welcome to my personal website! I'm Arupam Biswas, a dedicated neuroscience researcher exploring the brain's complexities. 
+        Welcome to my personal website!  My work focuses on exploring and addressing challenges in neuroscience, particularly those related to the brain and its complexities. 
         Here, you'll find my projects, publications, and innovative solutions in neuroscience. Enjoy your visit!
       </p>
     </div>
@@ -218,49 +162,33 @@
     </div>
   </section>
   <section class="get-in-touch" id="contact">
-    <div class="contact-info">
-      <h2>Get in Touch</h2>
-      <p><strong>Email:</strong> arupambiswas007@gmail.com</p>
-      <p><strong>Lab:</strong> Dr Ishwariya Venkatesh, <a href="https://www.ccmb.res.in/research/labs/venkatesh-lab" target="_blank">Venkatesh Lab</a> CSIR-CCMB</p>
-      <p><strong>Address:</strong><br>
-        Institute for Developmental Biology and Neurobiology (iDN)<br>
-        Johannes Gutenberg University Mainz<br>
-        Biozentrum 1<br>
-        Hanns-Dieter-Hüsch-Weg 15<br>
-        55128 Mainz<br>
-        Germany
-      </p>
-      <p>
-        Feel free to reach out regarding research collaborations, speaking engagements, or questions about my work. I'm always open to discussing new ideas and potential partnerships.
-      </p>
-      <div class="social-links">
-        <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank">
-          <img src="facebookff.jpg" alt="Facebook Logo">
-        </a>
-        <a href="https://www.instagram.com/arupambiswas/" target="_blank">
-          <img src="instagram.jpg" alt="Instagram Logo">
-        </a>
-        <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank">
-          <img src="linkedIn.jpg" alt="LinkedIn Logo">
-        </a>
-        <a href="https://x.com/arupamb07" target="_blank">
-          <img src="twitterFL.jpg" alt="X Logo">
-        </a>
-      </div>
-    </div>
-    <div class="contact-form">
-      <h2>Contact Me</h2>
-      <form action="#" method="POST">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required placeholder="Your Name">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="Your Email">
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" required placeholder="Subject">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+    <h2>Get in Touch</h2>
+    <p><strong>Email:</strong> arupambiswas007@gmail.com</p>
+    <p><strong>Lab:</strong> Dr Ishwariya Venkatesh, <a href="https://www.ccmb.res.in/research/labs/venkatesh-lab" target="_blank">Venkatesh Lab</a> CSIR-CCMB</p>
+    <p><strong>Address:</strong><br>
+      Institute for Developmental Biology and Neurobiology (iDN)<br>
+      Johannes Gutenberg University Mainz<br>
+      Biozentrum 1<br>
+      Hanns-Dieter-Hüsch-Weg 15<br>
+      55128 Mainz<br>
+      Germany
+    </p>
+    <p>
+      Reach out for research collaborations, speaking engagements, or any questions. I'm always open to new ideas and partnerships!
+    </p>
+    <div class="social-links">
+      <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank">
+        <img src="facebookff.jpg" alt="Facebook Logo">
+      </a>
+      <a href="https://www.instagram.com/arupambiswas/" target="_blank">
+        <img src="instagram.jpg" alt="Instagram Logo">
+      </a>
+      <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank">
+        <img src="linkedIn.jpg" alt="LinkedIn Logo">
+      </a>
+      <a href="https://x.com/arupamb07" target="_blank">
+        <img src="twitterFL.jpg" alt="X Logo">
+      </a>
     </div>
   </section>
   <footer>
