@@ -83,6 +83,7 @@
     .get-in-touch {
       padding: 3rem;
       background: #ffffff;
+      margin-top: 3rem; /* Added spacing to separate it from the previous section */
     }
     .get-in-touch h2 {
       font-size: 2.5rem;
@@ -172,9 +173,18 @@
       .hero {
         flex-direction: column;
         text-align: center;
+        padding: 2rem 1rem; /* Reduced padding for smaller screens */
       }
-      .hero .about-me, .hero .profile-image {
+      .hero .about-me {
         width: 100%;
+        margin-bottom: 2rem; /* Add spacing between the text and the image */
+      }
+      .hero .profile-image {
+        width: 100%;
+      }
+      .get-in-touch {
+        margin-top: 5rem; /* Add extra spacing on mobile to ensure separation */
+        padding: 2rem 1rem; /* Adjust padding to fit mobile screens */
       }
       .social-links {
         flex-direction: row;
