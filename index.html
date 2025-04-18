@@ -80,6 +80,7 @@
     .hero .profile-image {
       width: 45%;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
@@ -88,6 +89,31 @@
       max-width: 500px;
       border-radius: 15px;
       object-fit: cover;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+      margin-bottom: 1rem;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .social-links a {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+    }
+    .social-links a img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: #1e293b;
+      padding: 5px;
+    }
+    .social-links a img:hover {
+      transform: scale(1.1);
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
     }
     .education-section {
@@ -133,30 +159,6 @@
       margin-bottom: 2rem;
       color: #e2e8f0;
     }
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .social-links a {
-      display: inline-block;
-      width: 100px;
-      height: 100px;
-    }
-    .social-links a img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 50%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background-color: #1e293b;
-      padding: 10px;
-    }
-    .social-links a img:hover {
-      transform: scale(1.1);
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-    }
     footer {
       margin-top: 2rem;
       padding: 1rem;
@@ -177,14 +179,14 @@
 </head>
 <body>
   <nav>
-    <h1>Hello, I'm Arupam</h1>
+    <h1>Arupam Biswas</h1>
     <ul>
       <li><a href="#about-me">About Me</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#publications-and-awards">Publications and Awards</a></li>
-      <li><a href="#gallary">Gallary</a></li>
-      <li><a href="#get-in-touch">Get in Touch</a></li>
+      <li><a href="#research-interests">Research</a></li>
+      <li><a href="#projects">Publications and Awards</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#contact">Get in Touch</a></li>
     </ul>
   </nav>
   <section class="hero" id="about-me">
@@ -194,6 +196,10 @@
         <a href="https://idn.biologie.uni-mainz.de/" target="_blank">
           Institute of Developmental Biology and Neurobiology (iDN)
         </a>, Germany.
+      </p>
+      <p>
+        Neurological diseases are not only permanently debilitating but are the fastest-growing cause of death among non-communicable diseases. Strategies to promote repair of the nervous system are extremely rare, and to date, there are no therapies available.
+      </p>
       <p>
         At
         <a href="https://www.uni-mainz.de/" target="_blank">
@@ -201,7 +207,7 @@
         </a>, in collaboration with the
         <a href="https://www.mpip-mainz.mpg.de/en/home" target="_blank">
           Max Planck Institute for Polymer Research
-        </a>, our interdisciplinary team is pioneering new regenerative treatments for multiple sclerosis and traumatic brain and spinal cord injuries. By merging neurobiology, neuroimmunology, chemistry, and polymer research, we're developing innovative strategies to heal the nervous system.
+        </a>, our interdisciplinary team combines neurobiology, neuroimmunology, chemistry, and polymer research to develop new strategies for regenerative treatments for multiple sclerosis and traumatic brain and spinal cord injuries.
       </p>
       <p>
         Beyond the lab, I enjoy cooking and exploring new places. If you share an interest in neurobiology, regenerative medicine, or the molecular mechanisms of brain repair, I would love to connect!
@@ -209,6 +215,20 @@
     </div>
     <div class="profile-image">
       <img src="your-profile-picture.jpg" alt="Profile Background Image" />
+      <div class="social-links">
+        <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank">
+          <img src="facebookff.jpg" alt="Facebook Logo">
+        </a>
+        <a href="https://www.instagram.com/arupambiswas/" target="_blank">
+          <img src="instagram.jpg" alt="Instagram Logo">
+        </a>
+        <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank">
+          <img src="linkedIn.jpg" alt="LinkedIn Logo">
+        </a>
+        <a href="https://x.com/arupamb07" target="_blank">
+          <img src="twitterFL.jpg" alt="X Logo">
+        </a>
+      </div>
     </div>
   </section>
   <section class="education-section" id="education">
@@ -245,20 +265,6 @@
     <p>
       Feel free to reach out regarding research collaborations, speaking engagements, or questions about my work. I'm always open to discussing new ideas and potential partnerships.
     </p>
-    <div class="social-links">
-      <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank">
-        <img src="facebookff.jpg" alt="Facebook Logo">
-      </a>
-      <a href="https://www.instagram.com/arupambiswas/" target="_blank">
-        <img src="instagram.jpg" alt="Instagram Logo">
-      </a>
-      <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank">
-        <img src="linkedIn.jpg" alt="LinkedIn Logo">
-      </a>
-      <a href="https://x.com/arupamb07" target="_blank">
-        <img src="twitterFL.jpg" alt="X Logo">
-      </a>
-    </div>
   </section>
   <footer>
     © 2025 Arupam Biswas. All rights reserved.
