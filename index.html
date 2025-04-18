@@ -1,37 +1,324 @@
-<section id="education" class="education-section">
-  <h2>Education</h2>
-  <div class="education-item">
-    <h3>2025-Present Day</h3>
-    <h4>PhD in Neuroscience</h4>
-    <p>
-      <strong>
-        <a href="https://www.uni-mainz.de/" target="_blank" style="color: #1e293b;">
-          Johannes Gutenberg University Mainz
-        </a>, Germany
-      </strong>
-    </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Arupam Biswas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: #f8f9fa;
+      background-color: #0f172a;
+    }
+    nav {
+      background: #1e293b;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    nav h1 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #38bdf8;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.8rem;
+    }
+    nav ul li {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #f8fafc;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+    nav ul li a:hover {
+      color: #0f172a;
+      background-color: #38bdf8;
+    }
+    .hero {
+      padding: 3rem;
+      background: linear-gradient(to right, #0f172a, #1e293b);
+    }
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #38bdf8;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .hero .about-me-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem; /* Reduced gap between text and profile image */
+    }
+    .hero .about-me-text {
+      flex: 0 0 60%; /* 60% width for the text */
+      text-align: justify;
+    }
+    .hero .about-me-text p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: #e2e8f0;
+    }
+    .hero .about-me-text a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    .hero .about-me-text a:hover {
+      text-decoration: underline;
+    }
+    .hero .profile-image {
+      flex: 0 0 40%; /* 40% width for the image */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero .profile-image img {
+      width: 100%;
+      max-width: 450px; /* Increased size of the profile picture */
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .social-links a {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+    }
+    .social-links a img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: #1e293b;
+      padding: 5px;
+    }
+    .social-links a img:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    }
+    .education-section {
+      padding: 5rem 3rem;
+      background: #ffffff; /* White background for the education section */
+      color: #0f172a; /* Dark text for better contrast */
+    }
+    .education-section h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #0f172a; /* Dark text color */
+    }
+    .education-item {
+      margin-bottom: 3rem;
+      text-align: left;
+    }
+    .education-item h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .education-item h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-top: 0.5rem;
+    }
+    .education-item p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #1e293b;
+      margin-top: 0.5rem;
+    }
+    .education-item ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    .education-item ul li {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #334155;
+    }
+    .get-in-touch {
+      padding: 5rem;
+      background: #0f172a;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .get-in-touch h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #38bdf8;
+    }
+    .get-in-touch p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      color: #e2e8f0;
+    }
+    footer {
+      margin-top: 2rem;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      background-color: #1e293b;
+    }
+    @media (max-width: 768px) {
+      .hero .about-me-content {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero .about-me-text,
+      .hero .profile-image {
+        flex: 1 1 auto;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>Hello, I'm Arupam</h1>
     <ul>
-      <li>Title: Aptamer Based Electrochemical Sensor for Sensitive Detection of Psychoactive Drugs.</li>
-      <li>Supervisor: Prof. Dr. Claire Jacob, Prof. Dr. Martin Heine, Dr. Himanshu Kumar Shukla, <a href="https://idn.biologie.uni-mainz.de/" target="_blank" style="color: #1e293b;">
-          Institute of Developmental Biology and Neurobiology (iDN)
-        </a>, Germany</li>
+      <li><a href="#about-me">About Me</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications-and-awards">Publications and Awards</a></li>
+      <li><a href="#gallary">Gallery</a></li>
+      <li><a href="#get-in-touch">Get in Touch</a></li>
     </ul>
-  </div>
-  <div class="education-item">
-    <h3>2019-2024</h3>
-    <h4>Five-Year Integrated M.Sc in Lifesciences</h4>
-    <p><strong> Visva-Bharati, India.</strong></p>
-    <ul>
-      <li>Master's Dissertation: High-Content Screening for neurite growth analyses: Evaluating gene treatments.</li>
-      <li>Supervisor: Dr. Ishwariya Venkatesh, CSIR-Centre for Cellular and Molecular Biology (CSIR-CCMB), India.</li>
-    </ul>
-  </div>
-  <div class="education-subsection">
-    <div class="content">
-      <h3>Future Plans</h3>
-      <p>
-        Write about your future plans here. Mention what you aim to achieve in the coming years, whether it's further research, a new project, or any other aspirations.
-      </p>
+  </nav>
+  <section class="hero" id="about-me">
+    <h2>About Me</h2>
+    <div class="about-me-content">
+      <div class="about-me-text">
+        <p>
+          Welcome to my personal website! I am a Neuroscience Researcher at the
+          <a href="https://idn.biologie.uni-mainz.de/" target="_blank">
+            Institute of Developmental Biology and Neurobiology (iDN)
+          </a>, Germany.
+        </p>
+        <p>
+          At
+          <a href="https://www.uni-mainz.de/" target="_blank">
+            Johannes Gutenberg University Mainz
+          </a>, in collaboration with the
+          <a href="https://www.mpip-mainz.mpg.de/en/home" target="_blank">
+            Max Planck Institute for Polymer Research
+          </a>, our interdisciplinary team is pioneering new regenerative treatments for multiple sclerosis and traumatic brain and spinal cord injuries. By merging neurobiology, neuroimmunology, chemistry, and polymer research, we're developing innovative strategies to heal the nervous system.
+        </p>
+        <p>
+          Beyond the lab, I enjoy cooking and exploring new places. If you share an interest in neurobiology, regenerative medicine, or the molecular mechanisms of brain repair, I would love to connect!
+        </p>
+      </div>
+      <div class="profile-image">
+        <img src="your-profile-picture.jpg" alt="Profile Background Image" />
+        <div class="social-links">
+          <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank">
+            <img src="facebookff.jpg" alt="Facebook Logo">
+          </a>
+          <a href="https://www.instagram.com/arupambiswas/" target="_blank">
+            <img src="InstagramF.jpg" alt="Instagram Logo">
+          </a>
+          <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank">
+            <img src="linkedIn.jpg" alt="LinkedIn Logo">
+          </a>
+          <a href="https://x.com/arupamb07" target="_blank">
+            <img src="twitterFL.jpg" alt="X Logo">
+          </a>
+          <a href="mailto:arupambiswas007@gmail.com" target="_blank">
+            <img src="gmail.jpg" alt="Gmail Logo">
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+  <section id="education" class="education-section">
+    <h2>Education</h2>
+    <div class="education-item">
+      <h3>2025-Present Day</h3>
+      <h4>PhD in Neuroscience</h4>
+      <p>
+        <strong>
+          <a href="https://www.uni-mainz.de/" target="_blank" class="edu-link">
+            Johannes Gutenberg University Mainz
+          </a>, Germany
+        </strong>
+      </p>
+      <ul>
+        <li>Title: Aptamer Based Electrochemical Sensor for Sensitive Detection of Psychoactive Drugs</li>
+        <li>Supervisor: Prof. Dr. Claire Jacob, Prof. Dr. Martin Heine, Dr. Himanshu Kumar Shukla, 
+          <a href="https://idn.biologie.uni-mainz.de/" target="_blank" class="edu-link">
+            Institute of Developmental Biology and Neurobiology (iDN)
+          </a>, Germany
+        </li>
+      </ul>
+    </div>
+    <div class="education-item">
+      <h3>2019-2024</h3>
+      <h4>Five-Year Integrated M.Sc in Lifesciences</h4>
+      <p>
+        <strong>Visva-Bharati, India</strong>
+      </p>
+      <ul>
+        <li>Master's Dissertation: High-Content Screening for neurite growth analyses: Evaluating gene treatments</li>
+        <li>Supervisor: Dr. Ishwariya Venkatesh, CSIR-Centre for Cellular and Molecular Biology (CSIR-CCMB), India</li>
+      </ul>
+    </div>
+    <div class="education-subsection">
+      <div class="content">
+        <h3>Future Plans</h3>
+        <p>
+          Write about your future plans here. Mention what you aim to achieve in the coming years, whether it's further research, a new project, or any other aspirations.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="get-in-touch" id="get-in-touch">
+    <h2>Get in Touch</h2>
+    <p><strong>Email:</strong> arupambiswas007@gmail.com</p>
+    <p><strong>Lab:</strong> Dr Ishwariya Venkatesh, <a href="https://www.ccmb.res.in/research/labs/venkatesh-lab" target="_blank" style="color: #38bdf8;">Venkatesh Lab</a> CSIR-CCMB</p>
+    <p><strong>Address:</strong><br>
+      Institute for Developmental Biology and Neurobiology (iDN)<br>
+      Johannes Gutenberg University Mainz<br>
+      Biozentrum 1<br>
+      Hanns-Dieter-Hüsch-Weg 15<br>
+      55128 Mainz<br>
+      Germany
+    </p>
+    <p>
+      Feel free to reach out regarding research collaborations, speaking engagements, or questions about my work. I'm always open to discussing new ideas and potential partnerships.
+    </p>
+  </section>
+  <footer>
+    © 2025 Arupam Biswas. All rights reserved.
+  </footer>
+</body>
+</html>
