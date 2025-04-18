@@ -14,19 +14,21 @@
     }
     body {
       font-family: 'Outfit', sans-serif;
-      color: #0f172a;
+      color: #f8f9fa;
+      background-color: #0f172a;
     }
     nav {
-      background: white;
+      background: #1e293b;
       padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
     nav h1 {
       font-weight: 700;
       font-size: 1.5rem;
+      color: #38bdf8;
     }
     nav ul {
       list-style: none;
@@ -39,11 +41,14 @@
     }
     nav ul li a {
       text-decoration: none;
-      color: #0f172a;
-      transition: color 0.3s ease;
+      color: #f8fafc;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
     }
     nav ul li a:hover {
-      color: #1d4ed8;
+      color: #0f172a;
+      background-color: #38bdf8;
     }
     .hero {
       display: flex;
@@ -52,7 +57,7 @@
       justify-content: space-between;
       height: 100vh;
       padding: 3rem;
-      background: #f9fafb;
+      background: linear-gradient(to right, #0f172a, #1e293b);
     }
     .hero .about-me {
       width: 50%;
@@ -63,6 +68,14 @@
       font-size: 1.2rem;
       line-height: 1.8;
       margin-bottom: 1.5rem;
+      color: #e2e8f0;
+    }
+    .hero .about-me a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    .hero .about-me a:hover {
+      text-decoration: underline;
     }
     .hero .profile-image {
       width: 45%;
@@ -75,17 +88,18 @@
       max-width: 500px;
       border-radius: 15px;
       object-fit: cover;
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
     }
     .education-section {
       padding: 5rem 3rem;
-      background: #f9fafb;
+      background: #1e293b;
       text-align: center;
     }
     .education-section h2 {
       font-size: 3rem;
       font-weight: 700;
       margin-bottom: 2rem;
+      color: #38bdf8;
     }
     .education-subsection {
       margin-bottom: 3rem;
@@ -94,14 +108,16 @@
       font-size: 2rem;
       font-weight: 600;
       margin-bottom: 1rem;
+      color: #f8fafc;
     }
     .education-subsection .content p {
       font-size: 1.2rem;
       line-height: 1.8;
+      color: #e2e8f0;
     }
     .get-in-touch {
       padding: 5rem;
-      background: #ffffff;
+      background: #0f172a;
       margin-top: 3rem;
       text-align: center;
     }
@@ -109,11 +125,13 @@
       font-size: 3rem;
       font-weight: 700;
       margin-bottom: 2rem;
+      color: #38bdf8;
     }
     .get-in-touch p {
       font-size: 1.2rem;
       line-height: 1.8;
       margin-bottom: 2rem;
+      color: #e2e8f0;
     }
     .social-links {
       display: flex;
@@ -132,18 +150,20 @@
       object-fit: contain;
       border-radius: 50%;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: #1e293b;
+      padding: 10px;
     }
     .social-links a img:hover {
       transform: scale(1.1);
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
     }
     footer {
       margin-top: 2rem;
       padding: 1rem;
       text-align: center;
       font-size: 0.9rem;
-      color: #475569;
-      background-color: #f1f5f9;
+      color: #94a3b8;
+      background-color: #1e293b;
     }
     @media (max-width: 768px) {
       .get-in-touch {
@@ -157,7 +177,7 @@
 </head>
 <body>
   <nav>
-    <h1>Hello, I'm Arupam</h1>
+    <h1>Arupam Biswas</h1>
     <ul>
       <li><a href="#about-me">About Me</a></li>
       <li><a href="#education">Education</a></li>
@@ -171,7 +191,7 @@
     <div class="about-me">
       <p>
         Welcome to my personal website! I am a Neuroscience Researcher at the
-        <a href="https://idn.biologie.uni-mainz.de/" target="_blank" style="color: #1d4ed8; text-decoration: none;">
+        <a href="https://idn.biologie.uni-mainz.de/" target="_blank">
           Institute of Developmental Biology and Neurobiology (iDN)
         </a>, Germany.
       </p>
@@ -180,10 +200,10 @@
       </p>
       <p>
         At
-        <a href="https://www.uni-mainz.de/" target="_blank" style="color: #1d4ed8; text-decoration: none;">
+        <a href="https://www.uni-mainz.de/" target="_blank">
           Johannes Gutenberg University Mainz
         </a>, in collaboration with the
-        <a href="https://www.mpip-mainz.mpg.de/en/home" target="_blank" style="color: #1d4ed8; text-decoration: none;">
+        <a href="https://www.mpip-mainz.mpg.de/en/home" target="_blank">
           Max Planck Institute for Polymer Research
         </a>, our interdisciplinary team combines neurobiology, neuroimmunology, chemistry, and polymer research to develop new strategies for regenerative treatments for multiple sclerosis and traumatic brain and spinal cord injuries.
       </p>
@@ -217,7 +237,7 @@
   <section class="get-in-touch" id="contact">
     <h2>Get in Touch</h2>
     <p><strong>Email:</strong> arupambiswas007@gmail.com</p>
-    <p><strong>Lab:</strong> Dr Ishwariya Venkatesh, <a href="https://www.ccmb.res.in/research/labs/venkatesh-lab" target="_blank">Venkatesh Lab</a> CSIR-CCMB</p>
+    <p><strong>Lab:</strong> Dr Ishwariya Venkatesh, <a href="https://www.ccmb.res.in/research/labs/venkatesh-lab" target="_blank" style="color: #38bdf8;">Venkatesh Lab</a> CSIR-CCMB</p>
     <p><strong>Address:</strong><br>
       Institute for Developmental Biology and Neurobiology (iDN)<br>
       Johannes Gutenberg University Mainz<br>
