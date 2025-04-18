@@ -54,40 +54,52 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       height: 100vh;
       padding: 3rem;
       background: linear-gradient(to right, #0f172a, #1e293b);
+      color: #e2e8f0;
     }
-    .hero .about-me {
-      width: 50%;
-      text-align: left;
+    .about-me-container {
+      display: flex;
+      max-width: 1200px;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .about-me-text {
+      width: 55%;
       padding-right: 2rem;
     }
-    .hero .about-me p {
+    .about-me-text h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #38bdf8;
+    }
+    .about-me-text p {
       font-size: 1.2rem;
       line-height: 1.8;
       margin-bottom: 1.5rem;
       color: #e2e8f0;
     }
-    .hero .about-me a {
+    .about-me-text a {
       color: #38bdf8;
       text-decoration: none;
     }
-    .hero .about-me a:hover {
+    .about-me-text a:hover {
       text-decoration: underline;
     }
-    .hero .profile-image {
-      width: 45%;
+    .about-me-profile {
+      width: 40%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
     }
-    .hero .profile-image img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 15px;
+    .profile-image img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
       object-fit: cover;
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
       margin-bottom: 1rem;
@@ -95,7 +107,7 @@
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1rem;
       margin-top: 1rem;
     }
     .social-links a {
@@ -108,9 +120,9 @@
       height: 100%;
       object-fit: contain;
       border-radius: 50%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       background-color: #1e293b;
       padding: 5px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .social-links a img:hover {
       transform: scale(1.1);
@@ -168,6 +180,18 @@
       background-color: #1e293b;
     }
     @media (max-width: 768px) {
+      .about-me-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-me-text {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 2rem;
+      }
+      .about-me-profile {
+        width: 100%;
+      }
       .get-in-touch {
         padding: 3rem 1rem;
       }
@@ -179,7 +203,7 @@
 </head>
 <body>
   <nav>
-    <h1>Hello, I'm Arupam</h1>
+    <h1>Arupam Biswas</h1>
     <ul>
       <li><a href="#about-me">About Me</a></li>
       <li><a href="#education">Education</a></li>
@@ -190,41 +214,52 @@
     </ul>
   </nav>
   <section class="hero" id="about-me">
-    <div class="about-me">
-      <p>
-        Welcome to my personal website! I am a Neuroscience Researcher at the
-        <a href="https://idn.biologie.uni-mainz.de/" target="_blank">
-          Institute of Developmental Biology and Neurobiology (iDN)
-        </a>, Germany.
-      </p>
-      <p>
-        At
-        <a href="https://www.uni-mainz.de/" target="_blank">
-          Johannes Gutenberg University Mainz
-        </a>, in collaboration with the
-        <a href="https://www.mpip-mainz.mpg.de/en/home" target="_blank">
-          Max Planck Institute for Polymer Research
-        </a>, our interdisciplinary team is pioneering new regenerative treatments for multiple sclerosis and traumatic brain and spinal cord injuries. By merging neurobiology, neuroimmunology, chemistry, and polymer research, we're developing innovative strategies to heal the nervous system.
-      </p>
-      <p>
-        Beyond the lab, I enjoy cooking and exploring new places. If you share an interest in neurobiology, regenerative medicine, or the molecular mechanisms of brain repair, I would love to connect!
-      </p>
-    </div>
-    <div class="profile-image">
-      <img src="your-profile-picture.jpg" alt="Profile Background Image" />
-      <div class="social-links">
-        <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank">
-          <img src="facebookff.jpg" alt="Facebook Logo">
-        </a>
-        <a href="https://www.instagram.com/arupambiswas/" target="_blank">
-          <img src="InstagramF.jpg" alt="Instagram Logo">
-        </a>
-        <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank">
-          <img src="linkedIn.jpg" alt="LinkedIn Logo">
-        </a>
-        <a href="https://x.com/arupamb07" target="_blank">
-          <img src="twitterFL.jpg" alt="X Logo">
-        </a>
+    <div class="about-me-container">
+      <!-- Left Side: Text Content -->
+      <div class="about-me-text">
+        <h2>About Me</h2>
+        <p>
+          Welcome to my personal website! I am a passionate Neuroscience Researcher at the
+          <a href="https://idn.biologie.uni-mainz.de/" target="_blank">
+            Institute of Developmental Biology and Neurobiology (iDN)
+          </a>, Germany.
+        </p>
+        <p>
+          Neurological diseases are not only permanently debilitating but are the fastest-growing cause of death among non-communicable diseases. Strategies to promote repair of the nervous system are extremely rare, and to date, there are no therapies available.
+        </p>
+        <p>
+          At
+          <a href="https://www.uni-mainz.de/" target="_blank">
+            Johannes Gutenberg University Mainz
+          </a>, in collaboration with the
+          <a href="https://www.mpip-mainz.mpg.de/en/home" target="_blank">
+            Max Planck Institute for Polymer Research
+          </a>, our interdisciplinary team combines neurobiology, neuroimmunology, chemistry, and polymer research to develop new strategies for regenerative treatments for multiple sclerosis and traumatic brain and spinal cord injuries.
+        </p>
+        <p>
+          Beyond the lab, I enjoy cooking and exploring new places. If you share an interest in neurobiology, regenerative medicine, or the molecular mechanisms of brain repair, I would love to connect!
+        </p>
+      </div>
+
+      <!-- Right Side: Profile Image and Social Media -->
+      <div class="about-me-profile">
+        <div class="profile-image">
+          <img src="your-profile-picture.jpg" alt="Profile Picture" />
+        </div>
+        <div class="social-links">
+          <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank" title="Facebook">
+            <img src="facebookff.jpg" alt="Facebook Logo">
+          </a>
+          <a href="https://www.instagram.com/arupambiswas/" target="_blank" title="Instagram">
+            <img src="instagram.jpg" alt="Instagram Logo">
+          </a>
+          <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank" title="LinkedIn">
+            <img src="linkedIn.jpg" alt="LinkedIn Logo">
+          </a>
+          <a href="https://x.com/arupamb07" target="_blank" title="X">
+            <img src="twitterFL.jpg" alt="X Logo">
+          </a>
+        </div>
       </div>
     </div>
   </section>
