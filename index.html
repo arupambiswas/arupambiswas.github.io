@@ -78,7 +78,7 @@
       color: #e2e8f0;
     }
     .hero .about-me-text a {
-      color: #38bdf8;
+      color: inherit;
       text-decoration: none;
     }
     .hero .about-me-text a:hover {
@@ -123,7 +123,7 @@
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
     }
     .education-section {
-      padding: 5rem 3rem;
+      padding: 3rem 2rem;
       background: #ffffff;
       color: #0f172a;
     }
@@ -131,38 +131,50 @@
       font-size: 3rem;
       font-weight: 700;
       margin-bottom: 2rem;
+      text-align: center;
+      color: #1e293b;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .card {
+      flex: 1 1 calc(45% - 1rem);
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 1.5rem;
       color: #0f172a;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
     }
-    .education-item {
-      margin-bottom: 3rem;
-      text-align: left;
-    }
-    .education-item h3 {
+    .card h3 {
       font-size: 1.5rem;
-      font-weight: 700;
+      margin-bottom: 0.5rem;
       color: #1e293b;
     }
-    .education-item h4 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #1e293b;
-      margin-top: 0.5rem;
-    }
-    .education-item p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #1e293b;
-      margin-top: 0.5rem;
-    }
-    .education-item ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-      margin-top: 0.5rem;
-    }
-    .education-item ul li {
-      font-size: 1rem;
-      line-height: 1.6;
+    .card-date {
+      font-size: 1.1rem;
+      font-weight: bold;
       color: #334155;
+      margin-bottom: 1rem;
+    }
+    .card ul {
+      margin-top: 0.5rem;
+      padding-left: 1.5rem;
+      list-style: disc;
+    }
+    .card ul li {
+      margin-bottom: 0.5rem;
+      color: #334155;
+    }
+    .edu-link {
+      text-decoration: none;
+      color: inherit;
+    }
+    .edu-link:hover {
+      text-decoration: none;
     }
     .get-in-touch {
       padding: 5rem;
@@ -191,14 +203,8 @@
       background-color: #1e293b;
     }
     @media (max-width: 768px) {
-      .hero .about-me-content {
-        flex-direction: column;
-        align-items: center;
-      }
-      .hero .about-me-text,
-      .hero .profile-image {
-        flex: 1 1 auto;
-        text-align: center;
+      .card {
+        flex: 1 1 100%;
       }
     }
   </style>
@@ -232,7 +238,7 @@
           </a>, in collaboration with the
           <a href="https://www.mpip-mainz.mpg.de/en/home" target="_blank">
             Max Planck Institute for Polymer Research
-          </a>, our interdisciplinary team is pioneering new regenerative treatments for multiple sclerosis and traumatic brain and spinal cord injuries. By merging neurobiology, neuroimmunology, chemistry, and polymer research, we're developing innovative strategies to heal the nervous system.
+          </a>, our interdisciplinary team is pioneering new treatments for multiple sclerosis and traumatic brain injuries.
         </p>
         <p>
           Beyond the lab, I enjoy cooking and exploring new places. If you share an interest in neurobiology, regenerative medicine, or the molecular mechanisms of brain repair, I would love to connect!
@@ -262,60 +268,58 @@
   </section>
   <section id="education" class="education-section">
     <h2>Education</h2>
-    <div class="education-item">
-      <h3>2025-Present Day</h3>
-      <h4>PhD in Neuroscience</h4>
-      <p>
-        <strong>
-          <a href="https://www.uni-mainz.de/" target="_blank" class="edu-link">
-            Johannes Gutenberg University Mainz
-          </a>, Germany
-        </strong>
-      </p>
-      <ul>
-        <li>Title: Aptamer Based Electrochemical Sensor for Sensitive Detection of Psychoactive Drugs</li>
-        <li>Supervisor: Prof. Dr. Claire Jacob, Prof. Dr. Martin Heine, Dr. Himanshu Kumar Shukla, 
-          <a href="https://idn.biologie.uni-mainz.de/" target="_blank" class="edu-link">
-            Institute of Developmental Biology and Neurobiology (iDN)
-          </a>, Germany.
-        </li>
-      </ul>
-    </div>
-    <div class="education-item">
-      <h3>2019-2024</h3>
-      <h4>Five-Year Integrated M.Sc in Lifesciences</h4>
-      <p>
-      <strong>
-        <a href="https://www.visvabharati.ac.in/index.html" target="_blank" class="edu-link">
-          Visva-Bharati, India.
-        </a>
-      </strong>
-    </p>
-      <ul>
-        <li>Master's Dissertation: High-Content Screening for neurite growth analyses: Evaluating gene treatments.</li>
-        <li>Supervisor: 
-        <a href="https://www.ccmb.res.in/People/Research-Group/Ishwariya-Venkatesh" target="_blank" class="edu-link">
-          Dr. Ishwariya Venkatesh
-        </a>, 
-        <a href="https://www.ccmb.res.in/" target="_blank" class="edu-link">
-          CSIR-Centre for Cellular and Molecular Biology (CSIR-CCMB)
-        </a>, India.
-      </li>
-      </ul>
-    </div>
-    <div class="education-subsection">
-      <div class="content">
-        <h3>Future Plans</h3>
+    <div class="card-container">
+      <div class="card">
+        <h3>PhD in Neuroscience</h3>
+        <p class="card-date">2025-Present Day</p>
         <p>
-          Write about your future plans here. Mention what you aim to achieve in the coming years, whether it's further research, a new project, or any other aspirations.
+          <strong>
+            <a href="https://www.uni-mainz.de/" target="_blank" class="edu-link">
+              Johannes Gutenberg University Mainz
+            </a>, Germany
+          </strong>
         </p>
+        <ul>
+          <li>Title: Aptamer Based Electrochemical Sensor for Sensitive Detection of Psychoactive Drugs</li>
+          <li>Supervisor: Prof. Dr. Claire Jacob, Prof. Dr. Martin Heine, Dr. Himanshu Kumar Shukla, 
+            <a href="https://idn.biologie.uni-mainz.de/" target="_blank" class="edu-link">
+              Institute of Developmental Biology and Neurobiology (iDN)
+            </a>, Germany
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Five-Year Integrated M.Sc in Lifesciences</h3>
+        <p class="card-date">2019-2024</p>
+        <p>
+          <strong>
+            <a href="https://www.visvabharati.ac.in/index.html" target="_blank" class="edu-link">
+              Visva-Bharati, India
+            </a>
+          </strong>
+        </p>
+        <ul>
+          <li>Master's Dissertation: High-Content Screening for neurite growth analyses: Evaluating gene treatments</li>
+          <li>Supervisor: 
+            <a href="https://www.ccmb.res.in/People/Research-Group/Ishwariya-Venkatesh" target="_blank" class="edu-link">
+              Dr. Ishwariya Venkatesh
+            </a>, 
+            <a href="https://www.ccmb.res.in/" target="_blank" class="edu-link">
+              CSIR-Centre for Cellular and Molecular Biology (CSIR-CCMB)
+            </a>, India
+          </li>
+        </ul>
       </div>
     </div>
   </section>
   <section class="get-in-touch" id="get-in-touch">
     <h2>Get in Touch</h2>
     <p><strong>Email:</strong> arupambiswas007@gmail.com</p>
-    <p><strong>Lab:</strong> Dr Ishwariya Venkatesh, <a href="https://www.ccmb.res.in/research/labs/venkatesh-lab" target="_blank" style="color: #38bdf8;">Venkatesh Lab</a> CSIR-CCMB</p>
+    <p><strong>Lab:</strong> Dr Ishwariya Venkatesh, 
+      <a href="https://www.ccmb.res.in/research/labs/venkatesh-lab" target="_blank">
+        Venkatesh Lab
+      </a> CSIR-CCMB
+    </p>
     <p><strong>Address:</strong><br>
       Institute for Developmental Biology and Neurobiology (iDN)<br>
       Johannes Gutenberg University Mainz<br>
