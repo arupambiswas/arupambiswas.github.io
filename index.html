@@ -123,16 +123,16 @@
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
     }
     .education-section {
-      padding: 3rem 2rem;
-      background: #ffffff;
-      color: #0f172a;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      color: #f8f9fa;
     }
     .education-section h2 {
       font-size: 3rem;
       font-weight: 700;
       margin-bottom: 2rem;
       text-align: center;
-      color: #1e293b;
+      color: #f8f9fa;
     }
     .card-container {
       display: flex;
@@ -141,24 +141,29 @@
       justify-content: center;
     }
     .card {
-      flex: 1 1 calc(45% - 1rem);
-      background: #f8f9fa;
-      border-radius: 8px;
-      padding: 1.5rem;
-      color: #0f172a;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      max-width: 500px;
+      flex: 1 1 calc(48% - 1rem);
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 2rem;
+      color: #f8f9fa;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     }
     .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: #1e293b;
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+      color: #93c5fd;
     }
     .card-date {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: bold;
-      color: #334155;
-      margin-bottom: 1rem;
+      color: #bfdbfe;
+      margin-bottom: 1.5rem;
     }
     .card ul {
       margin-top: 0.5rem;
@@ -166,8 +171,8 @@
       list-style: disc;
     }
     .card ul li {
-      margin-bottom: 0.5rem;
-      color: #334155;
+      margin-bottom: 0.8rem;
+      color: #d1d5db;
     }
     .edu-link {
       text-decoration: none;
