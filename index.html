@@ -3,19 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Arupam Biswas</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
     body {
+      margin: 0;
       font-family: 'Outfit', sans-serif;
+      background: #0f172a;
       color: #f8f9fa;
-      background-color: #0f172a;
     }
     nav {
       background: #1e293b;
@@ -23,7 +18,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
     nav h1 {
       font-weight: 700;
@@ -34,6 +29,7 @@
       list-style: none;
       display: flex;
       gap: 1.8rem;
+      margin: 0;
     }
     nav ul li {
       font-weight: 600;
@@ -42,7 +38,7 @@
     nav ul li a {
       text-decoration: none;
       color: #f8fafc;
-      transition: color 0.3s ease, background-color 0.3s ease;
+      transition: color 0.3s, background-color 0.3s;
       padding: 0.5rem 1rem;
       border-radius: 5px;
     }
@@ -50,91 +46,102 @@
       color: #0f172a;
       background-color: #38bdf8;
     }
-    .hero {
-      padding: 4rem 2rem;
-      background: linear-gradient(to right, #0f172a, #1e293b);
-    }
-    .hero h2 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: #38bdf8;
-      margin-bottom: 2.5rem;
-      text-align: center;
-    }
-    .about-me-content {
+    .hero-split {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 2rem;
-      flex-wrap: wrap;
-      max-width: 1100px;
-      margin: 0 auto;
+      min-height: 90vh;
+      width: 100vw;
     }
-    .about-me-text {
-      flex: 1 1 350px;
-      min-width: 260px;
-      text-align: justify;
+    .hero-img-side {
+      flex: 2;
+      background: url('your-profile-picture.jpg') center center/cover no-repeat;
+      min-height: 400px;
     }
-    .about-me-text p {
-      font-size: 1.5rem;
-      line-height: 2;
-      margin-bottom: 2rem;
-      color: #e2e8f0;
-    }
-    .about-me-text a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
-    .about-me-text a:hover {
-      text-decoration: underline;
-    }
-    .profile-image {
-      flex: 0 1 320px;
-      min-width: 220px;
+    .hero-text-side {
+      flex: 3;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: flex-start;
+      background: rgba(15,23,42,0.94);
+      padding: 4rem 3rem;
+      min-width: 320px;
     }
-    .profile-image img {
-      width: 100%;
-      max-width: 320px;
-      border-radius: 15px;
-      object-fit: cover;
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    .hero-text-side h1 {
+      font-size: 2.7rem;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      letter-spacing: 1px;
+    }
+    .hero-text-side .subtitle {
+      font-size: 1.3rem;
+      color: #38bdf8;
+      margin-bottom: 2.2rem;
+      font-weight: 500;
     }
     .social-links {
       display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 1rem;
-      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 1.5rem;
     }
     .social-links a {
       display: inline-block;
-      width: 50px;
-      height: 50px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #1e293b;
+      overflow: hidden;
+      transition: box-shadow 0.3s, transform 0.3s;
     }
     .social-links a img {
       width: 100%;
       height: 100%;
       object-fit: contain;
       border-radius: 50%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background-color: #1e293b;
-      padding: 5px;
+      padding: 6px;
+      background: #1e293b;
+      transition: transform 0.3s;
     }
-    .social-links a img:hover {
-      transform: scale(1.1);
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    .social-links a:hover img {
+      transform: scale(1.12);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     }
+    /* About Section */
+    .about-section {
+      padding: 5rem 2rem 3rem 2rem;
+      background: linear-gradient(to right, #0f172a, #1e293b);
+      color: #f8f9fa;
+      text-align: center;
+    }
+    .about-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #38bdf8;
+      font-weight: 700;
+    }
+    .about-section .about-text {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: #e2e8f0;
+      text-align: center;
+      line-height: 2;
+    }
+    .about-section .about-text a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    .about-section .about-text a:hover {
+      text-decoration: underline;
+    }
+    /* Education Section */
     .education-section {
       padding: 4rem 2rem;
       background: linear-gradient(to right, #e0f2fe, #f8fafc);
       color: #1e293b;
     }
     .education-section h2 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 2rem;
       text-align: center;
@@ -162,15 +169,15 @@
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
     .card h3 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       margin-bottom: 0.8rem;
       color: #0f172a;
     }
     .card-date {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: bold;
       color: #475569;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.1rem;
     }
     .card ul {
       margin-top: 0.5rem;
@@ -188,13 +195,14 @@
     .edu-link:hover {
       text-decoration: none;
     }
+    /* Research Section */
     .research-section {
       padding: 4rem 2rem;
       background: linear-gradient(to right, #f8fafc, #e0f2fe);
       color: #1e293b;
     }
     .research-section h2 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 2rem;
       color: #0f172a;
@@ -230,7 +238,7 @@
       padding: 0 1rem;
     }
     .carousel-item h3 {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       margin-bottom: 0.5rem;
     }
     .carousel-item p {
@@ -261,6 +269,7 @@
     .carousel-button:hover {
       background: rgba(0, 0, 0, 0.8);
     }
+    /* Get in Touch Section */
     .get-in-touch {
       padding: 5rem 2rem;
       background: #0f172a;
@@ -268,13 +277,13 @@
       text-align: center;
     }
     .get-in-touch h2 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 2rem;
       color: #38bdf8;
     }
     .get-in-touch p {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       line-height: 1.8;
       margin-bottom: 2rem;
       color: #e2e8f0;
@@ -287,95 +296,27 @@
       color: #94a3b8;
       background-color: #1e293b;
     }
-    @media (max-width: 1024px) {
-      .hero {
-        padding: 3rem 1rem;
-      }
-      .education-section, .research-section {
-        padding: 3rem 1rem;
-      }
-      .get-in-touch {
-        padding: 3rem 1rem;
-      }
-      .carousel-item img {
-        max-width: 95vw;
-      }
-    }
-    @media (max-width: 900px) {
-      .about-me-content {
+    @media (max-width: 950px) {
+      .hero-split {
         flex-direction: column;
+      }
+      .hero-img-side {
+        min-height: 220px;
+        height: 250px;
+      }
+      .hero-text-side {
         align-items: center;
+        padding: 2.5rem 1rem;
+        text-align: center;
       }
-      .about-me-text,
-      .profile-image {
-        flex: 1 1 100%;
-        min-width: 0;
-        max-width: 100%;
-        margin-bottom: 2rem;
-      }
-      .profile-image {
-        margin-bottom: 0;
-      }
+      .hero-text-side h1 { font-size: 2rem; }
     }
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1.2rem 1rem;
-      }
-      nav ul {
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-      .education-section h2,
-      .research-section h2,
-      .get-in-touch h2 {
-        font-size: 2.1rem;
-      }
-      .card-container {
-        flex-direction: column;
-        gap: 1.2rem;
-      }
-      .card {
-        flex: 1 1 100%;
-        max-width: 100%;
-        min-width: 0;
-        padding: 1.2rem;
-      }
-      .carousel-item img {
-        max-width: 98vw;
-      }
-    }
-    @media (max-width: 480px) {
-      nav h1 {
-        font-size: 1.1rem;
-      }
-      nav ul li {
-        font-size: 0.9rem;
-      }
-      .hero h2,
-      .education-section h2,
-      .research-section h2,
-      .get-in-touch h2 {
-        font-size: 1.5rem;
-      }
-      .about-me-text p {
-        font-size: 1.1rem;
-      }
-      .carousel-item h3 {
-        font-size: 1.1rem;
-      }
-      .get-in-touch p {
-        font-size: 1rem;
-      }
-      .card {
-        padding: 0.8rem;
-      }
-      .carousel-button {
-        width: 32px;
-        height: 32px;
-        font-size: 1.5rem;
-      }
+    @media (max-width: 600px) {
+      .about-section h2, .education-section h2, .research-section h2, .get-in-touch h2 { font-size: 1.4rem; }
+      .about-section .about-text, .card, .carousel-item h3, .get-in-touch p { font-size: 1rem; }
+      nav ul li { font-size: 0.95rem; }
+      .card, .carousel-item { padding: 0.8rem; }
+      .carousel-button { width: 32px; height: 32px; font-size: 1.5rem; }
     }
   </style>
 </head>
@@ -383,55 +324,59 @@
   <nav>
     <h1>@rupam.</h1>
     <ul>
+      <li><a href="#home">Home</a></li>
       <li><a href="#about-me">About Me</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#get-in-touch">Get in Touch</a></li>
     </ul>
   </nav>
-  <section class="hero" id="about-me">
-    <h2>About Me</h2>
-    <div class="about-me-content">
-      <div class="about-me-text">
-        <p>
-          Welcome to my personal website! I am a passionate neuroscience researcher driven by a deep curiosity about how the central nervous system (CNS) heals and adapts. My scientific journey began in India and has led me to Germany, where I am currently pursuing my PhD degree at
-          <a href="https://idn.biologie.uni-mainz.de/" target="_blank">
-            Institute of Developmental Biology and Neurobiology (iDN)
-          </a>. My work focuses on developing biomaterials for neural regeneration, in collaboration with the
-          <a href="https://lir-mainz.de/en/lir" target="_blank">
-            Leibniz Institute for Resilience Research (LIR)
-          </a> and the
-          <a href="https://www.mpip-mainz.mpg.de/en/home" target="_blank">
-            Max Planck Institute for Polymer Research (MPI-P)
-          </a>, Germany.
-          <br><br>
-          Outside of the lab, I love exploring new cuisines, traveling to discover different cultures, and sharing ideas with fellow scientists and enthusiasts. I believe that collaboration and open-mindedness are key to driving innovation in science and beyond.
-          <br><br>
-          If you are interested in neurobiology, regenerative medicine, or want to collaborate, feel free to get in touch!
-        </p>
-      </div>
-      <div class="profile-image">
-        <img src="your-profile-picture.jpg" alt="Profile Background Image" />
-        <div class="social-links">
-          <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank">
-            <img src="facebookff.jpg" alt="Facebook Logo">
-          </a>
-          <a href="https://www.instagram.com/arupambiswas/" target="_blank">
-            <img src="InstagramF.jpg" alt="Instagram Logo">
-          </a>
-          <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank">
-            <img src="linkedIn.jpg" alt="LinkedIn Logo">
-          </a>
-          <a href="https://x.com/arupamb07" target="_blank">
-            <img src="twitterFL.jpg" alt="X Logo">
-          </a>
-          <a href="mailto:arupambiswas007@gmail.com" target="_blank">
-            <img src="gmail.jpg" alt="Gmail Logo">
-          </a>
-        </div>
+  <!-- Hero Split Section -->
+  <section class="hero-split" id="home">
+    <div class="hero-img-side"></div>
+    <div class="hero-text-side">
+      <h1>I'm Arupam Biswas.</h1>
+      <div class="subtitle">Neuroscientist &amp; Biomaterials Researcher</div>
+      <div class="social-links">
+        <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank">
+          <img src="facebookff.jpg" alt="Facebook Logo">
+        </a>
+        <a href="https://www.instagram.com/arupambiswas/" target="_blank">
+          <img src="InstagramF.jpg" alt="Instagram Logo">
+        </a>
+        <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank">
+          <img src="linkedIn.jpg" alt="LinkedIn Logo">
+        </a>
+        <a href="https://x.com/arupamb07" target="_blank">
+          <img src="twitterFL.jpg" alt="X Logo">
+        </a>
+        <a href="mailto:arupambiswas007@gmail.com" target="_blank">
+          <img src="gmail.jpg" alt="Gmail Logo">
+        </a>
       </div>
     </div>
   </section>
+  <!-- About Me Section -->
+  <section class="about-section" id="about-me">
+    <h2>About Me</h2>
+    <div class="about-text">
+      Welcome to my personal website! I am a passionate neuroscience researcher driven by curiosity about how the central nervous system heals and adapts. My journey began in India and led me to Germany, where I am pursuing a PhD at
+      <a href="https://idn.biologie.uni-mainz.de/" target="_blank">
+        Institute of Developmental Biology and Neurobiology (iDN)
+      </a>. My work focuses on developing biomaterials for neural regeneration, in collaboration with the
+      <a href="https://lir-mainz.de/en/lir" target="_blank">
+        Leibniz Institute for Resilience Research (LIR)
+      </a> and the
+      <a href="https://www.mpip-mainz.mpg.de/en/home" target="_blank">
+        Max Planck Institute for Polymer Research (MPI-P)
+      </a>, Germany.
+      <br><br>
+      Outside of the lab, I love exploring new cuisines, traveling to discover different cultures, and sharing ideas with fellow scientists and enthusiasts. Collaboration and open-mindedness are key to driving innovation in science and beyond.
+      <br><br>
+      If you are interested in neurobiology, regenerative medicine, or want to collaborate, feel free to get in touch!
+    </div>
+  </section>
+  <!-- Education Section -->
   <section id="education" class="education-section">
     <h2>Education</h2>
     <div class="card-container">
@@ -478,6 +423,7 @@
       </div>
     </div>
   </section>
+  <!-- Research Section -->
   <section id="research" class="research-section">
     <h2>Research</h2>
     <div class="carousel">
@@ -486,22 +432,21 @@
           <img src="Neural-cells-Biomaterials.jpg" alt="Project 1">
           <div class="item-info">
             <h3>PhD Topic: Interactive Biomaterials for Neural Regeneration (InteReg)</h3>
-            <h4>Principal Investigators: Prof. Dr. Claire Jacob (Group Leader), Prof. Dr. Martin Heine (Group Leader), Dr. Himanshu Kumar Mishra (Junior Group Leader), Institute for Developmental Biology and Neurobiology. </h4>
-            <p>The
+            <p>
+              The
               <a href="https://intereg.uni-mainz.de/" target="_blank" style="text-decoration: none; color: inherit;">
-              Interactive Biomaterials for Neural Regeneration (InteReg)
-            </a> project, a five-year collaboration between Johannes Gutenberg University Mainz, the Max Planck Institute for Polymer Research, and the Leibniz Institute for Resilience Research, has secured six million euros from the
-              <a href="https://www.carl-zeiss-stiftung.de/en/topics-projects/project-overview/detail/interactive-biomaterials-for-neural-regeneration-intereg" target="_blank" style="text-decoration: none; color: inherit;">
-                Carl Zeiss Foundation
-                </a>to develop precision biomaterials for treating neurological diseases. InteReg will focus on creating programmable materials that guide central nervous system cell regeneration following injuries or in conditions like multiple sclerosis and traumatic injuries (SCI, TBI). Our interdisciplinary team aims to produce solutions such as programmable extracellular matrices for spinal cord repair and nanocarriers targeting oligodendrocyte progenitor cells. The support from the Interdisciplinary Center for Clinical Trials (IZKS) at the Mainz University Medical Center further enhances the potential for translating these groundbreaking discoveries into effective therapeutic solutions for neurological diseases and injuries. </p>
+                Interactive Biomaterials for Neural Regeneration (InteReg)
+              </a> project is a five-year collaboration between Johannes Gutenberg University Mainz, the Max Planck Institute for Polymer Research, and the Leibniz Institute for Resilience Research, aiming to develop precision biomaterials for treating neurological diseases. InteReg focuses on creating programmable materials that guide central nervous system cell regeneration following injuries or in conditions like multiple sclerosis and traumatic injuries (SCI, TBI).
+            </p>
           </div>
         </div>
         <div class="carousel-item">
           <img src="msdissertation.jpg" alt="Project 2">
           <div class="item-info">
             <h3>Master's Thesis: High-Content Screening for neurite growth analyses: Evaluating gene treatments</h3>
-            <h4>Principal Investigator: Dr. Ishwariya Venkatesh (Senior Scientist, Laboratory of Axon Growth & Regeneration, CSIR-CCMB, India)</h4>
-            <p>Neurons in the central nervous system (CNS), including the brain and spinal cord, send out axons to make connections. In mammals, these axons can't regrow after injury, leading to permanent damage. Research shows that axon growth depends on certain genes called regeneration-associated genes (RAGs). Activating these genes can help axons regrow. However, finding the right combination of genes is challenging. To tackle this, in-vitro phenotypic screening becomes critical for evaluating the effects of these transcription factors (TFs) on neuronal cells. This helps identify potential treatments to promote axon regeneration.</p>
+            <p>
+              Neurons in the central nervous system (CNS), including the brain and spinal cord, send out axons to make connections. In mammals, these axons can't regrow after injury, leading to permanent damage. Research shows that axon growth depends on certain genes called regeneration-associated genes (RAGs). Activating these genes can help axons regrow. In-vitro phenotypic screening is critical for evaluating the effects of these transcription factors on neuronal cells and identifying potential treatments to promote axon regeneration.
+            </p>
           </div>
         </div>
         <div class="carousel-item">
@@ -516,6 +461,7 @@
       <button class="carousel-button next">›</button>
     </div>
   </section>
+  <!-- Get in Touch Section -->
   <section class="get-in-touch" id="get-in-touch">
     <h2>Get in Touch</h2>
     <p><strong>Email:</strong> arupambiswas007@gmail.com</p>
@@ -540,6 +486,7 @@
     © 2025 Arupam Biswas. All rights reserved.
   </footer>
   <script>
+    // Carousel Functionality
     const track = document.querySelector('.carousel-track');
     const items = Array.from(track.children);
     const prevButton = document.querySelector('.carousel-button.prev');
