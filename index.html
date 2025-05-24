@@ -69,9 +69,10 @@
     }
     .hero-img-side {
       flex: 2;
-      background: url('your-profile-picture.jpg') center center/contain no-repeat;
+      background: url('your-profile-picture.jpg') center center/cover no-repeat;
       min-height: 400px;
-      /* No cropping: show entire image, may have letterboxing */
+      /* Cropped on desktop by default */
+      transition: background-size 0.3s, background-position 0.3s;
     }
     .hero-text-side {
       flex: 3;
@@ -328,15 +329,19 @@
       color: #94a3b8;
       background-color: #1e293b;
     }
-    /* Responsive Design */
+
+    /* Mobile/tablet: show entire image, not cropped */
     @media (max-width: 1024px) {
       .hero-split {
         flex-direction: column;
         min-height: unset;
       }
       .hero-img-side {
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center top !important;
         min-height: 220px;
-        height: 230px;
+        height: 220px;
         width: 100vw;
       }
       .hero-text-side {
