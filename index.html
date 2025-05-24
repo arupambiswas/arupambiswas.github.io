@@ -63,29 +63,47 @@
       margin-bottom: 2.5rem;
       text-align: center;
     }
-    .hero .hello-i-am-arupam-content {
+    .about-me {
+      max-width: 700px;
+      margin: 2rem auto 3rem auto;
+      padding: 1.5rem 2rem;
+      background: rgba(30,41,59,0.7);
+      border-radius: 12px;
+      text-align: center;
+    }
+    .about-me h3 {
+      font-size: 2rem;
+      color: #38bdf8;
+      margin-bottom: 1rem;
+    }
+    .about-me p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #e2e8f0;
+    }
+    .hero .about-me-content {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: 2rem;
       flex-wrap: wrap;
     }
-    .hero .hello-i-am-arupam-text {
+    .hero .about-me-text {
       flex: 1 1 350px;
       min-width: 260px;
       text-align: justify;
     }
-    .hero .hello-i-am-arupam-text p {
+    .hero .about-me-text p {
       font-size: 1.5rem;
       line-height: 2;
       margin-bottom: 2rem;
       color: #e2e8f0;
     }
-    .hero .hello-i-am-arupam-text a {
+    .hero .about-me-text a {
       color: #38bdf8;
       text-decoration: none;
     }
-    .hero .hello-i-am-arupam-text a:hover {
+    .hero .about-me-text a:hover {
       text-decoration: underline;
     }
     .hero .profile-image {
@@ -306,11 +324,11 @@
       }
     }
     @media (max-width: 900px) {
-      .hero .hello-i-am-arupam-content {
+      .hero .about-me-content {
         flex-direction: column;
         align-items: center;
       }
-      .hero .hello-i-am-arupam-text,
+      .hero .about-me-text,
       .hero .profile-image {
         flex: 1 1 100%;
         min-width: 0;
@@ -363,7 +381,7 @@
       .get-in-touch h2 {
         font-size: 1.5rem;
       }
-      .hero .hello-i-am-arupam-text p {
+      .hero .about-me-text p {
         font-size: 1.1rem;
       }
       .carousel-item h3 {
@@ -387,16 +405,26 @@
   <nav>
     <h1>@rupam.</h1>
     <ul>
-      <li><a href="#hello-i-am-arupam">About Me</a></li>
+      <li><a href="#about-me">About Me</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#get-in-touch">Get in Touch</a></li>
     </ul>
   </nav>
-  <section class="hero" id="hello-i-am-arupam">
-    <h2>Hi! I'm Arupam</h2>
-    <div class="hello-i-am-arupam-content">
-      <div class="hello-i-am-arupam-text">
+  <section class="hero" id="about-me">
+    <h2>About Me</h2>
+    <section class="about-me">
+      <h3>About Me</h3>
+      <p>
+        I am a passionate Neuroscience researcher driven by curiosity about how the brain heals and adapts. My scientific journey started in India and has taken me to Germany, where I am currently pursuing my PhD at Johannes Gutenberg University Mainz. My work focuses on designing novel biomaterials for neural regeneration, aiming to develop new therapies for brain and spinal cord injuries, as well as neurodegenerative diseases like Multiple Sclerosis.
+        <br><br>
+        Outside of the lab, I love exploring new cuisines, traveling to discover different cultures, and sharing ideas with fellow scientists and enthusiasts. I believe that collaboration and open-mindedness are key to driving innovation in science and beyond.
+        <br><br>
+        If you are interested in neurobiology, regenerative medicine, or want to collaborate, feel free to get in touch!
+      </p>
+    </section>
+    <div class="about-me-content">
+      <div class="about-me-text">
         <p>
           Welcome to my personal website! I am a Neuroscience Researcher at the
           <a href="https://idn.biologie.uni-mainz.de/" target="_blank">
