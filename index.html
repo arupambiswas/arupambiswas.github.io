@@ -69,9 +69,9 @@
     }
     .hero-img-side {
       flex: 2;
-      background: url('your-profile-picture.jpg') center center/cover no-repeat;
+      background: url('your-profile-picture.jpg') center center/contain no-repeat;
       min-height: 400px;
-      transition: background-size 0.3s, background-position 0.3s;
+      /* No cropping: show entire image, may have letterboxing */
     }
     .hero-text-side {
       flex: 3;
@@ -361,9 +361,6 @@
     }
     @media (max-width: 600px) {
       .hero-img-side {
-        background-size: contain !important;
-        background-repeat: no-repeat !important;
-        background-position: center top !important;
         min-height: 180px;
         height: 180px;
       }
