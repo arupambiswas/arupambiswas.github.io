@@ -53,7 +53,7 @@
     }
     /* Hero Section */
     .hero {
-      padding: 4rem;
+      padding: 4rem 2rem;
       background: linear-gradient(to right, #0f172a, #1e293b);
     }
     .hero h2 {
@@ -68,9 +68,11 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 2rem;
+      flex-wrap: wrap;
     }
     .hero .hello-i-am-arupam-text {
-      flex: 0 0 65%;
+      flex: 1 1 350px;
+      min-width: 260px;
       text-align: justify;
     }
     .hero .hello-i-am-arupam-text p {
@@ -87,7 +89,8 @@
       text-decoration: underline;
     }
     .hero .profile-image {
-      flex: 0 0 30%;
+      flex: 0 1 320px;
+      min-width: 220px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -95,7 +98,7 @@
     }
     .hero .profile-image img {
       width: 100%;
-      max-width: 400px;
+      max-width: 320px;
       border-radius: 15px;
       object-fit: cover;
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
@@ -105,6 +108,7 @@
       justify-content: center;
       gap: 1.5rem;
       margin-top: 1rem;
+      flex-wrap: wrap;
     }
     .social-links a {
       display: inline-block;
@@ -144,7 +148,7 @@
       justify-content: center;
     }
     .card {
-      flex: 1 1 calc(48% - 1rem);
+      flex: 1 1 320px;
       background: #ffffff;
       border-radius: 12px;
       padding: 2rem;
@@ -152,6 +156,7 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       max-width: 600px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      min-width: 260px;
     }
     .card:hover {
       transform: scale(1.03);
@@ -211,9 +216,11 @@
       max-width: 100%;
       padding: 1rem;
       text-align: center;
+      box-sizing: border-box;
     }
     .carousel-item img {
-      width: 700px;
+      width: 100%;
+      max-width: 700px;
       height: auto;
       border-radius: 8px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -258,7 +265,7 @@
     }
     /* Get in Touch Section */
     .get-in-touch {
-      padding: 5rem;
+      padding: 5rem 2rem;
       background: #0f172a;
       margin-top: 3rem;
       text-align: center;
@@ -283,9 +290,95 @@
       color: #94a3b8;
       background-color: #1e293b;
     }
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+      .hero {
+        padding: 3rem 1rem;
+      }
+      .education-section, .research-section {
+        padding: 3rem 1rem;
+      }
+      .get-in-touch {
+        padding: 3rem 1rem;
+      }
+      .carousel-item img {
+        max-width: 95vw;
+      }
+    }
+    @media (max-width: 900px) {
+      .hero .hello-i-am-arupam-content {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero .hello-i-am-arupam-text,
+      .hero .profile-image {
+        flex: 1 1 100%;
+        min-width: 0;
+        max-width: 100%;
+        margin-bottom: 2rem;
+      }
+      .hero .profile-image {
+        margin-bottom: 0;
+      }
+    }
     @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.2rem 1rem;
+      }
+      nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .education-section h2,
+      .research-section h2,
+      .get-in-touch h2 {
+        font-size: 2.1rem;
+      }
+      .card-container {
+        flex-direction: column;
+        gap: 1.2rem;
+      }
       .card {
         flex: 1 1 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 1.2rem;
+      }
+      .carousel-item img {
+        max-width: 98vw;
+      }
+    }
+    @media (max-width: 480px) {
+      nav h1 {
+        font-size: 1.1rem;
+      }
+      nav ul li {
+        font-size: 0.9rem;
+      }
+      .hero h2,
+      .education-section h2,
+      .research-section h2,
+      .get-in-touch h2 {
+        font-size: 1.5rem;
+      }
+      .hero .hello-i-am-arupam-text p {
+        font-size: 1.1rem;
+      }
+      .carousel-item h3 {
+        font-size: 1.1rem;
+      }
+      .get-in-touch p {
+        font-size: 1rem;
+      }
+      .card {
+        padding: 0.8rem;
+      }
+      .carousel-button {
+        width: 32px;
+        height: 32px;
+        font-size: 1.5rem;
       }
     }
   </style>
