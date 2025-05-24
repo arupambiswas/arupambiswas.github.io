@@ -71,7 +71,6 @@
       flex: 2;
       background: url('your-profile-picture.jpg') center center/cover no-repeat;
       min-height: 400px;
-      /* Cropped on desktop by default */
       transition: background-size 0.3s, background-position 0.3s;
     }
     .hero-text-side {
@@ -100,6 +99,12 @@
       line-height: 1.7;
       max-width: 640px;
       text-align: justify;
+    }
+    /* Larger font for .hero-desc only on desktop */
+    @media (min-width: 1025px) {
+      .hero-desc {
+        font-size: 1.3rem;
+      }
     }
     .hero-desc a {
       color: #38bdf8;
@@ -329,8 +334,7 @@
       color: #94a3b8;
       background-color: #1e293b;
     }
-
-    /* Mobile/tablet: show entire image, not cropped */
+    /* Responsive Design */
     @media (max-width: 1024px) {
       .hero-split {
         flex-direction: column;
