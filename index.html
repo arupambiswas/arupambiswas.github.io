@@ -7,7 +7,6 @@
   <title>Arupam Biswas</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* Global Styles */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -51,7 +50,6 @@
       color: #0f172a;
       background-color: #38bdf8;
     }
-    /* Hero Section */
     .hero {
       padding: 4rem 2rem;
       background: linear-gradient(to right, #0f172a, #1e293b);
@@ -63,50 +61,34 @@
       margin-bottom: 2.5rem;
       text-align: center;
     }
-    .about-me {
-      max-width: 700px;
-      margin: 2rem auto 3rem auto;
-      padding: 1.5rem 2rem;
-      background: rgba(30,41,59,0.7);
-      border-radius: 12px;
-      text-align: center;
-    }
-    .about-me h3 {
-      font-size: 2rem;
-      color: #38bdf8;
-      margin-bottom: 1rem;
-    }
-    .about-me p {
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: #e2e8f0;
-    }
-    .hero .about-me-content {
+    .about-me-content {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: 2rem;
       flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-    .hero .about-me-text {
+    .about-me-text {
       flex: 1 1 350px;
       min-width: 260px;
       text-align: justify;
     }
-    .hero .about-me-text p {
+    .about-me-text p {
       font-size: 1.5rem;
       line-height: 2;
       margin-bottom: 2rem;
       color: #e2e8f0;
     }
-    .hero .about-me-text a {
+    .about-me-text a {
       color: #38bdf8;
       text-decoration: none;
     }
-    .hero .about-me-text a:hover {
+    .about-me-text a:hover {
       text-decoration: underline;
     }
-    .hero .profile-image {
+    .profile-image {
       flex: 0 1 320px;
       min-width: 220px;
       display: flex;
@@ -114,7 +96,7 @@
       align-items: center;
       justify-content: center;
     }
-    .hero .profile-image img {
+    .profile-image img {
       width: 100%;
       max-width: 320px;
       border-radius: 15px;
@@ -146,7 +128,6 @@
       transform: scale(1.1);
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
     }
-    /* Education Section */
     .education-section {
       padding: 4rem 2rem;
       background: linear-gradient(to right, #e0f2fe, #f8fafc);
@@ -207,7 +188,6 @@
     .edu-link:hover {
       text-decoration: none;
     }
-    /* Research Section */
     .research-section {
       padding: 4rem 2rem;
       background: linear-gradient(to right, #f8fafc, #e0f2fe);
@@ -281,7 +261,6 @@
     .carousel-button:hover {
       background: rgba(0, 0, 0, 0.8);
     }
-    /* Get in Touch Section */
     .get-in-touch {
       padding: 5rem 2rem;
       background: #0f172a;
@@ -308,7 +287,6 @@
       color: #94a3b8;
       background-color: #1e293b;
     }
-    /* Responsive Styles */
     @media (max-width: 1024px) {
       .hero {
         padding: 3rem 1rem;
@@ -324,18 +302,18 @@
       }
     }
     @media (max-width: 900px) {
-      .hero .about-me-content {
+      .about-me-content {
         flex-direction: column;
         align-items: center;
       }
-      .hero .about-me-text,
-      .hero .profile-image {
+      .about-me-text,
+      .profile-image {
         flex: 1 1 100%;
         min-width: 0;
         max-width: 100%;
         margin-bottom: 2rem;
       }
-      .hero .profile-image {
+      .profile-image {
         margin-bottom: 0;
       }
     }
@@ -381,7 +359,7 @@
       .get-in-touch h2 {
         font-size: 1.5rem;
       }
-      .hero .about-me-text p {
+      .about-me-text p {
         font-size: 1.1rem;
       }
       .carousel-item h3 {
@@ -413,32 +391,27 @@
   </nav>
   <section class="hero" id="about-me">
     <h2>About Me</h2>
-    <section class="about-me">
-      <h3>About Me</h3>
-      <p>
-        I am a passionate Neuroscience researcher driven by curiosity about how the brain heals and adapts. My scientific journey started in India and has taken me to Germany, where I am currently pursuing my PhD at Johannes Gutenberg University Mainz. My work focuses on designing novel biomaterials for neural regeneration, aiming to develop new therapies for brain and spinal cord injuries, as well as neurodegenerative diseases like Multiple Sclerosis.
-        <br><br>
-        Outside of the lab, I love exploring new cuisines, traveling to discover different cultures, and sharing ideas with fellow scientists and enthusiasts. I believe that collaboration and open-mindedness are key to driving innovation in science and beyond.
-        <br><br>
-        If you are interested in neurobiology, regenerative medicine, or want to collaborate, feel free to get in touch!
-      </p>
-    </section>
     <div class="about-me-content">
       <div class="about-me-text">
         <p>
+          I am a passionate Neuroscience researcher driven by curiosity about how the brain heals and adapts. My scientific journey started in India and has taken me to Germany, where I am currently pursuing my PhD at Johannes Gutenberg University Mainz. My work focuses on designing novel biomaterials for neural regeneration, aiming to develop new therapies for brain and spinal cord injuries, as well as neurodegenerative diseases like Multiple Sclerosis.
+          <br><br>
           Welcome to my personal website! I am a Neuroscience Researcher at the
           <a href="https://idn.biologie.uni-mainz.de/" target="_blank">
             Institute of Developmental Biology and Neurobiology (iDN)
-          </a>, focusing on treatments for Multiple Sclerosis(MS) and Traumatic injuries(SCI, TBI) in collaboration with
+          </a>, focusing on treatments for Multiple Sclerosis (MS) and Traumatic injuries (SCI, TBI) in collaboration with
           <a href="https://lir-mainz.de/en/lir" target="_blank">
             Leibniz Institute for Resilience Research (LIR)
           </a> and the
           <a href="https://www.mpip-mainz.mpg.de/en/home" target="_blank">
             Max Planck Institute for Polymer Research (MPI-P)
           </a>, Germany.
-        </p>
-        <p>
+          <br><br>
+          Outside of the lab, I love exploring new cuisines, traveling to discover different cultures, and sharing ideas with fellow scientists and enthusiasts. I believe that collaboration and open-mindedness are key to driving innovation in science and beyond.
+          <br><br>
           Besides research, I enjoy cooking and traveling. Let's connect if you're interested in neurobiology, regenerative medicine, or brain repair!
+          <br><br>
+          If you are interested in neurobiology, regenerative medicine, or want to collaborate, feel free to get in touch!
         </p>
       </div>
       <div class="profile-image">
