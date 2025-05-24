@@ -6,30 +6,43 @@
   <title>Arupam Biswas</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
     body {
       margin: 0;
       font-family: 'Outfit', sans-serif;
       background: #0f172a;
       color: #f8f9fa;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
     nav {
       background: #1e293b;
-      padding: 1.5rem 2rem;
+      padding: 1.2rem 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 99;
     }
     nav h1 {
       font-weight: 700;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: #38bdf8;
+      margin: 0;
     }
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.8rem;
+      gap: 1.1rem;
       margin: 0;
+      padding: 0;
     }
     nav ul li {
       font-weight: 600;
@@ -39,13 +52,16 @@
       text-decoration: none;
       color: #f8fafc;
       transition: color 0.3s, background-color 0.3s;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.7rem;
       border-radius: 5px;
+      display: block;
     }
-    nav ul li a:hover {
+    nav ul li a:hover, nav ul li a:focus {
       color: #0f172a;
       background-color: #38bdf8;
+      outline: none;
     }
+
     .hero-split {
       display: flex;
       min-height: 90vh;
@@ -65,40 +81,35 @@
       background: rgba(15,23,42,0.94);
       padding: 4rem 3rem;
       min-width: 320px;
+      width: 100%;
     }
     .hero-text-side h1 {
-      font-size: 2.7rem;
+      font-size: 2.1rem;
       color: #fff;
       font-weight: 700;
       margin-bottom: 0.8rem;
       letter-spacing: 1px;
+      line-height: 1.2;
     }
-    .hero-text-side .subtitle {
-      font-size: 1.3rem;
-      color: #38bdf8;
-      margin-bottom: 2.2rem;
-      font-weight: 500;
-    }
-    /* White Hero Description */
     .hero-desc {
       color: #fff;
-      font-size: 1.1rem;
-      margin-bottom: 2.4rem;
+      font-size: 1.04rem;
+      margin-bottom: 2.2rem;
       line-height: 1.7;
-      text-align: left;
       max-width: 640px;
+      text-align: justify;
     }
     .hero-desc a {
       color: #38bdf8;
       text-decoration: none;
+      word-break: break-word;
     }
     .hero-desc a:hover {
       text-decoration: underline;
     }
-    /* Social Links Styling */
     .social-links {
       display: flex;
-      gap: 1.2rem;
+      gap: 1rem;
       margin-top: 1.5rem;
       flex-wrap: wrap;
     }
@@ -106,19 +117,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(30,41,59,0.13);
       transition: box-shadow 0.3s, transform 0.3s, background 0.2s;
       border: 2px solid #e2e8f0;
-      position: relative;
       padding: 0;
     }
     .social-links a img {
-      width: 26px;
-      height: 26px;
+      width: 22px;
+      height: 22px;
       object-fit: contain;
       border-radius: 4px;
       transition: transform 0.3s;
@@ -126,33 +136,35 @@
       padding: 0;
       display: block;
     }
-    .social-links a:hover {
+    .social-links a:hover, .social-links a:focus {
       background: #38bdf8;
       box-shadow: 0 4px 16px rgba(56,189,248,0.23);
-      transform: translateY(-4px) scale(1.08);
+      transform: translateY(-2px) scale(1.08);
       border-color: #38bdf8;
+      outline: none;
     }
-    .social-links a:hover img {
-      transform: scale(1.15);
+    .social-links a:hover img, .social-links a:focus img {
+      transform: scale(1.11);
     }
     .social-links a.facebook { border-color: #1877f3; }
-    .social-links a.facebook:hover { background: #1877f3; }
+    .social-links a.facebook:hover, .social-links a.facebook:focus { background: #1877f3; }
     .social-links a.instagram { border-color: #e1306c; }
-    .social-links a.instagram:hover { background: #e1306c; }
+    .social-links a.instagram:hover, .social-links a.instagram:focus { background: #e1306c; }
     .social-links a.linkedin { border-color: #0a66c2; }
-    .social-links a.linkedin:hover { background: #0a66c2; }
+    .social-links a.linkedin:hover, .social-links a.linkedin:focus { background: #0a66c2; }
     .social-links a.twitter { border-color: #14171a; }
-    .social-links a.twitter:hover { background: #14171a; }
+    .social-links a.twitter:hover, .social-links a.twitter:focus { background: #14171a; }
     .social-links a.gmail { border-color: #ea4335; }
-    .social-links a.gmail:hover { background: #ea4335; }
-    /* Education, Research, Footer, etc. (unchanged) */
+    .social-links a.gmail:hover, .social-links a.gmail:focus { background: #ea4335; }
+
+    /* Education Section */
     .education-section {
-      padding: 4rem 2rem;
+      padding: 3rem 1rem 2rem 1rem;
       background: linear-gradient(to right, #e0f2fe, #f8fafc);
       color: #1e293b;
     }
     .education-section h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
       margin-bottom: 2rem;
       text-align: center;
@@ -161,58 +173,64 @@
     .card-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 1.7rem;
       justify-content: center;
     }
     .card {
       flex: 1 1 320px;
       background: #ffffff;
       border-radius: 12px;
-      padding: 2rem;
+      padding: 1.2rem 1.1rem;
       color: #1e293b;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+      max-width: 440px;
+      min-width: 220px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      min-width: 260px;
     }
-    .card:hover {
+    .card:hover, .card:focus-within {
       transform: scale(1.03);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.17);
+      outline: none;
     }
     .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.8rem;
+      font-size: 1.17rem;
+      margin-bottom: 0.6rem;
       color: #0f172a;
     }
     .card-date {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: bold;
       color: #475569;
-      margin-bottom: 1.1rem;
+      margin-bottom: 0.8rem;
     }
     .card ul {
-      margin-top: 0.5rem;
-      padding-left: 1.5rem;
+      margin-top: 0.3rem;
+      padding-left: 1.2rem;
       list-style: disc;
     }
     .card ul li {
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.6rem;
       color: #64748b;
+      font-size: 0.97rem;
     }
     .edu-link {
       text-decoration: none;
       color: inherit;
+      word-break: break-word;
     }
-    .edu-link:hover {
-      text-decoration: none;
+    .edu-link:hover, .edu-link:focus {
+      text-decoration: underline;
+      color: #0a66c2;
+      outline: none;
     }
+    /* Research Section */
     .research-section {
-      padding: 4rem 2rem;
+      padding: 3rem 1rem 2rem 1rem;
       background: linear-gradient(to right, #f8fafc, #e0f2fe);
       color: #1e293b;
     }
     .research-section h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
       margin-bottom: 2rem;
       color: #0f172a;
@@ -225,35 +243,35 @@
     }
     .carousel-track {
       display: flex;
-      transition: transform 0.5s ease-in-out;
+      transition: transform 0.5s cubic-bezier(.73,.31,.36,.93);
     }
     .carousel-item {
       flex: 0 0 100%;
       max-width: 100%;
-      padding: 1rem;
+      padding: 1rem 0.3rem;
       text-align: center;
       box-sizing: border-box;
     }
     .carousel-item img {
       width: 100%;
-      max-width: 700px;
+      max-width: 480px;
       height: auto;
       border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.16);
       margin: 0 auto 1rem;
       display: block;
     }
     .carousel-item .item-info {
       text-align: justify;
-      padding: 0 1rem;
+      padding: 0 0.3rem;
     }
     .carousel-item h3 {
-      font-size: 1.2rem;
+      font-size: 1.09rem;
       margin-bottom: 0.5rem;
     }
     .carousel-item p {
-      font-size: 1rem;
-      line-height: 1.5;
+      font-size: 0.97rem;
+      line-height: 1.55;
       color: #475569;
     }
     .carousel-button {
@@ -264,73 +282,108 @@
       color: #f8f9fa;
       border: none;
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 2rem;
+      width: 36px;
+      height: 36px;
+      font-size: 1.6rem;
       cursor: pointer;
       z-index: 10;
+      transition: background 0.2s;
     }
     .carousel-button.prev {
-      left: 1rem;
+      left: 0.4rem;
     }
     .carousel-button.next {
-      right: 1rem;
+      right: 0.4rem;
     }
-    .carousel-button:hover {
+    .carousel-button:hover, .carousel-button:focus {
       background: rgba(0, 0, 0, 0.8);
+      outline: none;
     }
+    /* Get in Touch Section */
     .get-in-touch {
-      padding: 5rem 2rem;
+      padding: 3.2rem 1rem 2.2rem 1rem;
       background: #0f172a;
-      margin-top: 3rem;
+      margin-top: 2.2rem;
       text-align: center;
     }
     .get-in-touch h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
       margin-bottom: 2rem;
       color: #38bdf8;
     }
     .get-in-touch p {
-      font-size: 1.15rem;
-      line-height: 1.8;
-      margin-bottom: 2rem;
+      font-size: 1.03rem;
+      line-height: 1.75;
+      margin-bottom: 1.2rem;
       color: #e2e8f0;
+      word-break: break-word;
     }
     footer {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       padding: 1rem;
       text-align: center;
       font-size: 0.9rem;
       color: #94a3b8;
       background-color: #1e293b;
     }
-    @media (max-width: 950px) {
+    /* Responsive Design */
+    @media (max-width: 1024px) {
       .hero-split {
         flex-direction: column;
+        min-height: unset;
       }
       .hero-img-side {
         min-height: 220px;
-        height: 250px;
+        height: 230px;
+        width: 100vw;
       }
       .hero-text-side {
         align-items: center;
-        padding: 2.5rem 1rem;
+        padding: 2.7rem 1rem 2rem 1rem;
         text-align: center;
+        min-width: unset;
       }
-      .hero-text-side h1 { font-size: 2rem; }
-      .hero-desc { text-align: center; }
+      .hero-text-side h1, .get-in-touch h2, .education-section h2, .research-section h2 {
+        font-size: 1.37rem;
+      }
+      .hero-desc {
+        font-size: 1rem;
+      }
+      .carousel-item img {
+        max-width: 90vw;
+      }
+      .card {
+        max-width: 99vw;
+        min-width: 180px;
+      }
     }
     @media (max-width: 600px) {
-      .about-section h2, .education-section h2, .research-section h2, .get-in-touch h2 { font-size: 1.4rem; }
-      .about-section .about-text, .card, .carousel-item h3, .get-in-touch p { font-size: 1rem; }
-      nav ul li { font-size: 0.95rem; }
-      .card, .carousel-item { padding: 0.8rem; }
-      .carousel-button { width: 32px; height: 32px; font-size: 1.5rem; }
-      .hero-text-side { padding: 1.2rem 0.3rem; }
-      .social-links { gap: 0.7rem; }
-      .social-links a { width: 36px; height: 36px; }
-      .social-links a img { width: 20px; height: 20px; }
+      nav ul {
+        gap: 0.7rem;
+      }
+      nav h1 {
+        font-size: 1rem;
+      }
+      .hero-text-side {
+        padding: 1.25rem 0.2rem 1rem 0.2rem;
+      }
+      .hero-text-side h1 {
+        font-size: 1.08rem;
+      }
+      .hero-desc {
+        font-size: 0.99rem;
+      }
+      .card, .carousel-item {
+        padding: 0.7rem 0.1rem;
+      }
+      .carousel-button { width: 28px; height: 28px; font-size: 1.1rem; }
+      .social-links { gap: 0.4rem; }
+      .social-links a { width: 30px; height: 30px; }
+      .social-links a img { width: 15px; height: 15px; }
+      .get-in-touch h2, .education-section h2, .research-section h2 {
+        font-size: 1.09rem;
+      }
     }
   </style>
 </head>
