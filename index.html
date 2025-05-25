@@ -8,7 +8,7 @@
   <style>
     html {
       box-sizing: border-box;
-      scroll-behavior: smooth; /* Enable smooth scrolling */
+      scroll-behavior: smooth;
     }
     *, *:before, *:after {
       box-sizing: inherit;
@@ -64,6 +64,87 @@
       outline: none;
     }
 
+    /* Hamburger menu button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 38px;
+      height: 38px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 100;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 3px;
+      margin: 4px 0;
+      background: #000;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    /* Hamburger menu open animation */
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile menu overlay */
+    .mobile-nav {
+      display: none;
+    }
+    .mobile-nav.active {
+      display: flex;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15,23,42,0.98);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 98;
+      animation: fadeIn 0.3s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .mobile-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+    .mobile-nav ul li a {
+      color: #f8fafc;
+      font-size: 1.6rem;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 1px;
+      border-radius: 5px;
+      padding: 0.6rem 2.2rem;
+      transition: background 0.2s, color 0.2s;
+      background: transparent;
+    }
+    .mobile-nav ul li a:hover,
+    .mobile-nav ul li a:focus {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+
     section {
       scroll-margin-top: 80px;
     }
@@ -75,8 +156,8 @@
     }
     .hero-img-side {
       flex: 2;
-      background: url('your-profile-picture.jpg') center center/95% no-repeat;
-      min-height: 700px;
+      background: url('your-profile-picture.jpg') center center/85% no-repeat;
+      min-height: 400px;
       transition: background-size 0.3s, background-position 0.3s;
     }
     .hero-text-side {
@@ -261,7 +342,6 @@
       box-sizing: border-box;
       font-size: 1rem;
     }
-    /* Default image style for mobile/small screens */
     .carousel-item img {
       width: 100%;
       max-width: 480px;
@@ -340,7 +420,6 @@
       background-color: #1e293b;
     }
 
-    /* Desktop: Increase font sizes, justify intro text, utilize free space, and ENLARGE Project 1 and 2 images */
     @media (min-width: 1025px) {
       body, nav, .hero-desc, .card, .carousel-item, .get-in-touch, .get-in-touch p, .get-in-touch h2 {
         font-size: 1.25rem;
@@ -387,34 +466,52 @@
       .carousel-item:nth-child(2) img {
         max-width: 680px;
       }
+      /* Hide hamburger on desktop */
+      .hamburger {
+        display: none !important;
+      }
+      /* Desktop nav always visible */
+      nav ul {
+        display: flex !important;
+      }
+      .mobile-nav {
+        display: none !important;
+      }
     }
-    /* Responsive Navigation: Stack nav items vertically on small screens */
+
+    @media (max-width: 900px) {
+      .hero-text-side {
+        padding: 2.7rem 1rem 2rem 1rem;
+      }
+      .hero-desc {
+        max-width: 540px;
+      }
+    }
+
     @media (max-width: 600px) {
       nav {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
       }
       nav ul {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .hero-split {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 0.2rem;
-        width: 100%;
-      }
-      nav ul li {
-        width: 100%;
-      }
-      nav ul li a {
-        padding: 0.7rem 0.8rem;
-        font-size: 1.02rem;
-        width: 100%;
-        box-sizing: border-box;
+        min-height: unset;
       }
       .hero-img-side {
         min-height: 180px;
         height: 180px;
       }
       .hero-text-side {
+        align-items: center;
         padding: 1.25rem 0.2rem 1rem 0.2rem;
+        text-align: center;
+        min-width: unset;
       }
       .hero-text-side h1 {
         font-size: 1.08rem;
@@ -441,50 +538,25 @@
         padding-right: 3vw;
       }
     }
-    @media (max-width: 1024px) {
-      .hero-split {
-        flex-direction: column;
-        min-height: unset;
-      }
-      .hero-img-side {
-        background-size: contain !important;
-        background-repeat: no-repeat !important;
-        background-position: center top !important;
-        min-height: 220px;
-        height: 220px;
-        width: 100vw;
-      }
-      .hero-text-side {
-        align-items: center;
-        padding: 2.7rem 1rem 2rem 1rem;
-        text-align: center;
-        min-width: unset;
-      }
-      .hero-text-side h1, .get-in-touch h2, .education-section h2, .research-section h2 {
-        font-size: 1.37rem;
-      }
-      .hero-desc {
-        font-size: 1rem;
-        max-width: 540px;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .carousel-item img {
-        max-width: 90vw;
-      }
-      .card {
-        max-width: 99vw;
-        min-width: 180px;
-        font-size: 1rem;
-        padding: 1.2rem 1.1rem;
-      }
-    }
   </style>
 </head>
 <body>
   <nav>
     <h1>@rupam.</h1>
+    <button class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#get-in-touch">Get in Touch</a></li>
+    </ul>
+  </nav>
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#education">Education</a></li>
@@ -496,9 +568,9 @@
   <section class="hero-split" id="home">
     <div class="hero-img-side"></div>
     <div class="hero-text-side">
-      <h1>Welcome to Arupam's Space!</h1>
+      <h1>Welcome to my personal website!</h1>
       <div class="hero-desc">
-        I'm Arupam Biswas, a Neuroscience Researcher driven by a deep curiosity about how the Central Nervous System(CNS) heals and adapts. My journey began in India and led me to Germany, where I am pursuing a PhD at
+        I'm Arupam Biswas, a passionate neuroscience researcher driven by curiosity about how the central nervous system heals and adapts. My journey began in India and led me to Germany, where I am pursuing a PhD at
         <a href="https://idn.biologie.uni-mainz.de/" target="_blank">
           Institute of Developmental Biology and Neurobiology (iDN)
         </a>. My work focuses on developing biomaterials for neural regeneration, in collaboration with the
@@ -561,8 +633,8 @@
         <p>
           <strong>
             <a href="https://www.visvabharati.ac.in/index.html" target="_blank" class="edu-link">
-              Visva-Bharati
-            </a>, India.
+              Visva-Bharati, India
+            </a>
           </strong>
         </p>
         <ul>
@@ -635,6 +707,31 @@
     © 2025 Arupam Biswas. All rights reserved.
   </footer>
   <script>
+    // Hamburger menu logic
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', function () {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+      // Accessibility for aria-expanded
+      hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active') ? 'true' : 'false');
+      // Prevent background scroll when menu open
+      if (hamburger.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    });
+    // Close menu on link click (mobile only)
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      link.addEventListener('click', function () {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
     // Carousel Functionality
     const track = document.querySelector('.carousel-track');
     const items = Array.from(track.children);
