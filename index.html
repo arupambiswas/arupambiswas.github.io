@@ -186,6 +186,7 @@
       max-width: 440px;
       min-width: 220px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      font-size: 1rem;
     }
     .card:hover, .card:focus-within {
       transform: scale(1.03);
@@ -250,6 +251,7 @@
       padding: 1rem 0.3rem;
       text-align: center;
       box-sizing: border-box;
+      font-size: 1rem;
     }
     .carousel-item img {
       width: 100%;
@@ -299,14 +301,68 @@
       outline: none;
     }
 
-    /* Home intro paragraph bigger and wider on desktop */
+    .get-in-touch {
+      padding: 3.2rem 1rem 2.2rem 1rem;
+      background: #0f172a;
+      margin-top: 2.2rem;
+      text-align: center;
+      max-width: 100vw;
+      box-sizing: border-box;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      overflow-wrap: break-word;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .get-in-touch > * {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    footer {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      background-color: #1e293b;
+    }
+
+    /* Desktop: Increase font sizes for every section */
     @media (min-width: 1025px) {
+      body, nav, .hero-desc, .card, .carousel-item, .get-in-touch, .get-in-touch p, .get-in-touch h2 {
+        font-size: 1.25rem;
+      }
+      nav h1 {
+        font-size: 1.7rem;
+      }
+      .hero-text-side h1 {
+        font-size: 2.5rem;
+      }
+      .education-section h2,
+      .research-section h2,
+      .get-in-touch h2 {
+        font-size: 2.3rem;
+      }
+      .card h3,
+      .carousel-item h3 {
+        font-size: 1.3rem;
+      }
+      .card-date {
+        font-size: 1.15rem;
+      }
+      .carousel-item p,
+      .card ul li {
+        font-size: 1.15rem;
+      }
       .hero-desc {
         font-size: 1.35rem;
         max-width: 900px;
       }
     }
-
     /* Responsive Design */
     @media (max-width: 1024px) {
       .hero-split {
@@ -377,24 +433,6 @@
         padding-left: 3vw;
         padding-right: 3vw;
       }
-    }
-    /* Ensure "Get in Touch" always fits and is centered */
-    .get-in-touch {
-      max-width: 100vw;
-      width: 100%;
-      box-sizing: border-box;
-      margin-left: auto;
-      margin-right: auto;
-      overflow-wrap: break-word;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .get-in-touch > * {
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
     }
   </style>
 </head>
