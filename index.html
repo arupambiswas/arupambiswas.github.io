@@ -76,8 +76,8 @@
     }
     .hero-img-side {
       flex: 2;
-      background: url('your-profile-picture.jpg') center center/95% no-repeat;
-      min-height: 700px;
+      background: url('your-profile-picture.jpg') center center/85% no-repeat;
+      min-height: 400px;
       transition: background-size 0.3s, background-position 0.3s;
     }
     .hero-text-side {
@@ -105,7 +105,10 @@
       margin-bottom: 1.2rem;
       line-height: 1.5;
       max-width: 540px;
-      text-align: left;
+      /* Default for mobile is centered; override on desktop below */
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
     }
     .hero-desc a {
       color: #38bdf8;
@@ -338,7 +341,7 @@
       background-color: #1e293b;
     }
 
-    /* Desktop: Increase font sizes for every section, compact hero-desc, enlarge cards, left-align intro */
+    /* Desktop: Increase font sizes, justify intro text, utilize free space */
     @media (min-width: 1025px) {
       body, nav, .hero-desc, .card, .carousel-item, .get-in-touch, .get-in-touch p, .get-in-touch h2 {
         font-size: 1.25rem;
@@ -373,10 +376,12 @@
       }
       .hero-desc {
         font-size: 1.2rem;
-        max-width: 700px;
+        max-width: 850px; /* Use more width on desktop */
         line-height: 1.45;
         margin-bottom: 1.1rem;
-        text-align: left;
+        text-align: justify; /* Justify both ends */
+        margin-left: 0;
+        margin-right: 0;
       }
     }
     /* Responsive Navigation: Stack nav items vertically on small screens */
@@ -413,6 +418,9 @@
       .hero-desc {
         font-size: 0.99rem;
         max-width: 100vw;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
       }
       .card, .carousel-item {
         padding: 0.7rem 0.1rem;
@@ -454,6 +462,9 @@
       .hero-desc {
         font-size: 1rem;
         max-width: 540px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
       }
       .carousel-item img {
         max-width: 90vw;
@@ -481,9 +492,9 @@
   <section class="hero-split" id="home">
     <div class="hero-img-side"></div>
     <div class="hero-text-side">
-      <h1>Welcome!</h1>
+      <h1>Welcome to my personal website!</h1>
       <div class="hero-desc">
-        I'm Arupam Biswas, a neuroscience researcher driven by curiosity about how the central nervous system heals and adapts. My journey began in India and led me to Germany, where I am pursuing a PhD at
+        I'm Arupam Biswas, a passionate neuroscience researcher driven by curiosity about how the central nervous system heals and adapts. My journey began in India and led me to Germany, where I am pursuing a PhD at
         <a href="https://idn.biologie.uni-mainz.de/" target="_blank">
           Institute of Developmental Biology and Neurobiology (iDN)
         </a>. My work focuses on developing biomaterials for neural regeneration, in collaboration with the
@@ -494,7 +505,9 @@
           Max Planck Institute for Polymer Research (MPI-P)
         </a>, Germany.
         <br><br>
-        Outside of the lab, I love exploring new cuisines, traveling to discover different cultures, and sharing ideas with fellow scientists and enthusiasts.  If you are interested in neurobiology, regenerative medicine, or want to collaborate, feel free to get in touch!
+        Outside of the lab, I love exploring new cuisines, traveling to discover different cultures, and sharing ideas with fellow scientists and enthusiasts. Collaboration and open-mindedness are key to driving innovation in science and beyond.
+        <br><br>
+        If you are interested in neurobiology, regenerative medicine, or want to collaborate, feel free to get in touch!
       </div>
       <div class="social-links">
         <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank" class="facebook">
@@ -525,8 +538,8 @@
         <p>
           <strong>
             <a href="https://www.uni-mainz.de/" target="_blank" class="edu-link">
-              Johannes Gutenberg University Mainz, Germany.
-            </a>
+              Johannes Gutenberg University Mainz
+            </a>, Germany.
           </strong>
         </p>
         <ul>
@@ -544,7 +557,7 @@
         <p>
           <strong>
             <a href="https://www.visvabharati.ac.in/index.html" target="_blank" class="edu-link">
-              Visva-Bharati, India.
+              Visva-Bharati, India
             </a>
           </strong>
         </p>
