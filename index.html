@@ -69,8 +69,8 @@
     }
     .hero-img-side {
       flex: 2;
-      background: url('your-profile-picture.jpg') center center/95% no-repeat;
-      min-height: 700px;
+      background: url('your-profile-picture.jpg') center center/85% no-repeat;
+      min-height: 400px;
       transition: background-size 0.3s, background-position 0.3s;
     }
     .hero-text-side {
@@ -95,9 +95,9 @@
     .hero-desc {
       color: #fff;
       font-size: 1.04rem;
-      margin-bottom: 2.2rem;
-      line-height: 1.7;
-      max-width: 640px;
+      margin-bottom: 1.2rem;
+      line-height: 1.5;
+      max-width: 540px;
       text-align: justify;
     }
     .hero-desc a {
@@ -180,13 +180,13 @@
       flex: 1 1 320px;
       background: #ffffff;
       border-radius: 12px;
-      padding: 1.2rem 1.1rem;
+      padding: 2rem 2rem;
       color: #1e293b;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
-      max-width: 440px;
-      min-width: 220px;
+      max-width: 600px;
+      min-width: 320px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
     .card:hover, .card:focus-within {
       transform: scale(1.03);
@@ -331,7 +331,7 @@
       background-color: #1e293b;
     }
 
-    /* Desktop: Increase font sizes for every section */
+    /* Desktop: Increase font sizes for every section, compact hero-desc, enlarge cards */
     @media (min-width: 1025px) {
       body, nav, .hero-desc, .card, .carousel-item, .get-in-touch, .get-in-touch p, .get-in-touch h2 {
         font-size: 1.25rem;
@@ -347,20 +347,28 @@
       .get-in-touch h2 {
         font-size: 2.3rem;
       }
+      .card {
+        font-size: 1.25rem;
+        padding: 2.5rem 2.3rem;
+        max-width: 700px;
+        min-width: 350px;
+      }
       .card h3,
       .carousel-item h3 {
-        font-size: 1.3rem;
+        font-size: 1.45rem;
       }
       .card-date {
-        font-size: 1.15rem;
+        font-size: 1.2rem;
       }
       .carousel-item p,
       .card ul li {
-        font-size: 1.15rem;
+        font-size: 1.22rem;
       }
       .hero-desc {
-        font-size: 1.35rem;
-        max-width: 900px;
+        font-size: 1.2rem;
+        max-width: 700px;
+        line-height: 1.45;
+        margin-bottom: 1.1rem;
       }
     }
     /* Responsive Design */
@@ -388,7 +396,7 @@
       }
       .hero-desc {
         font-size: 1rem;
-        max-width: 640px;
+        max-width: 540px;
       }
       .carousel-item img {
         max-width: 90vw;
@@ -396,6 +404,8 @@
       .card {
         max-width: 99vw;
         min-width: 180px;
+        font-size: 1rem;
+        padding: 1.2rem 1.1rem;
       }
     }
     @media (max-width: 600px) {
