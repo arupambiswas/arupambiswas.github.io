@@ -63,7 +63,6 @@
       background-color: #38bdf8;
       outline: none;
     }
-
     /* Hamburger menu button */
     .hamburger {
       display: none;
@@ -86,7 +85,6 @@
       border-radius: 2px;
       transition: 0.3s;
     }
-    /* Hamburger menu open animation */
     .hamburger.active span:nth-child(1) {
       transform: translateY(7px) rotate(45deg);
     }
@@ -96,8 +94,6 @@
     .hamburger.active span:nth-child(3) {
       transform: translateY(-7px) rotate(-45deg);
     }
-
-    /* Mobile menu overlay */
     .mobile-nav {
       display: none;
     }
@@ -144,11 +140,9 @@
       background: #38bdf8;
       color: #0f172a;
     }
-
     section {
       scroll-margin-top: 80px;
     }
-
     .hero-split {
       display: flex;
       min-height: 90vh;
@@ -156,9 +150,22 @@
     }
     .hero-img-side {
       flex: 2;
-      background: url('your-profile-picture.jpg') center center/85% no-repeat;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      background: #1e293b;
       min-height: 400px;
       transition: background-size 0.3s, background-position 0.3s;
+    }
+    .profile-img {
+      margin-top: 44px;
+      width: 340px;
+      max-width: 90vw;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.16);
+      display: block;
+      object-fit: cover;
+      height: auto;
     }
     .hero-text-side {
       flex: 3;
@@ -389,7 +396,6 @@
       background: rgba(0, 0, 0, 0.8);
       outline: none;
     }
-
     .get-in-touch {
       padding: 3.2rem 1rem 2.2rem 1rem;
       background: #0f172a;
@@ -419,7 +425,6 @@
       color: #94a3b8;
       background-color: #1e293b;
     }
-
     @media (min-width: 1025px) {
       body, nav, .hero-desc, .card, .carousel-item, .get-in-touch, .get-in-touch p, .get-in-touch h2 {
         font-size: 1.25rem;
@@ -466,19 +471,25 @@
       .carousel-item:nth-child(2) img {
         max-width: 680px;
       }
-      /* Hide hamburger on desktop */
       .hamburger {
         display: none !important;
       }
-      /* Desktop nav always visible */
       nav ul {
         display: flex !important;
       }
       .mobile-nav {
         display: none !important;
       }
+      .hero-img-side {
+        align-items: flex-start;
+      }
+      .profile-img {
+        margin-top: 44px;
+        width: 340px;
+        max-width: 340px;
+        height: auto;
+      }
     }
-
     @media (max-width: 900px) {
       .hero-text-side {
         padding: 2.7rem 1rem 2rem 1rem;
@@ -487,7 +498,6 @@
         max-width: 540px;
       }
     }
-
     @media (max-width: 600px) {
       nav {
         flex-direction: row;
@@ -504,8 +514,20 @@
         min-height: unset;
       }
       .hero-img-side {
-        min-height: 180px;
-        height: 180px;
+        min-height: 220px; /* Increase height for mobile */
+        height: 220px;
+        margin-top: 18px; /* Push image further down on mobile */
+        align-items: flex-start;
+      }
+      .profile-img {
+        margin-top: 24px;
+        width: 90vw;
+        max-width: 350px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.16);
+        display: block;
+        object-fit: cover;
       }
       .hero-text-side {
         align-items: center;
@@ -566,7 +588,9 @@
   </nav>
   <!-- Hero Split Section -->
   <section class="hero-split" id="home">
-    <div class="hero-img-side"></div>
+    <div class="hero-img-side">
+      <img src="your-profile-picture.jpg" alt="Profile picture" class="profile-img" />
+    </div>
     <div class="hero-text-side">
       <h1>Welcome to my personal website!</h1>
       <div class="hero-desc">
@@ -722,7 +746,6 @@
         document.body.style.overflow = '';
       }
     });
-    // Close menu on link click (mobile only)
     document.querySelectorAll('.mobile-nav a').forEach(link => {
       link.addEventListener('click', function () {
         hamburger.classList.remove('active');
