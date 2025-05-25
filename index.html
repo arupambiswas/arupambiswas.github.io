@@ -30,6 +30,7 @@
       position: sticky;
       top: 0;
       z-index: 99;
+      flex-wrap: wrap;
     }
     nav h1 {
       font-weight: 700;
@@ -372,7 +373,56 @@
         text-align: left;
       }
     }
-    /* Responsive Design */
+    /* Responsive Navigation: Stack nav items vertically on small screens */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+        width: 100%;
+      }
+      nav ul li {
+        width: 100%;
+      }
+      nav ul li a {
+        padding: 0.7rem 0.8rem;
+        font-size: 1.02rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .hero-img-side {
+        min-height: 180px;
+        height: 180px;
+      }
+      .hero-text-side {
+        padding: 1.25rem 0.2rem 1rem 0.2rem;
+      }
+      .hero-text-side h1 {
+        font-size: 1.08rem;
+      }
+      .hero-desc {
+        font-size: 0.99rem;
+        max-width: 100vw;
+      }
+      .card, .carousel-item {
+        padding: 0.7rem 0.1rem;
+      }
+      .carousel-button { width: 28px; height: 28px; font-size: 1.1rem; }
+      .social-links { gap: 0.4rem; }
+      .social-links a { width: 30px; height: 30px; }
+      .social-links a img { width: 15px; height: 15px; }
+      .get-in-touch h2, .education-section h2, .research-section h2 {
+        font-size: 1.09rem;
+      }
+      .get-in-touch {
+        padding-left: 3vw;
+        padding-right: 3vw;
+      }
+    }
     @media (max-width: 1024px) {
       .hero-split {
         flex-direction: column;
@@ -409,42 +459,6 @@
         padding: 1.2rem 1.1rem;
       }
     }
-    @media (max-width: 600px) {
-      .hero-img-side {
-        min-height: 180px;
-        height: 180px;
-      }
-      nav ul {
-        gap: 0.7rem;
-      }
-      nav h1 {
-        font-size: 1rem;
-      }
-      .hero-text-side {
-        padding: 1.25rem 0.2rem 1rem 0.2rem;
-      }
-      .hero-text-side h1 {
-        font-size: 1.08rem;
-      }
-      .hero-desc {
-        font-size: 0.99rem;
-        max-width: 100vw;
-      }
-      .card, .carousel-item {
-        padding: 0.7rem 0.1rem;
-      }
-      .carousel-button { width: 28px; height: 28px; font-size: 1.1rem; }
-      .social-links { gap: 0.4rem; }
-      .social-links a { width: 30px; height: 30px; }
-      .social-links a img { width: 15px; height: 15px; }
-      .get-in-touch h2, .education-section h2, .research-section h2 {
-        font-size: 1.09rem;
-      }
-      .get-in-touch {
-        padding-left: 3vw;
-        padding-right: 3vw;
-      }
-    }
   </style>
 </head>
 <body>
@@ -461,20 +475,22 @@
   <section class="hero-split" id="home">
     <div class="hero-img-side"></div>
     <div class="hero-text-side">
-      <h1>Welcome!</h1>
+      <h1>Welcome to my personal website!</h1>
       <div class="hero-desc">
         I'm Arupam Biswas, a passionate neuroscience researcher driven by curiosity about how the central nervous system heals and adapts. My journey began in India and led me to Germany, where I am pursuing a PhD at
         <a href="https://idn.biologie.uni-mainz.de/" target="_blank">
-          Institute of Developmental Biology and Neurobiology(iDN).
-        </a> My work focuses on developing biomaterials for neural regeneration, in collaboration with the
+          Institute of Developmental Biology and Neurobiology (iDN)
+        </a>. My work focuses on developing biomaterials for neural regeneration, in collaboration with the
         <a href="https://lir-mainz.de/en/lir" target="_blank">
-          Leibniz Institute for Resilience Research(LIR)
+          Leibniz Institute for Resilience Research (LIR)
         </a> and the
         <a href="https://www.mpip-mainz.mpg.de/en/home" target="_blank">
-          Max Planck Institute for Polymer Research(MPI-P),
-        </a>Germany.
+          Max Planck Institute for Polymer Research (MPI-P)
+        </a>, Germany.
         <br><br>
-        Outside of the lab, I love exploring new cuisines and traveling to discover different cultures. If neurosciences or regenerative medicine interests you, feel free to get in touch!
+        Outside of the lab, I love exploring new cuisines, traveling to discover different cultures, and sharing ideas with fellow scientists and enthusiasts. Collaboration and open-mindedness are key to driving innovation in science and beyond.
+        <br><br>
+        If you are interested in neurobiology, regenerative medicine, or want to collaborate, feel free to get in touch!
       </div>
       <div class="social-links">
         <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank" class="facebook">
@@ -598,7 +614,7 @@
       Germany
     </p>
     <p>
-      Feel free to reach out regarding research collaborations, speaking engagements, or discussing new ideas and potential partnerships.
+      Feel free to reach out regarding research collaborations, speaking engagements, or questions about my work. I'm always open to discussing new ideas and potential partnerships.
     </p>
   </section>
   <footer>
