@@ -57,8 +57,6 @@
       background-color: #38bdf8;
       outline: none;
     }
-
-    /* Hamburger styles (hidden on desktop, shown on mobile) */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -128,7 +126,6 @@
       color: #0f172a;
       outline: none;
     }
-
     @media (max-width: 780px) {
       nav ul { display: none; }
       .hamburger { display: flex; }
@@ -150,7 +147,6 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
-
     .hero-split {
       display: flex;
       min-height: 90vh;
@@ -167,7 +163,6 @@
       align-items: center;
       justify-content: flex-end;
     }
-    /* Profile picture - desktop: keep large, mobile: smaller */
     .profile-pic {
       display: block;
       width: 420px;
@@ -278,7 +273,6 @@
     .social-links a.twitter:hover, .social-links a.twitter:focus { background: #14171a; }
     .social-links a.gmail { border-color: #ea4335; }
     .social-links a.gmail:hover, .social-links a.gmail:focus { background: #ea4335; }
-
     .education-section {
       padding: 3rem 1rem 2rem 1rem;
       background: linear-gradient(to right, #e0f2fe, #f8fafc);
@@ -426,7 +420,6 @@
       background: rgba(0, 0, 0, 0.8);
       outline: none;
     }
-
     .get-in-touch {
       padding: 3.2rem 1rem 2.2rem 1rem;
       background: #0f172a;
@@ -456,8 +449,6 @@
       color: #94a3b8;
       background-color: #1e293b;
     }
-
-    /* Desktop font sizes & layout */
     @media (min-width: 1025px) {
       .profile-pic {
         width: 420px;
@@ -486,8 +477,6 @@
         max-width: 900px;
       }
     }
-
-    /* Mobile layout improvements */
     @media (max-width: 1024px) {
       .profile-pic {
         width: 90vw;
@@ -582,7 +571,7 @@
       <li><a href="#home">Home</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#research">Research</a></li>
-      <li><a href="#gallary">Gallary</a></li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#get-in-touch">Get in Touch</a></li>
     </ul>
     <button class="hamburger" aria-label="Open navigation menu" aria-controls="navMobileMenu" aria-expanded="false">
@@ -590,18 +579,18 @@
       <span class="hamburger-bar"></span>
       <span class="hamburger-bar"></span>
     </button>
-    <!-- Mobile nav menu (initially hidden) -->
-    <ul class="nav-links-mobile" id="navMobileMenu" role="menu" aria-label="Mobile navigation menu" tabindex="-1" style="display:none;">
+    <ul class="nav-links-mobile" id="navMobileMenu" role="menu" aria-label="Mobile navigation menu" aria-hidden="true" tabindex="-1" style="display:none;">
+      <li><a href="#home" role="menuitem" tabindex="0">Home</a></li>
       <li><a href="#education" role="menuitem" tabindex="0">Education</a></li>
       <li><a href="#research" role="menuitem" tabindex="0">Research</a></li>
-      <li><a href="#gallary" role="menuitem" tabindex="0">Gallary</a></li>
+      <li><a href="#gallery" role="menuitem" tabindex="0">Gallery</a></li>
       <li><a href="#get-in-touch" role="menuitem" tabindex="0">Get in Touch</a></li>
     </ul>
     <div class="nav-overlay"></div>
   </nav>
-  <!-- Hero Split Section -->
   <section class="hero-split" id="home">
     <div class="hero-img-side">
+      <!-- Replace with your actual image files -->
       <img src="your-profile-picture.jpg" alt="Profile Picture" class="profile-pic" />
       <div class="social-links hero-social">
         <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank" class="facebook">
@@ -616,7 +605,7 @@
         <a href="https://x.com/arupamb07" target="_blank" class="twitter">
           <img src="twitterFL.jpg" alt="X Logo">
         </a>
-        <a href="mailto:arupambiswas007@gmail.com" target="_blank" class="gmail">
+        <a href="mailto:arupambiswas007[at]gmail[dot]com" target="_blank" class="gmail">
           <img src="gmail.jpg" alt="Gmail Logo">
         </a>
       </div>
@@ -624,24 +613,21 @@
     <div class="hero-text-side">
       <h1>Greetings Everyone!!</h1>
       <div class="hero-desc">
-        My name is Arupam Biswas, and I’m a Neuroscience Researcher exploring how the central nervous system heals, adapts, and thrives. My journey began in India and led me to Germany, where I am currently a Doctoral Candidate at the
+        My name is Arupam Biswas, and I’m a Neuroscience Researcher exploring how the central nervous system heals, adapts, and thrives. My journey began in India and led me to Germany, where I am currently pursuing my PhD at the 
         <a href="https://idn.biologie.uni-mainz.de/" target="_blank">
-          Institute of Developmental Biology and Neurobiology(iDN). 
-        </a> My research focuses on developing models and tools for next-generation therapies using precision-engineered artificial biomaterials to support CNS regeneration after traumatic brain injury (TBI), spinal cord injury (SCI), or in conditions like multiple sclerosis (MS).
-        <br><br>
-        Outside of the lab, I love exploring new cuisines, traveling to discover different cultures, and sharing ideas with fellow scientists and enthusiasts. Collaboration and open-mindedness are key to driving innovation in science and beyond.
-        <br><br>
+          Institute of Developmental Biology and Neurobiology (iDN)
+        </a>. My research focuses on developing models and tools for next-generation therapies using precision-engineered artificial biomaterials to support CNS regeneration after traumatic brain injury and neurodegenerative diseases.<br><br>
+        Outside of the lab, I love exploring new cuisines, traveling to discover different cultures, and sharing ideas with fellow scientists and enthusiasts. Collaboration and open-mindedness are key to scientific progress.<br><br>
         If you are interested in neurobiology, regenerative medicine, or want to collaborate, feel free to get in touch!
       </div>
     </div>
   </section>
-  <!-- Education Section -->
   <section id="education" class="education-section">
     <h2>Education</h2>
     <div class="card-container">
       <div class="card">
         <h3>PhD in Neuroscience</h3>
-        <p class="card-date">2025-Present Day</p>
+        <p class="card-date">2025–Present</p>
         <p>
           <strong>
             <a href="https://www.uni-mainz.de/" target="_blank" class="edu-link">
@@ -660,7 +646,7 @@
       </div>
       <div class="card">
         <h3>Five-Year Integrated M.Sc in Lifesciences</h3>
-        <p class="card-date">2019-2024</p>
+        <p class="card-date">2019–2024</p>
         <p>
           <strong>
             <a href="https://www.visvabharati.ac.in/index.html" target="_blank" class="edu-link">
@@ -682,7 +668,6 @@
       </div>
     </div>
   </section>
-  <!-- Research Section -->
   <section id="research" class="research-section">
     <h2>Research</h2>
     <div class="carousel">
@@ -692,10 +677,10 @@
           <div class="item-info">
             <h3>PhD Topic: Interactive Biomaterials for Neural Regeneration (InteReg)</h3>
             <p>
-              Traumatic CNS injuries and diseases like MS lead to lasting disability due to poor regenerative capacity. Barriers include glial scarring, inhibitory debris, lack of axonal guidance, and inefficient remyelination. In MS, immune attacks damage myelin, and remyelination declines with disease progression and age. While immune-targeting therapies exist, effective regeneration treatments are still lacking. The
+              Traumatic CNS injuries and diseases like MS lead to lasting disability due to poor regenerative capacity. Barriers include glial scarring, inhibitory debris, lack of axonal guidance, and more. The 
               <a href="https://intereg.uni-mainz.de/" target="_blank" style="text-decoration: none; color: inherit;">
                 Interactive Biomaterials for Neural Regeneration (InteReg)
-              </a> project is a five-year collaboration between Johannes Gutenberg University Mainz, the Max Planck Institute for Polymer Research, and the Leibniz Institute for Resilience Research, aiming to develop precision biomaterials for treating neurological diseases. InteReg focuses on creating programmable materials that guide central nervous system cell regeneration following injuries or in conditions like multiple sclerosis and traumatic injuries (SCI, TBI).
+              </a> project is a five-year collaboration between Johannes Gutenberg University Mainz, the Max Planck Institute for Polymer Research, and the Leibniz Institute for Resilience Research, aiming to engineer materials that can help guide and promote nerve regeneration.
             </p>
           </div>
         </div>
@@ -704,7 +689,7 @@
           <div class="item-info">
             <h3>Master's Thesis: High-Content Screening for neurite growth analyses: Evaluating gene treatments</h3>
             <p>
-              Neurons in the central nervous system (CNS), including the brain and spinal cord, send out axons to make connections. In mammals, these axons can't regrow after injury, leading to permanent damage. Research shows that axon growth depends on certain genes called regeneration-associated genes (RAGs). Activating these genes can help axons regrow. In-vitro phenotypic screening is critical for evaluating the effects of these transcription factors on neuronal cells and identifying potential treatments to promote axon regeneration.
+              Neurons in the central nervous system (CNS), including the brain and spinal cord, send out axons to make connections. In mammals, these axons can't regrow after injury, leading to permanent loss of function. My thesis investigated gene therapies that could stimulate regrowth, using high-content screening methods to analyze neurite extension.
             </p>
           </div>
         </div>
@@ -720,10 +705,13 @@
       <button class="carousel-button next">›</button>
     </div>
   </section>
-  <!-- Get in Touch Section -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <p>Gallery coming soon! Here you'll find photos from conferences, lab work, and travels.</p>
+  </section>
   <section class="get-in-touch" id="get-in-touch">
     <h2>Get in Touch</h2>
-    <p><strong>Email:</strong> arupambiswas007@gmail.com</p>
+    <p><strong>Email:</strong> arupambiswas007[at]gmail[dot]com</p>
     <p><strong>Lab:</strong> Dr Ishwariya Venkatesh, 
       <a href="https://www.ccmb.res.in/research/labs/venkatesh-lab" target="_blank">
         Venkatesh Lab
@@ -745,22 +733,21 @@
     © 2025 Arupam Biswas. All rights reserved.
   </footer>
   <script>
-    // Hamburger menu functionality
     const hamburgerBtn = document.querySelector('.hamburger');
     const mobileNav = document.querySelector('.nav-links-mobile');
     const navOverlay = document.querySelector('.nav-overlay');
-
     function openMobileMenu() {
       mobileNav.style.display = 'flex';
+      mobileNav.setAttribute('aria-hidden', 'false');
       hamburgerBtn.setAttribute('aria-expanded', 'true');
       navOverlay.classList.add('active');
-      // Focus first link for accessibility
       const firstLink = mobileNav.querySelector('a');
       if(firstLink) firstLink.focus();
       document.body.style.overflow = 'hidden';
     }
     function closeMobileMenu() {
       mobileNav.style.display = 'none';
+      mobileNav.setAttribute('aria-hidden', 'true');
       hamburgerBtn.setAttribute('aria-expanded', 'false');
       navOverlay.classList.remove('active');
       document.body.style.overflow = '';
@@ -782,18 +769,13 @@
     Array.from(mobileNav.querySelectorAll('a')).forEach(link => {
       link.addEventListener('click', closeMobileMenu);
     });
-
-    // Mobile nav highlight (active) logic: Only one blue mark
     function setActiveMobileNav(e) {
       const links = mobileNav.querySelectorAll('a');
-      // Remove all actives
       links.forEach(link => link.classList.remove('active'));
-      // Only set active to the clicked link if this is a click event
       if(e && e.target && e.target.nodeName === "A") {
         links.forEach(link => link.classList.remove('active'));
         e.target.classList.add('active');
       } else if (location.hash) {
-        // If hash changes, find and set the right link
         let found = false;
         links.forEach(link => {
           if (link.getAttribute('href') === location.hash) {
@@ -801,18 +783,13 @@
             found = true;
           }
         });
-        // If no match, remove all actives
         if (!found) links.forEach(link => link.classList.remove('active'));
       }
     }
-    // Set on click
     mobileNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', setActiveMobileNav);
     });
-    // Set on hashchange (for manual scrolls/bookmarks)
     window.addEventListener('hashchange', setActiveMobileNav);
-
-    // Carousel Functionality
     const track = document.querySelector('.carousel-track');
     const items = Array.from(track.children);
     const prevButton = document.querySelector('.carousel-button.prev');
@@ -831,6 +808,7 @@
       updateCarousel();
     });
     window.addEventListener('resize', updateCarousel);
+    window.addEventListener('load', updateCarousel);
     updateCarousel();
   </script>
 </body>
