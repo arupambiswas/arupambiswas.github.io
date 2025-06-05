@@ -72,7 +72,31 @@
       background: url('your-profile-picture.jpg') center center/95% no-repeat;
       min-height: 700px;
       transition: background-size 0.3s, background-position 0.3s;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
     }
+    /* Social links under profile picture */
+    .social-links.hero-social {
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      z-index: 5;
+      background: rgba(16,22,41,0.2);
+      padding: 0.7rem 0.5rem;
+      border-radius: 14px;
+      width: fit-content;
+      box-shadow: 0 2px 8px rgba(16,22,41,0.09);
+    }
+    /* Hide original social-links in text side */
+    .hero-text-side .social-links { display: none !important; }
     .hero-text-side {
       flex: 3;
       display: flex;
@@ -173,46 +197,46 @@
     .card-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.7rem;
+      gap: 2.7rem;
       justify-content: center;
     }
     .card {
-      flex: 1 1 320px;
+      flex: 1 1 520px;
       background: #ffffff;
-      border-radius: 12px;
-      padding: 1.2rem 1.1rem;
+      border-radius: 16px;
+      padding: 2rem 2.2rem;
       color: #1e293b;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
-      max-width: 440px;
-      min-width: 220px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.09);
+      max-width: 620px;
+      min-width: 340px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      font-size: 1rem;
+      font-size: 1.22rem;
     }
     .card:hover, .card:focus-within {
       transform: scale(1.03);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.17);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.17);
       outline: none;
     }
     .card h3 {
-      font-size: 1.17rem;
-      margin-bottom: 0.6rem;
+      font-size: 1.37rem;
+      margin-bottom: 0.8rem;
       color: #0f172a;
     }
     .card-date {
-      font-size: 1rem;
+      font-size: 1.15rem;
       font-weight: bold;
       color: #475569;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1.2rem;
     }
     .card ul {
-      margin-top: 0.3rem;
-      padding-left: 1.2rem;
+      margin-top: 0.7rem;
+      padding-left: 1.4rem;
       list-style: disc;
     }
     .card ul li {
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.8rem;
       color: #64748b;
-      font-size: 0.97rem;
+      font-size: 1.11rem;
     }
     .edu-link {
       text-decoration: none;
@@ -252,27 +276,33 @@
       text-align: center;
       box-sizing: border-box;
       font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .carousel-item img {
-      width: 100%;
-      max-width: 480px;
+      /* Enlarged image for project 1 and 2 */
+      width: 90vw;
+      max-width: 720px;
+      min-width: 320px;
       height: auto;
-      border-radius: 8px;
+      border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.16);
-      margin: 0 auto 1rem;
+      margin: 0 auto 1.2rem;
       display: block;
     }
     .carousel-item .item-info {
       text-align: justify;
       padding: 0 0.3rem;
+      max-width: 900px;
     }
     .carousel-item h3 {
-      font-size: 1.09rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.19rem;
+      margin-bottom: 0.7rem;
     }
     .carousel-item p {
-      font-size: 0.97rem;
-      line-height: 1.55;
+      font-size: 1.13rem;
+      line-height: 1.65;
       color: #475569;
     }
     .carousel-button {
@@ -362,6 +392,13 @@
         font-size: 1.35rem;
         max-width: 900px;
       }
+      /* Even larger education cards on desktop */
+      .card {
+        font-size: 1.25rem;
+        max-width: 750px;
+        min-width: 380px;
+        padding: 2.3rem 3rem;
+      }
     }
     /* Responsive Design */
     @media (max-width: 1024px) {
@@ -376,6 +413,10 @@
         min-height: 220px;
         height: 220px;
         width: 100vw;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
       }
       .hero-text-side {
         align-items: center;
@@ -391,11 +432,17 @@
         max-width: 640px;
       }
       .carousel-item img {
-        max-width: 90vw;
+        max-width: 95vw;
       }
       .card {
         max-width: 99vw;
         min-width: 180px;
+        font-size: 1.01rem;
+        padding: 1.5rem 1rem;
+      }
+      .social-links.hero-social {
+        bottom: 10px;
+        padding: 0.5rem 0.3rem;
       }
     }
     @media (max-width: 600px) {
@@ -423,9 +470,9 @@
         padding: 0.7rem 0.1rem;
       }
       .carousel-button { width: 28px; height: 28px; font-size: 1.1rem; }
-      .social-links { gap: 0.4rem; }
-      .social-links a { width: 30px; height: 30px; }
-      .social-links a img { width: 15px; height: 15px; }
+      .social-links, .social-links.hero-social { gap: 0.4rem; }
+      .social-links a, .social-links.hero-social a { width: 30px; height: 30px; }
+      .social-links a img, .social-links.hero-social a img { width: 15px; height: 15px; }
       .get-in-touch h2, .education-section h2, .research-section h2 {
         font-size: 1.09rem;
       }
@@ -448,7 +495,25 @@
   </nav>
   <!-- Hero Split Section -->
   <section class="hero-split" id="home">
-    <div class="hero-img-side"></div>
+    <div class="hero-img-side">
+      <div class="social-links hero-social">
+        <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank" class="facebook">
+          <img src="facebookff.jpg" alt="Facebook Logo">
+        </a>
+        <a href="https://www.instagram.com/arupambiswas/" target="_blank" class="instagram">
+          <img src="InstagramF.jpg" alt="Instagram Logo">
+        </a>
+        <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank" class="linkedin">
+          <img src="linkedIn.jpg" alt="LinkedIn Logo">
+        </a>
+        <a href="https://x.com/arupamb07" target="_blank" class="twitter">
+          <img src="twitterFL.jpg" alt="X Logo">
+        </a>
+        <a href="mailto:arupambiswas007@gmail.com" target="_blank" class="gmail">
+          <img src="gmail.jpg" alt="Gmail Logo">
+        </a>
+      </div>
+    </div>
     <div class="hero-text-side">
       <h1>Welcome to my personal website!</h1>
       <div class="hero-desc">
@@ -467,23 +532,7 @@
         <br><br>
         If you are interested in neurobiology, regenerative medicine, or want to collaborate, feel free to get in touch!
       </div>
-      <div class="social-links">
-        <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank" class="facebook">
-          <img src="facebookff.jpg" alt="Facebook Logo">
-        </a>
-        <a href="https://www.instagram.com/arupambiswas/" target="_blank" class="instagram">
-          <img src="InstagramF.jpg" alt="Instagram Logo">
-        </a>
-        <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank" class="linkedin">
-          <img src="linkedIn.jpg" alt="LinkedIn Logo">
-        </a>
-        <a href="https://x.com/arupamb07" target="_blank" class="twitter">
-          <img src="twitterFL.jpg" alt="X Logo">
-        </a>
-        <a href="mailto:arupambiswas007@gmail.com" target="_blank" class="gmail">
-          <img src="gmail.jpg" alt="Gmail Logo">
-        </a>
-      </div>
+      <!-- Social links moved to profile pic side; hidden here -->
     </div>
   </section>
   <!-- Education Section -->
