@@ -170,8 +170,9 @@
     /* Profile picture - desktop: keep large, mobile: smaller */
     .profile-pic {
       display: block;
-      width: 95%;
+      width: 420px;
       max-width: 420px;
+      min-width: 340px;
       margin-top: 3.5rem;
       margin-bottom: 2.2rem;
       border-radius: 14px;
@@ -458,40 +459,12 @@
 
     /* Desktop font sizes & layout */
     @media (min-width: 1025px) {
-      body, nav, .hero-desc, .card, .carousel-item, .get-in-touch, .get-in-touch p, .get-in-touch h2 {
-        font-size: 1.25rem;
-      }
-      nav h1 {
-        font-size: 1.7rem;
-      }
-      .hero-text-side h1 {
-        font-size: 2.5rem;
-      }
-      .education-section h2,
-      .research-section h2,
-      .get-in-touch h2 {
-        font-size: 2.3rem;
-      }
-      .card h3,
-      .carousel-item h3 {
-        font-size: 1.3rem;
-      }
-      .card-date {
-        font-size: 1.15rem;
-      }
-      .carousel-item p,
-      .card ul li {
-        font-size: 1.15rem;
-      }
-      .hero-desc {
-        font-size: 1.35rem;
-        max-width: 900px;
-      }
-      .card {
-        font-size: 1.25rem;
-        max-width: 750px;
-        min-width: 380px;
-        padding: 2.3rem 3rem;
+      .profile-pic {
+        width: 420px;
+        max-width: 420px;
+        min-width: 340px;
+        margin-top: 3.5rem;
+        margin-bottom: 2.2rem;
       }
       .hero-img-side {
         min-width: 340px;
@@ -501,13 +474,6 @@
       }
       .hero-split {
         align-items: stretch;
-      }
-      .profile-pic {
-        width: 420px;
-        max-width: 420px;
-        min-width: 340px;
-        margin-top: 3.5rem;
-        margin-bottom: 2.2rem;
       }
       .social-links.hero-social {
         margin-bottom: 2.7rem;
@@ -523,6 +489,13 @@
 
     /* Mobile layout improvements */
     @media (max-width: 1024px) {
+      .profile-pic {
+        width: 90vw;
+        max-width: 350px;
+        min-width: 0;
+        margin-top: 1.1rem;
+        margin-bottom: 0.9rem;
+      }
       .hero-split {
         flex-direction: column;
         min-height: unset;
@@ -534,12 +507,6 @@
         position: relative;
         flex-basis: unset;
         max-width: 100vw;
-      }
-      .profile-pic {
-        width: 90vw;
-        max-width: 350px;
-        margin-top: 1.1rem;
-        margin-bottom: 0.9rem;
       }
       .social-links.hero-social {
         margin-top: 1.2rem;
@@ -579,6 +546,7 @@
         margin-bottom: 0.7rem;
         width: 98vw;
         max-width: 98vw;
+        min-width: 0;
       }
       .hero-text-side {
         padding: 1.25rem 4vw 1rem 4vw;
@@ -609,7 +577,7 @@
 </head>
 <body>
   <nav>
-    <h1>Arup@m.</h1>
+    <h1>@rupam.</h1>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#education">Education</a></li>
@@ -618,7 +586,6 @@
       <li><a href="#get-in-touch">Get in Touch</a></li>
     </ul>
     <button class="hamburger" aria-label="Open navigation menu" aria-controls="navMobileMenu" aria-expanded="false">
-      <span class="hamburger-bar"></span>
       <span class="hamburger-bar"></span>
       <span class="hamburger-bar"></span>
       <span class="hamburger-bar"></span>
@@ -831,14 +798,19 @@
       links.forEach(link => link.classList.remove('active'));
       // Only set active to the clicked link if this is a click event
       if(e && e.target && e.target.nodeName === "A") {
+        links.forEach(link => link.classList.remove('active'));
         e.target.classList.add('active');
       } else if (location.hash) {
         // If hash changes, find and set the right link
+        let found = false;
         links.forEach(link => {
           if (link.getAttribute('href') === location.hash) {
             link.classList.add('active');
+            found = true;
           }
         });
+        // If no match, remove all actives
+        if (!found) links.forEach(link => link.classList.remove('active'));
       }
     }
     // Set on click
