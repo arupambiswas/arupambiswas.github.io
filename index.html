@@ -340,6 +340,7 @@
     .carousel-track {
       display: flex;
       transition: transform 0.5s cubic-bezier(.73,.31,.36,.93);
+      will-change: transform;
     }
     .carousel-item {
       flex: 0 0 100%;
@@ -385,6 +386,7 @@
       cursor: pointer;
       z-index: 10;
       transition: background 0.2s;
+      user-select: none;
     }
     .carousel-button.prev {
       left: 0.4rem;
@@ -557,19 +559,19 @@
         If you are interested in neurobiology, regenerative medicine, or want to collaborate, feel free to get in touch!
       </div>
       <div class="social-links">
-        <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank" class="facebook">
+        <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank" class="facebook" aria-label="Facebook">
           <img src="facebookff.jpg" alt="Facebook Logo">
         </a>
-        <a href="https://www.instagram.com/arupambiswas/" target="_blank" class="instagram">
+        <a href="https://www.instagram.com/arupambiswas/" target="_blank" class="instagram" aria-label="Instagram">
           <img src="InstagramF.jpg" alt="Instagram Logo">
         </a>
-        <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank" class="linkedin">
+        <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank" class="linkedin" aria-label="LinkedIn">
           <img src="linkedIn.jpg" alt="LinkedIn Logo">
         </a>
-        <a href="https://x.com/arupamb07" target="_blank" class="twitter">
+        <a href="https://x.com/arupamb07" target="_blank" class="twitter" aria-label="X">
           <img src="twitterFL.jpg" alt="X Logo">
         </a>
-        <a href="mailto:arupambiswas007@gmail.com" target="_blank" class="gmail">
+        <a href="mailto:arupambiswas007@gmail.com" target="_blank" class="gmail" aria-label="Gmail">
           <img src="gmail.jpg" alt="Gmail Logo">
         </a>
       </div>
@@ -649,8 +651,8 @@
           </div>
         </div>
       </div>
-      <button class="carousel-button prev">‹</button>
-      <button class="carousel-button next">›</button>
+      <button class="carousel-button prev" type="button" tabindex="0" aria-label="Previous Research Slide">‹</button>
+      <button class="carousel-button next" type="button" tabindex="0" aria-label="Next Research Slide">›</button>
     </div>
   </section>
   <!-- Get in Touch Section -->
@@ -709,7 +711,8 @@
     let currentIndex = 0;
 
     function updateCarousel() {
-      const itemWidth = items[0].getBoundingClientRect().width;
+      // Use offsetWidth for more robust width calculation
+      const itemWidth = items[0].offsetWidth;
       track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     }
 
@@ -724,7 +727,11 @@
     });
 
     window.addEventListener('resize', updateCarousel);
-    updateCarousel();
+
+    // Ensure carousel items have correct width on load
+    window.addEventListener('DOMContentLoaded', () => {
+      updateCarousel();
+    });
   </script>
 </body>
 </html>
