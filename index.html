@@ -170,9 +170,9 @@
     }
     .profile-pic {
       display: block;
-      width: 420px;
-      max-width: 600px;
-      min-width: 340px;
+      width: 540px;
+      max-width: 700px;
+      min-width: 420px;
       margin-top: 3.5rem;
       margin-bottom: 2.2rem;
       border-radius: 14px;
@@ -241,8 +241,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 42px;
-      height: 42px;
+      width: 64px;
+      height: 64px;
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(30,41,59,0.13);
@@ -251,8 +251,8 @@
       padding: 0;
     }
     .social-links a img {
-      width: 22px;
-      height: 22px;
+      width: 40px;
+      height: 40px;
       object-fit: contain;
       border-radius: 4px;
       transition: transform 0.3s;
@@ -432,6 +432,83 @@
       background: rgba(0, 0, 0, 0.8);
       outline: none;
     }
+    .gallery-section {
+      padding: 3rem 1rem 2rem 1rem;
+      background: linear-gradient(to right, #f8fafc, #e0f2fe);
+      color: #1e293b;
+    }
+    .gallery-section h2 {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #0f172a;
+      font-weight: 700;
+    }
+    .gallery-filters {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2.2rem;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 0.5rem 1.3rem;
+      border: none;
+      border-radius: 7px;
+      background: #e0f2fe;
+      color: #0f172a;
+      font-weight: 600;
+      font-size: 1.08rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(30,41,59,0.08);
+    }
+    .filter-btn.active, .filter-btn:focus {
+      background: #38bdf8;
+      color: #fff;
+      outline: none;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.7rem;
+      margin-top: 2rem;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(16,22,41,0.09);
+      background: #fff;
+      transition: transform 0.2s;
+    }
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover img,
+    .gallery-item:focus-within img {
+      transform: scale(1.07);
+    }
+    .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0; right: 0;
+      background: rgba(15,23,42,0.76);
+      color: #fff;
+      padding: 0.7rem 1rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 1.04rem;
+      border-radius: 0 0 12px 12px;
+    }
+    .gallery-item:hover .caption,
+    .gallery-item:focus-within .caption {
+      opacity: 1;
+    }
     .get-in-touch {
       padding: 3.2rem 1rem 2.2rem 1rem;
       background: #0f172a;
@@ -463,23 +540,6 @@
       color: #94a3b8;
       background-color: #1e293b;
       max-width: none;
-    }
-    @media (min-width: 1025px) {
-      .profile-pic {
-        width: 540px;
-        max-width: 700px;
-        min-width: 420px;
-      }
-      .social-links a,
-      .social-links.hero-social a {
-        width: 64px;
-        height: 64px;
-      }
-      .social-links a img,
-      .social-links.hero-social a img {
-        width: 40px;
-        height: 40px;
-      }
     }
     @media (max-width: 1024px) {
       .profile-pic {
@@ -576,6 +636,8 @@
         padding-left: 3vw;
         padding-right: 3vw;
       }
+      .gallery-section h2 { font-size: 1.19rem; }
+      .gallery-grid { gap: 0.7rem; }
     }
   </style>
 </head>
@@ -719,9 +781,38 @@
       <button class="carousel-button next">›</button>
     </div>
   </section>
-  <section id="gallery">
+  <section id="gallery" class="gallery-section">
     <h2>Gallery</h2>
-    <p>Gallery coming soon! Here you'll find photos from conferences, lab work, and travels.</p>
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="lab">Lab</button>
+      <button class="filter-btn" data-filter="conferences">Conferences</button>
+      <button class="filter-btn" data-filter="travels">Travels</button>
+      <!-- Add more tags if needed -->
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" data-tags="lab">
+        <img src="photo_lab1.jpg" alt="Lab work 1" />
+        <div class="caption">Microscopy session</div>
+      </div>
+      <div class="gallery-item" data-tags="conferences">
+        <img src="photo_conf1.jpg" alt="Conference 1" />
+        <div class="caption">Presenting at NeuroConf 2024</div>
+      </div>
+      <div class="gallery-item" data-tags="travels">
+        <img src="photo_travel1.jpg" alt="Travel 1" />
+        <div class="caption">Exploring Heidelberg</div>
+      </div>
+      <div class="gallery-item" data-tags="lab conferences">
+        <img src="photo_lab2.jpg" alt="Lab & Conference" />
+        <div class="caption">Poster session with team</div>
+      </div>
+      <div class="gallery-item" data-tags="travels">
+        <img src="photo_travel2.jpg" alt="Travel 2" />
+        <div class="caption">Mainz city walk</div>
+      </div>
+      <!-- Add more .gallery-item as needed, data-tags can be space-separated for multiple tags -->
+    </div>
   </section>
   <section class="get-in-touch" id="get-in-touch">
     <h2>Get in Touch</h2>
@@ -824,6 +915,32 @@
     window.addEventListener('resize', updateCarousel);
     window.addEventListener('load', updateCarousel);
     updateCarousel();
+
+    // Gallery filter logic
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Update active state
+          filterBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          const filter = this.getAttribute('data-filter');
+
+          galleryItems.forEach(item => {
+            const tags = item.getAttribute('data-tags').split(' ');
+            if (filter === "all" || tags.includes(filter)) {
+              item.style.display = "";
+              setTimeout(() => item.style.opacity = 1, 0);
+            } else {
+              item.style.opacity = 0;
+              setTimeout(() => item.style.display = "none", 200);
+            }
+          });
+        });
+      });
+    });
   </script>
 </body>
 </html>
