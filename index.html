@@ -6,12 +6,8 @@
   <title>Arupam Biswas</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    html {
-      box-sizing: border-box;
-    }
-    *, *:before, *:after {
-      box-sizing: inherit;
-    }
+    html { box-sizing: border-box; }
+    *, *:before, *:after { box-sizing: inherit; }
     body {
       margin: 0;
       font-family: 'Outfit', sans-serif;
@@ -96,7 +92,7 @@
       border-radius: 10px;
       box-shadow: 0 8px 24px rgba(30,41,59,0.21);
       z-index: 100;
-      min-width: 165px;
+      min-width: 180px;
       padding: 1.1rem 0.6rem 1rem 0.6rem;
       animation: slideDown 0.23s cubic-bezier(.56,.12,.36,.83);
     }
@@ -117,33 +113,31 @@
       display: block;
       background: none;
       transition: background 0.2s, color 0.2s;
+      font-weight: 700;
     }
-    .nav-links-mobile li a:hover, .nav-links-mobile li a:focus, .nav-links-mobile li a.active {
+    .nav-links-mobile li a.active {
+      background: #38bdf8;
+      color: #0f172a;
+    }
+    .nav-links-mobile li a:not(.active) {
+      background: none;
+      color: #f8fafc;
+    }
+    .nav-links-mobile li a:hover, .nav-links-mobile li a:focus {
       background: #38bdf8;
       color: #0f172a;
       outline: none;
     }
 
-    /* Hide desktop nav on mobile, show hamburger */
     @media (max-width: 780px) {
-      nav ul {
-        display: none;
-      }
-      .hamburger {
-        display: flex;
-      }
-      .nav-links-mobile {
-        display: flex;
-      }
+      nav ul { display: none; }
+      .hamburger { display: flex; }
+      .nav-links-mobile { display: flex; }
     }
     @media (min-width: 781px) {
-      .nav-links-mobile {
-        display: none !important;
-      }
+      .nav-links-mobile { display: none !important; }
     }
-    .nav-overlay {
-      display: none;
-    }
+    .nav-overlay { display: none; }
     .nav-overlay.active {
       display: block;
       position: fixed;
@@ -157,7 +151,6 @@
       to { opacity: 1; }
     }
 
-    /* MAIN LAYOUT */
     .hero-split {
       display: flex;
       min-height: 90vh;
@@ -174,20 +167,21 @@
       align-items: center;
       justify-content: flex-end;
     }
+    /* Profile picture - desktop: keep large, mobile: smaller */
     .profile-pic {
       display: block;
-      width: 80%;
-      max-width: 350px;
-      margin-top: 2.7rem;
-      margin-bottom: 1.7rem;
+      width: 85%;
+      max-width: 420px;
+      margin-top: 3.5rem;
+      margin-bottom: 2.2rem;
       border-radius: 14px;
       box-shadow: 0 4px 20px rgba(18,19,32,0.13);
       object-fit: cover;
     }
     .social-links.hero-social {
       position: static;
-      margin-top: 0.3rem;
-      margin-bottom: 2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 2.7rem;
       background: rgba(16,22,41,0.14);
       display: flex;
       justify-content: center;
@@ -462,7 +456,7 @@
       background-color: #1e293b;
     }
 
-    /* Desktop font sizes */
+    /* Desktop font sizes & layout */
     @media (min-width: 1025px) {
       body, nav, .hero-desc, .card, .carousel-item, .get-in-touch, .get-in-touch p, .get-in-touch h2 {
         font-size: 1.25rem;
@@ -509,8 +503,9 @@
         align-items: stretch;
       }
       .profile-pic {
-        width: 85%;
-        max-width: 410px;
+        width: 420px;
+        max-width: 420px;
+        min-width: 340px;
         margin-top: 3.5rem;
         margin-bottom: 2.2rem;
       }
@@ -826,25 +821,29 @@
       link.addEventListener('click', closeMobileMenu);
     });
 
-    // Mobile nav highlight (active) logic
-    function setActiveMobileNav() {
+    // Mobile nav highlight (active) logic: Only one blue mark
+    function setActiveMobileNav(e) {
       const links = mobileNav.querySelectorAll('a');
+      // Remove all actives
       links.forEach(link => link.classList.remove('active'));
-      let hash = location.hash;
-      if (!hash) return;
-      links.forEach(link => {
-        if (link.getAttribute('href') === hash) {
-          link.classList.add('active');
-        }
-      });
+      // Only set active to the clicked link if this is a click event
+      if(e && e.target && e.target.nodeName === "A") {
+        e.target.classList.add('active');
+      } else if (location.hash) {
+        // If hash changes, find and set the right link
+        links.forEach(link => {
+          if (link.getAttribute('href') === location.hash) {
+            link.classList.add('active');
+          }
+        });
+      }
     }
+    // Set on click
     mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', function() {
-        setTimeout(setActiveMobileNav, 10);
-      });
+      link.addEventListener('click', setActiveMobileNav);
     });
+    // Set on hashchange (for manual scrolls/bookmarks)
     window.addEventListener('hashchange', setActiveMobileNav);
-    setActiveMobileNav();
 
     // Carousel Functionality
     const track = document.querySelector('.carousel-track');
