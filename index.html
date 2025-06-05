@@ -178,6 +178,7 @@
       border-radius: 14px;
       box-shadow: 0 4px 20px rgba(18,19,32,0.13);
       object-fit: cover;
+      transition: width 0.3s, max-width 0.3s;
     }
     .social-links.hero-social {
       position: static;
@@ -463,6 +464,23 @@
       background-color: #1e293b;
       max-width: none;
     }
+    @media (min-width: 1025px) {
+      .profile-pic {
+        width: 540px;
+        max-width: 700px;
+        min-width: 420px;
+      }
+      .social-links a,
+      .social-links.hero-social a {
+        width: 64px;
+        height: 64px;
+      }
+      .social-links a img,
+      .social-links.hero-social a img {
+        width: 40px;
+        height: 40px;
+      }
+    }
     @media (max-width: 1024px) {
       .profile-pic {
         width: 90vw;
@@ -514,6 +532,16 @@
       .get-in-touch, .education-section, .research-section {
         padding-left: 7vw !important;
         padding-right: 7vw !important;
+      }
+      .social-links a,
+      .social-links.hero-social a {
+        width: 42px;
+        height: 42px;
+      }
+      .social-links a img,
+      .social-links.hero-social a img {
+        width: 22px;
+        height: 22px;
       }
     }
     @media (max-width: 600px) {
