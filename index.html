@@ -57,8 +57,6 @@
       background-color: #38bdf8;
       outline: none;
     }
-
-    /* Hamburger styles (hidden on desktop, shown on mobile) */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -128,11 +126,9 @@
       color: #0f172a;
       outline: none;
     }
-
     @media (max-width: 780px) {
       nav ul { display: none; }
       .hamburger { display: flex; }
-      .nav-links-mobile { display: flex; }
     }
     @media (min-width: 781px) {
       .nav-links-mobile { display: none !important; }
@@ -150,7 +146,6 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
-
     .hero-split {
       display: flex;
       min-height: 90vh;
@@ -167,7 +162,6 @@
       align-items: center;
       justify-content: flex-end;
     }
-    /* Profile picture - desktop: keep large, mobile: smaller */
     .profile-pic {
       display: block;
       width: 420px;
@@ -278,7 +272,6 @@
     .social-links a.twitter:hover, .social-links a.twitter:focus { background: #14171a; }
     .social-links a.gmail { border-color: #ea4335; }
     .social-links a.gmail:hover, .social-links a.gmail:focus { background: #ea4335; }
-
     .education-section {
       padding: 3rem 1rem 2rem 1rem;
       background: linear-gradient(to right, #e0f2fe, #f8fafc);
@@ -365,6 +358,7 @@
     .carousel-track {
       display: flex;
       transition: transform 0.5s cubic-bezier(.73,.31,.36,.93);
+      will-change: transform;
     }
     .carousel-item {
       flex: 0 0 100%;
@@ -415,6 +409,7 @@
       cursor: pointer;
       z-index: 10;
       transition: background 0.2s;
+      user-select: none;
     }
     .carousel-button.prev {
       left: 0.4rem;
@@ -426,7 +421,6 @@
       background: rgba(0, 0, 0, 0.8);
       outline: none;
     }
-
     .get-in-touch {
       padding: 3.2rem 1rem 2.2rem 1rem;
       background: #0f172a;
@@ -456,8 +450,6 @@
       color: #94a3b8;
       background-color: #1e293b;
     }
-
-    /* Desktop font sizes & layout */
     @media (min-width: 1025px) {
       .profile-pic {
         width: 420px;
@@ -486,8 +478,6 @@
         max-width: 900px;
       }
     }
-
-    /* Mobile layout improvements */
     @media (max-width: 1024px) {
       .profile-pic {
         width: 90vw;
@@ -590,8 +580,7 @@
       <span class="hamburger-bar"></span>
       <span class="hamburger-bar"></span>
     </button>
-    <!-- Mobile nav menu (initially hidden) -->
-    <ul class="nav-links-mobile" id="navMobileMenu" role="menu" aria-label="Mobile navigation menu" tabindex="-1" style="display:none;">
+    <ul class="nav-links-mobile" id="navMobileMenu" role="menu" aria-label="Mobile navigation menu" tabindex="-1">
       <li><a href="#home" role="menuitem" tabindex="0">Home</a></li>
       <li><a href="#education" role="menuitem" tabindex="0">Education</a></li>
       <li><a href="#research" role="menuitem" tabindex="0">Research</a></li>
@@ -600,7 +589,6 @@
     </ul>
     <div class="nav-overlay"></div>
   </nav>
-  <!-- Hero Split Section -->
   <section class="hero-split" id="home">
     <div class="hero-img-side">
       <img src="your-profile-picture.jpg" alt="Profile Picture" class="profile-pic" />
@@ -636,7 +624,6 @@
       </div>
     </div>
   </section>
-  <!-- Education Section -->
   <section id="education" class="education-section">
     <h2>Education</h2>
     <div class="card-container">
@@ -683,7 +670,6 @@
       </div>
     </div>
   </section>
-  <!-- Research Section -->
   <section id="research" class="research-section">
     <h2>Research</h2>
     <div class="carousel">
@@ -721,7 +707,6 @@
       <button class="carousel-button next" type="button" aria-label="Next research project">›</button>
     </div>
   </section>
-  <!-- Get in Touch Section -->
   <section class="get-in-touch" id="get-in-touch">
     <h2>Get in Touch</h2>
     <p><strong>Email:</strong> <a href="mailto:arupambiswas007@gmail.com">arupambiswas007@gmail.com</a></p>
@@ -794,7 +779,6 @@
         links.forEach(link => link.classList.remove('active'));
         e.target.classList.add('active');
       } else if (location.hash) {
-        // If hash changes, find and set the right link
         let found = false;
         links.forEach(link => {
           if (link.getAttribute('href') === location.hash) {
@@ -802,7 +786,6 @@
             found = true;
           }
         });
-        // If no match, remove all actives
         if (!found) links.forEach(link => link.classList.remove('active'));
       }
     }
@@ -820,7 +803,8 @@
     const nextButton = document.querySelector('.carousel-button.next');
     let currentIndex = 0;
     function updateCarousel() {
-      const itemWidth = items[0].getBoundingClientRect().width;
+      // Always get current width, so it works on resize
+      const itemWidth = track.offsetWidth;
       track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     }
     prevButton.addEventListener('click', () => {
@@ -834,7 +818,16 @@
     window.addEventListener('resize', updateCarousel);
 
     // Ensure carousel is properly sized on load
-    window.addEventListener('DOMContentLoaded', updateCarousel);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateCarousel();
+      // Force all carousel items to be the same width as track
+      const trackWidth = track.offsetWidth;
+      items.forEach(item => {
+        item.style.minWidth = trackWidth + 'px';
+        item.style.maxWidth = trackWidth + 'px';
+      });
+      updateCarousel();
+    });
   </script>
 </body>
 </html>
