@@ -118,7 +118,7 @@
       background: none;
       transition: background 0.2s, color 0.2s;
     }
-    .nav-links-mobile li a:hover, .nav-links-mobile li a:focus, .nav-links-mobile li a.active {
+    .nav-links-mobile li a:hover, .nav-links-mobile li a:focus {
       background: #38bdf8;
       color: #0f172a;
       outline: none;
@@ -159,59 +159,6 @@
       to { opacity: 1; }
     }
 
-    /* --- MAIN RESPONSIVE FIXES --- */
-
-    /* 1. Add horizontal padding for main sections, only mobile */
-    @media (max-width: 780px) {
-      .hero-text-side,
-      .education-section,
-      .research-section,
-      .get-in-touch {
-        padding-left: 7vw !important;
-        padding-right: 7vw !important;
-      }
-      .hero-text-side {
-        box-sizing: border-box;
-      }
-    }
-
-    /* 2. Move social links further below the profile picture, only mobile */
-    @media (max-width: 1024px) {
-      .hero-img-side {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        min-height: 220px;
-        height: auto;
-        width: 100vw;
-        position: relative;
-      }
-      .hero-img-side img.profile-pic {
-        width: 80vw;
-        max-width: 350px;
-        margin-top: 0.7rem;
-        margin-bottom: 0.9rem;
-        border-radius: 14px;
-        box-shadow: 0 4px 20px rgba(18,19,32,0.13);
-      }
-      .social-links.hero-social {
-        position: static !important;
-        margin-top: 22px !important; /* more space from the picture */
-        margin-bottom: 0.5rem;
-        background: rgba(16,22,41,0.13);
-      }
-    }
-
-    /* 3. Make nav section markers accurate (no visible mark unless really active) */
-    @media (max-width: 780px) {
-      .nav-links-mobile li a.active {
-        background: #38bdf8;
-        color: #0f172a;
-      }
-    }
-
-    /* Existing styles for hero section */
     .hero-split {
       display: flex;
       min-height: 90vh;
@@ -219,7 +166,7 @@
     }
     .hero-img-side {
       flex: 2;
-      background: none;
+      background: url('your-profile-picture.jpg') center center/95% no-repeat;
       min-height: 700px;
       transition: background-size 0.3s, background-position 0.3s;
       position: relative;
@@ -245,6 +192,7 @@
       width: fit-content;
       box-shadow: 0 2px 8px rgba(16,22,41,0.09);
     }
+    /* Hide original social-links in text side */
     .hero-text-side .social-links { display: none !important; }
     .hero-text-side {
       flex: 3;
@@ -549,6 +497,28 @@
     }
     /* Responsive Design */
     @media (max-width: 1024px) {
+      .hero-split {
+        flex-direction: column;
+        min-height: unset;
+      }
+      .hero-img-side {
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center top !important;
+        min-height: 220px;
+        height: 220px;
+        width: 100vw;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      .hero-text-side {
+        align-items: center;
+        padding: 2.7rem 1rem 2rem 1rem;
+        text-align: center;
+        min-width: unset;
+      }
       .hero-text-side h1, .get-in-touch h2, .education-section h2, .research-section h2 {
         font-size: 1.37rem;
       }
@@ -633,7 +603,6 @@
   <!-- Hero Split Section -->
   <section class="hero-split" id="home">
     <div class="hero-img-side">
-      <img src="your-profile-picture.jpg" alt="Profile Picture" class="profile-pic" />
       <div class="social-links hero-social">
         <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank" class="facebook">
           <img src="facebookff.jpg" alt="Facebook Logo">
@@ -672,6 +641,7 @@
         <br><br>
         If you are interested in neurobiology, regenerative medicine, or want to collaborate, feel free to get in touch!
       </div>
+      <!-- Social links moved to profile pic side; hidden here -->
     </div>
   </section>
   <!-- Education Section -->
@@ -823,34 +793,6 @@
     Array.from(mobileNav.querySelectorAll('a')).forEach(link => {
       link.addEventListener('click', closeMobileMenu);
     });
-
-    // Mobile nav highlight (active) logic
-    function setActiveMobileNav() {
-      const links = mobileNav.querySelectorAll('a');
-      // Remove all actives
-      links.forEach(link => link.classList.remove('active'));
-      // Find current hash
-      let hash = location.hash;
-      // If on page load and no hash, do nothing
-      if (!hash) return;
-      // Otherwise, set active to the matching link
-      links.forEach(link => {
-        if (link.getAttribute('href') === hash) {
-          link.classList.add('active');
-        }
-      });
-    }
-    // Set on click and on hashchange
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', function() {
-        // Small timeout to allow scroll before updating
-        setTimeout(setActiveMobileNav, 50);
-      });
-    });
-    window.addEventListener('hashchange', setActiveMobileNav);
-
-    // Initial call
-    setActiveMobileNav();
 
     // Carousel Functionality
     const track = document.querySelector('.carousel-track');
