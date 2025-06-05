@@ -57,6 +57,8 @@
       background-color: #38bdf8;
       outline: none;
     }
+
+    /* Hamburger styles (hidden on desktop, shown on mobile) */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -126,9 +128,11 @@
       color: #0f172a;
       outline: none;
     }
+
     @media (max-width: 780px) {
       nav ul { display: none; }
       .hamburger { display: flex; }
+      .nav-links-mobile { display: flex; }
     }
     @media (min-width: 781px) {
       .nav-links-mobile { display: none !important; }
@@ -146,6 +150,7 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
+
     .hero-split {
       display: flex;
       min-height: 90vh;
@@ -162,6 +167,7 @@
       align-items: center;
       justify-content: flex-end;
     }
+    /* Profile picture - desktop: keep large, mobile: smaller */
     .profile-pic {
       display: block;
       width: 420px;
@@ -272,6 +278,7 @@
     .social-links a.twitter:hover, .social-links a.twitter:focus { background: #14171a; }
     .social-links a.gmail { border-color: #ea4335; }
     .social-links a.gmail:hover, .social-links a.gmail:focus { background: #ea4335; }
+
     .education-section {
       padding: 3rem 1rem 2rem 1rem;
       background: linear-gradient(to right, #e0f2fe, #f8fafc);
@@ -358,7 +365,6 @@
     .carousel-track {
       display: flex;
       transition: transform 0.5s cubic-bezier(.73,.31,.36,.93);
-      will-change: transform;
     }
     .carousel-item {
       flex: 0 0 100%;
@@ -409,7 +415,6 @@
       cursor: pointer;
       z-index: 10;
       transition: background 0.2s;
-      user-select: none;
     }
     .carousel-button.prev {
       left: 0.4rem;
@@ -421,6 +426,7 @@
       background: rgba(0, 0, 0, 0.8);
       outline: none;
     }
+
     .get-in-touch {
       padding: 3.2rem 1rem 2.2rem 1rem;
       background: #0f172a;
@@ -450,6 +456,8 @@
       color: #94a3b8;
       background-color: #1e293b;
     }
+
+    /* Desktop font sizes & layout */
     @media (min-width: 1025px) {
       .profile-pic {
         width: 420px;
@@ -478,6 +486,8 @@
         max-width: 900px;
       }
     }
+
+    /* Mobile layout improvements */
     @media (max-width: 1024px) {
       .profile-pic {
         width: 90vw;
@@ -572,7 +582,7 @@
       <li><a href="#home">Home</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#research">Research</a></li>
-      <li><a href="#gallary">Gallery</a></li>
+      <li><a href="#gallary">Gallary</a></li>
       <li><a href="#get-in-touch">Get in Touch</a></li>
     </ul>
     <button class="hamburger" aria-label="Open navigation menu" aria-controls="navMobileMenu" aria-expanded="false">
@@ -580,32 +590,33 @@
       <span class="hamburger-bar"></span>
       <span class="hamburger-bar"></span>
     </button>
-    <ul class="nav-links-mobile" id="navMobileMenu" role="menu" aria-label="Mobile navigation menu" tabindex="-1">
-      <li><a href="#home" role="menuitem" tabindex="0">Home</a></li>
+    <!-- Mobile nav menu (initially hidden) -->
+    <ul class="nav-links-mobile" id="navMobileMenu" role="menu" aria-label="Mobile navigation menu" tabindex="-1" style="display:none;">
       <li><a href="#education" role="menuitem" tabindex="0">Education</a></li>
       <li><a href="#research" role="menuitem" tabindex="0">Research</a></li>
-      <li><a href="#gallary" role="menuitem" tabindex="0">Gallery</a></li>
+      <li><a href="#gallary" role="menuitem" tabindex="0">Gallary</a></li>
       <li><a href="#get-in-touch" role="menuitem" tabindex="0">Get in Touch</a></li>
     </ul>
     <div class="nav-overlay"></div>
   </nav>
+  <!-- Hero Split Section -->
   <section class="hero-split" id="home">
     <div class="hero-img-side">
       <img src="your-profile-picture.jpg" alt="Profile Picture" class="profile-pic" />
       <div class="social-links hero-social">
-        <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank" rel="noopener noreferrer" class="facebook">
+        <a href="https://www.facebook.com/arupam.biswas.007/" target="_blank" class="facebook">
           <img src="facebookff.jpg" alt="Facebook Logo">
         </a>
-        <a href="https://www.instagram.com/arupambiswas/" target="_blank" rel="noopener noreferrer" class="instagram">
+        <a href="https://www.instagram.com/arupambiswas/" target="_blank" class="instagram">
           <img src="InstagramF.jpg" alt="Instagram Logo">
         </a>
-        <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank" rel="noopener noreferrer" class="linkedin">
+        <a href="https://www.linkedin.com/in/arupam-biswas" target="_blank" class="linkedin">
           <img src="linkedIn.jpg" alt="LinkedIn Logo">
         </a>
-        <a href="https://x.com/arupamb07" target="_blank" rel="noopener noreferrer" class="twitter">
+        <a href="https://x.com/arupamb07" target="_blank" class="twitter">
           <img src="twitterFL.jpg" alt="X Logo">
         </a>
-        <a href="mailto:arupambiswas007@gmail.com" target="_blank" rel="noopener noreferrer" class="gmail">
+        <a href="mailto:arupambiswas007@gmail.com" target="_blank" class="gmail">
           <img src="gmail.jpg" alt="Gmail Logo">
         </a>
       </div>
@@ -614,9 +625,9 @@
       <h1>Greetings Everyone!!</h1>
       <div class="hero-desc">
         My name is Arupam Biswas, and I’m a Neuroscience Researcher exploring how the central nervous system heals, adapts, and thrives. My journey began in India and led me to Germany, where I am currently a Doctoral Candidate at the
-        <a href="https://idn.biologie.uni-mainz.de/" target="_blank" rel="noopener noreferrer">
-          Institute of Developmental Biology and Neurobiology(iDN)
-        </a>. My research focuses on developing models and tools for next-generation therapies using precision-engineered artificial biomaterials to support CNS regeneration after traumatic brain injury (TBI), spinal cord injury (SCI), or in conditions like multiple sclerosis (MS).
+        <a href="https://idn.biologie.uni-mainz.de/" target="_blank">
+          Institute of Developmental Biology and Neurobiology(iDN). 
+        </a> My research focuses on developing models and tools for next-generation therapies using precision-engineered artificial biomaterials to support CNS regeneration after traumatic brain injury (TBI), spinal cord injury (SCI), or in conditions like multiple sclerosis (MS).
         <br><br>
         Outside of the lab, I love exploring new cuisines, traveling to discover different cultures, and sharing ideas with fellow scientists and enthusiasts. Collaboration and open-mindedness are key to driving innovation in science and beyond.
         <br><br>
@@ -624,6 +635,7 @@
       </div>
     </div>
   </section>
+  <!-- Education Section -->
   <section id="education" class="education-section">
     <h2>Education</h2>
     <div class="card-container">
@@ -632,7 +644,7 @@
         <p class="card-date">2025-Present Day</p>
         <p>
           <strong>
-            <a href="https://www.uni-mainz.de/" target="_blank" rel="noopener noreferrer" class="edu-link">
+            <a href="https://www.uni-mainz.de/" target="_blank" class="edu-link">
               Johannes Gutenberg University Mainz
             </a>, Germany.
           </strong>
@@ -640,7 +652,7 @@
         <ul>
           <li>Title: Interactive Biomaterials for Neural Regeneration.</li>
           <li>Principal Investigators: Prof. Dr. Claire Jacob, Prof. Dr. Martin Heine, Dr. Himanshu Kumar Mishra, 
-            <a href="https://idn.biologie.uni-mainz.de/" target="_blank" rel="noopener noreferrer" class="edu-link">
+            <a href="https://idn.biologie.uni-mainz.de/" target="_blank" class="edu-link">
               Institute of Developmental Biology and Neurobiology (iDN)
             </a>, Germany.
           </li>
@@ -651,7 +663,7 @@
         <p class="card-date">2019-2024</p>
         <p>
           <strong>
-            <a href="https://www.visvabharati.ac.in/index.html" target="_blank" rel="noopener noreferrer" class="edu-link">
+            <a href="https://www.visvabharati.ac.in/index.html" target="_blank" class="edu-link">
               Visva-Bharati, India
             </a>
           </strong>
@@ -659,10 +671,10 @@
         <ul>
           <li>Master's Thesis: High-Content Screening for neurite growth analyses: Evaluating gene treatments</li>
           <li>Principal Investigator: 
-            <a href="https://www.ccmb.res.in/People/Research-Group/Ishwariya-Venkatesh" target="_blank" rel="noopener noreferrer" class="edu-link">
+            <a href="https://www.ccmb.res.in/People/Research-Group/Ishwariya-Venkatesh" target="_blank" class="edu-link">
               Dr. Ishwariya Venkatesh
             </a>, Senior Scientist,
-            <a href="https://www.ccmb.res.in/" target="_blank" rel="noopener noreferrer" class="edu-link">
+            <a href="https://www.ccmb.res.in/" target="_blank" class="edu-link">
               CSIR-Centre for Cellular and Molecular Biology (CSIR-CCMB)
             </a>, India
           </li>
@@ -670,6 +682,7 @@
       </div>
     </div>
   </section>
+  <!-- Research Section -->
   <section id="research" class="research-section">
     <h2>Research</h2>
     <div class="carousel">
@@ -680,7 +693,7 @@
             <h3>PhD Topic: Interactive Biomaterials for Neural Regeneration (InteReg)</h3>
             <p>
               Traumatic CNS injuries and diseases like MS lead to lasting disability due to poor regenerative capacity. Barriers include glial scarring, inhibitory debris, lack of axonal guidance, and inefficient remyelination. In MS, immune attacks damage myelin, and remyelination declines with disease progression and age. While immune-targeting therapies exist, effective regeneration treatments are still lacking. The
-              <a href="https://intereg.uni-mainz.de/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+              <a href="https://intereg.uni-mainz.de/" target="_blank" style="text-decoration: none; color: inherit;">
                 Interactive Biomaterials for Neural Regeneration (InteReg)
               </a> project is a five-year collaboration between Johannes Gutenberg University Mainz, the Max Planck Institute for Polymer Research, and the Leibniz Institute for Resilience Research, aiming to develop precision biomaterials for treating neurological diseases. InteReg focuses on creating programmable materials that guide central nervous system cell regeneration following injuries or in conditions like multiple sclerosis and traumatic injuries (SCI, TBI).
             </p>
@@ -703,15 +716,16 @@
           </div>
         </div>
       </div>
-      <button class="carousel-button prev" type="button" aria-label="Previous research project">‹</button>
-      <button class="carousel-button next" type="button" aria-label="Next research project">›</button>
+      <button class="carousel-button prev">‹</button>
+      <button class="carousel-button next">›</button>
     </div>
   </section>
+  <!-- Get in Touch Section -->
   <section class="get-in-touch" id="get-in-touch">
     <h2>Get in Touch</h2>
-    <p><strong>Email:</strong> <a href="mailto:arupambiswas007@gmail.com">arupambiswas007@gmail.com</a></p>
+    <p><strong>Email:</strong> arupambiswas007@gmail.com</p>
     <p><strong>Lab:</strong> Dr Ishwariya Venkatesh, 
-      <a href="https://www.ccmb.res.in/research/labs/venkatesh-lab" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.ccmb.res.in/research/labs/venkatesh-lab" target="_blank">
         Venkatesh Lab
       </a> CSIR-CCMB
     </p>
@@ -779,6 +793,7 @@
         links.forEach(link => link.classList.remove('active'));
         e.target.classList.add('active');
       } else if (location.hash) {
+        // If hash changes, find and set the right link
         let found = false;
         links.forEach(link => {
           if (link.getAttribute('href') === location.hash) {
@@ -786,6 +801,7 @@
             found = true;
           }
         });
+        // If no match, remove all actives
         if (!found) links.forEach(link => link.classList.remove('active'));
       }
     }
@@ -803,8 +819,7 @@
     const nextButton = document.querySelector('.carousel-button.next');
     let currentIndex = 0;
     function updateCarousel() {
-      // Always get current width, so it works on resize
-      const itemWidth = track.offsetWidth;
+      const itemWidth = items[0].getBoundingClientRect().width;
       track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     }
     prevButton.addEventListener('click', () => {
@@ -816,18 +831,7 @@
       updateCarousel();
     });
     window.addEventListener('resize', updateCarousel);
-
-    // Ensure carousel is properly sized on load
-    window.addEventListener('DOMContentLoaded', () => {
-      updateCarousel();
-      // Force all carousel items to be the same width as track
-      const trackWidth = track.offsetWidth;
-      items.forEach(item => {
-        item.style.minWidth = trackWidth + 'px';
-        item.style.maxWidth = trackWidth + 'px';
-      });
-      updateCarousel();
-    });
+    updateCarousel();
   </script>
 </body>
 </html>
