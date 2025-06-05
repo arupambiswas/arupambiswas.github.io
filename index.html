@@ -504,10 +504,12 @@
       transition: opacity 0.3s;
       font-size: 1.04rem;
       border-radius: 0 0 12px 12px;
+      pointer-events: none;
     }
     .gallery-item:hover .caption,
     .gallery-item:focus-within .caption {
       opacity: 1;
+      pointer-events: auto;
     }
     .get-in-touch {
       padding: 3.2rem 1rem 2.2rem 1rem;
@@ -794,12 +796,16 @@
       <div class="gallery-item" data-tags="lab">
         <img src="Retreat.png" alt="Lab work 1" />
         <div class="caption">IV-Lab Retreat 2024</div>
+      </div>
+      <div class="gallery-item" data-tags="lab">
         <img src="JNCASR.png" alt="Lab work 2" />
         <div class="caption">JNCASR- Prof. Sheeba Basu and Her Team</div>
       </div>
       <div class="gallery-item" data-tags="conferences">
         <img src="presentationhysci" alt="Conference 1" />
         <div class="caption">HySci'24(IIT-Hyderabad)</div>
+      </div>
+      <div class="gallery-item" data-tags="conferences">
         <img src="SURGE.jpg" alt="Conference 2" />
         <div class="caption">Summer Internship-IIT Kanpur'23</div>
       </div>
@@ -810,6 +816,8 @@
       <div class="gallery-item" data-tags="lab conferences">
         <img src="Hysci.jpg" alt="Lab & Conference" />
         <div class="caption">HySci: Hyderabad Chapter(April, 2024)</div>
+      </div>
+      <div class="gallery-item" data-tags="lab conferences">
         <img src="CMMDR.jpg" alt="Lab & Conference" />
         <div class="caption">Cellular and Molecular Mechanisms of Development and Regeneration: Shiv Nadar University(February, 2024)</div>
       </div>
@@ -926,14 +934,11 @@
     document.addEventListener('DOMContentLoaded', function() {
       const filterBtns = document.querySelectorAll('.filter-btn');
       const galleryItems = document.querySelectorAll('.gallery-item');
-
       filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-          // Update active state
           filterBtns.forEach(b => b.classList.remove('active'));
           this.classList.add('active');
           const filter = this.getAttribute('data-filter');
-
           galleryItems.forEach(item => {
             const tags = item.getAttribute('data-tags').split(' ');
             if (filter === "all" || tags.includes(filter)) {
