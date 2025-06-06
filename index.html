@@ -294,60 +294,67 @@
       text-align: center;
       color: #0f172a;
     }
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2.7rem;
-      justify-content: center;
-      max-width: none;
+    /* Modern List with Logos Style */
+    .edu-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 900px;
     }
-    .card {
-      flex: 1 1 520px;
-      background: #ffffff;
+    .edu-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      background: #fff;
       border-radius: 16px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.09);
+      margin-bottom: 2.2rem;
       padding: 2rem 2.2rem;
       color: #1e293b;
-      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.09);
-      max-width: none;
-      min-width: 340px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      font-size: 1.28rem;
-    }
-    .card:hover, .card:focus-within {
-      transform: scale(1.03);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.17);
-      outline: none;
-    }
-    .card h3 {
-      font-size: 1.37rem;
-      margin-bottom: 0.8rem;
-      color: #0f172a;
-    }
-    .card-date {
       font-size: 1.22rem;
-      font-weight: bold;
+      transition: box-shadow 0.2s;
+    }
+    .edu-list li:hover {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.17);
+    }
+    .edu-logo {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 11px;
+      box-shadow: 0 2px 8px rgba(30,41,59,0.11);
+      flex-shrink: 0;
+      background: #fff;
+      margin-top: 0.2rem;
+    }
+    .edu-date {
       color: #475569;
-      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+      font-weight: bold;
+      margin-left: 0.3em;
     }
-    .card ul {
-      margin-top: 0.7rem;
-      padding-left: 1.4rem;
-      list-style: disc;
-    }
-    .card ul li {
-      margin-bottom: 0.8rem;
-      color: #64748b;
-      font-size: 1.18rem;
-    }
-    .edu-link {
-      text-decoration: none;
-      color: inherit;
-      word-break: break-word;
-    }
-    .edu-link:hover, .edu-link:focus {
-      text-decoration: underline;
+    .edu-list .edu-link {
       color: #0a66c2;
-      outline: none;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .edu-list .edu-link:hover,
+    .edu-list .edu-link:focus {
+      text-decoration: underline;
+    }
+    @media (max-width: 700px) {
+      .edu-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.2rem 0.7rem;
+        font-size: 1rem;
+        gap: 0.7rem;
+      }
+      .edu-logo {
+        width: 38px;
+        height: 38px;
+        margin-bottom: 0.6rem;
+      }
     }
     .research-section {
       padding: 3rem 1rem 2rem 1rem;
@@ -585,12 +592,6 @@
       .carousel-item img {
         max-width: 95vw;
       }
-      .card {
-        max-width: 99vw;
-        min-width: 180px;
-        font-size: 1.01rem;
-        padding: 1.5rem 1rem;
-      }
       .get-in-touch, .education-section, .research-section {
         padding-left: 7vw !important;
         padding-right: 7vw !important;
@@ -624,7 +625,7 @@
         font-size: 0.99rem;
         max-width: 100vw;
       }
-      .card, .carousel-item {
+      .carousel-item {
         padding: 0.7rem 0.1rem;
       }
       .carousel-button { width: 28px; height: 28px; font-size: 1.1rem; }
@@ -691,60 +692,58 @@
     <div class="hero-text-side">
       <h1>Hello Everyone!!</h1>
       <div class="hero-desc">
-        My name is Arupam Biswas, and I’m a Neuroscience Researcher exploring how the central nervous system heals, adapts, and thrives. My journey began in India and led me to Germany, where I am currently pursuing my PhD at the 
+        My name is Arupam Biswas, and I’m a Neuroscience Researcher exploring how the central nervous system heals, adapts, and thrives. My journey began in India and led me to Germany, where I am c[...]
         <a href="https://idn.biologie.uni-mainz.de/" target="_blank">
           Institute of Developmental Biology and Neurobiology (iDN)
-        </a>. My research focuses on developing models and tools for next-generation therapies using precision-engineered artificial biomaterials to support CNS regeneration after traumatic brain injury and neurodegenerative diseases.<br><br>
-        Outside of the lab, I love exploring new cuisines, traveling to discover different cultures, and sharing ideas with fellow scientists and enthusiasts. Collaboration and open-mindedness are key to scientific progress.<br><br>
+        </a>. My research focuses on developing models and tools for next-generation therapies using precision-engineered artificial biomaterials to support CNS regeneration after traumatic brain inju[...]
+        Outside of the lab, I love exploring new cuisines, traveling to discover different cultures, and sharing ideas with fellow scientists and enthusiasts. Collaboration and open-mindedness are key[...]
         If you are interested in neurobiology, regenerative medicine, or want to collaborate, feel free to get in touch!
       </div>
     </div>
   </section>
   <section id="education" class="education-section">
     <h2>Education</h2>
-    <div class="card-container">
-      <div class="card">
-        <h3>PhD in Neuroscience</h3>
-        <p class="card-date">2025–Present</p>
-        <p>
-          <strong>
-            <a href="https://www.uni-mainz.de/" target="_blank" class="edu-link">
-              Johannes Gutenberg University Mainz
-            </a>, Germany.
-          </strong>
-        </p>
-        <ul>
-          <li>Title: Interactive Biomaterials for Neural Regeneration.</li>
-          <li>Principal Investigators: Prof. Dr. Martin Heine, Prof. Dr. Claire Jacob, Dr. Himanshu Kumar Mishra, 
-            <a href="https://idn.biologie.uni-mainz.de/" target="_blank" class="edu-link">
-              Institute of Developmental Biology and Neurobiology (iDN), Germany.
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Five-Year Integrated M.Sc in Life Sciences</h3>
-        <p class="card-date">2019–2024</p>
-        <p>
-          <strong>
-            <a href="https://www.visvabharati.ac.in/index.html" target="_blank" class="edu-link">
-              Visva-Bharati, India.
-            </a>
-          </strong>
-        </p>
-        <ul>
-          <li>Master's Thesis: High-Content Screening for neurite growth analyses: Evaluating gene treatments</li>
-          <li>Principal Investigator: 
-            <a href="https://www.ccmb.res.in/People/Research-Group/Ishwariya-Venkatesh" target="_blank" class="edu-link">
-              Dr. Ishwariya Venkatesh,
-            </a>Senior Scientist,
-            <a href="https://www.ccmb.res.in/" target="_blank" class="edu-link">
-              CSIR-Centre for Cellular and Molecular Biology (CSIR-CCMB)
-            </a>, India.
-          </li>
-        </ul>
-      </div>
-    </div>
+    <ul class="edu-list">
+      <li>
+        <img src="mainz-logo.png" class="edu-logo" alt="Johannes Gutenberg University Mainz Logo" />
+        <div>
+          <strong>PhD in Neuroscience</strong> <span class="edu-date">(2025–Present)</span><br>
+          <a href="https://www.uni-mainz.de/" target="_blank" class="edu-link">
+            Johannes Gutenberg University Mainz, Germany
+          </a>
+          <ul>
+            <li>Title: Interactive Biomaterials for Neural Regeneration</li>
+            <li>
+              Principal Investigators: Prof. Dr. Martin Heine, Prof. Dr. Claire Jacob, Dr. Himanshu Kumar Mishra,
+              <a href="https://idn.biologie.uni-mainz.de/" target="_blank" class="edu-link">
+                Institute of Developmental Biology and Neurobiology (iDN), Germany.
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <img src="vb-logo.png" class="edu-logo" alt="Visva-Bharati Logo" />
+        <div>
+          <strong>Five-Year Integrated M.Sc in Life Sciences</strong> <span class="edu-date">(2019–2024)</span><br>
+          <a href="https://www.visvabharati.ac.in/index.html" target="_blank" class="edu-link">
+            Visva-Bharati, India
+          </a>
+          <ul>
+            <li>Master's Thesis: High-Content Screening for neurite growth analyses: Evaluating gene treatments</li>
+            <li>
+              Principal Investigator:
+              <a href="https://www.ccmb.res.in/People/Research-Group/Ishwariya-Venkatesh" target="_blank" class="edu-link">
+                Dr. Ishwariya Venkatesh,
+              </a> Senior Scientist,
+              <a href="https://www.ccmb.res.in/" target="_blank" class="edu-link">
+                CSIR-Centre for Cellular and Molecular Biology (CSIR-CCMB), India.
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
   </section>
   <section id="research" class="research-section">
     <h2>Research</h2>
@@ -755,10 +754,10 @@
           <div class="item-info">
             <h3>PhD Topic: Interactive Biomaterials for Neural Regeneration (InteReg)</h3>
             <p>
-              Traumatic CNS injuries and diseases like MS lead to lasting disability due to poor regenerative capacity. Barriers include glial scarring, inhibitory debris, lack of axonal guidance, and more. The 
+              Traumatic CNS injuries and diseases like MS lead to lasting disability due to poor regenerative capacity. Barriers include glial scarring, inhibitory debris, lack of axonal guidance, and[...]
               <a href="https://intereg.uni-mainz.de/" target="_blank" style="text-decoration: none; color: inherit;">
                 Interactive Biomaterials for Neural Regeneration (InteReg)
-              </a> project is a five-year collaboration between Johannes Gutenberg University Mainz, the Max Planck Institute for Polymer Research, and the Leibniz Institute for Resilience Research, aiming to engineer materials that can help guide and promote nerve regeneration.
+              </a> project is a five-year collaboration between Johannes Gutenberg University Mainz, the Max Planck Institute for Polymer Research, and the Leibniz Institute for Resilience Research, a[...]
             </p>
           </div>
         </div>
@@ -767,7 +766,7 @@
           <div class="item-info">
             <h3>Master's Thesis: High-Content Screening for neurite growth analyses: Evaluating gene treatments</h3>
             <p>
-              Neurons in the central nervous system (CNS), including the brain and spinal cord, send out axons to make connections. In mammals, these axons can't regrow after injury, leading to permanent loss of function. My thesis investigated gene therapies that could stimulate regrowth, using high-content screening methods to analyze neurite extension.
+              Neurons in the central nervous system (CNS), including the brain and spinal cord, send out axons to make connections. In mammals, these axons can't regrow after injury, leading to perman[...]
             </p>
           </div>
         </div>
