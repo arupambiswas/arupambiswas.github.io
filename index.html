@@ -10,12 +10,14 @@
     *, *:before, *:after { box-sizing: inherit; }
     body {
       margin: 0;
-      font-family: 'Outfit', sans-serif;
+      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
       background: #0f172a;
       color: #f8f9fa;
       min-height: 100vh;
       overflow-x: hidden;
       max-width: none;
+      font-size: 1.13rem;
+      letter-spacing: 0.03em;
     }
     nav {
       background: #1e293b;
@@ -27,13 +29,15 @@
       position: sticky;
       top: 0;
       z-index: 99;
+      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     nav h1 {
       font-weight: 700;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       color: #38bdf8;
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Pacifico', cursive;
+      letter-spacing: 1.5px;
     }
     nav ul {
       list-style: none;
@@ -44,7 +48,8 @@
     }
     nav ul li {
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 1.08rem;
+      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     nav ul li a {
       text-decoration: none;
@@ -53,6 +58,7 @@
       padding: 0.4rem 0.7rem;
       border-radius: 5px;
       display: block;
+      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     nav ul li a:hover, nav ul li a:focus {
       color: #0f172a;
@@ -70,9 +76,6 @@
       background: transparent;
       padding: 0;
       z-index: 101;
-    }
-    .hamburger:focus {
-      outline: 2px solid #38bdf8;
     }
     .hamburger-bar {
       width: 28px;
@@ -114,6 +117,7 @@
       background: none;
       transition: background 0.2s, color 0.2s;
       font-weight: 700;
+      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     .nav-links-mobile li a.active {
       background: #38bdf8;
@@ -149,18 +153,19 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
+
+    /* HERO SECTION */
     .hero-split {
       display: flex;
       min-height: 90vh;
       width: 100vw;
       max-width: 100vw;
       background: linear-gradient(120deg, #fafdff 90%, #bae6fd 100%);
+      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     .hero-img-side {
-      flex: 2;
-      background: none;
+      flex: 2.5;
       min-height: 700px;
-      transition: background-size 0.3s, background-position 0.3s;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -169,20 +174,21 @@
       max-width: none;
       min-width: 0;
       width: 100%;
+      background: none;
     }
     .profile-pic {
       display: block;
-      width: 340px;
+      width: 540px;
       max-width: 700px;
-      min-width: 220px;
+      min-width: 420px;
       margin-top: 3.5rem;
       margin-bottom: 2.2rem;
-      border-radius: 14px;
+      border-radius: 18px;
       box-shadow: 0 4px 20px rgba(18,19,32,0.13);
       object-fit: cover;
-      transition: width 0.3s, max-width 0.3s;
-      border: 4px solid #bae6fd;
       background: #fff;
+      border: 4px solid #bae6fd;
+      transition: width 0.3s, max-width 0.3s;
     }
     .social-links.hero-social {
       position: static;
@@ -210,6 +216,7 @@
       min-width: 320px;
       width: 100%;
       max-width: none;
+      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     .hero-text-side h1 {
       font-size: 2.4rem;
@@ -218,6 +225,7 @@
       margin-bottom: 0.8rem;
       letter-spacing: 1px;
       line-height: 1.2;
+      font-family: 'Pacifico', cursive;
     }
     .hero-desc {
       color: #fff;
@@ -226,6 +234,7 @@
       line-height: 1.85;
       max-width: none;
       text-align: justify;
+      font-family: 'Outfit', 'Montserrat', Arial, sans-serif;
     }
     .hero-desc a {
       color: #38bdf8;
@@ -284,10 +293,12 @@
     .social-links a.twitter:hover, .social-links a.twitter:focus { background: #14171a; }
     .social-links a.gmail { border-color: #ea4335; }
     .social-links a.gmail:hover, .social-links a.gmail:focus { background: #ea4335; }
+
     /* EDUCATION SECTION */
     .education-section {
       background: #fafdff;
       padding: 3.5rem 0 2.5rem 0;
+      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     .ed-title {
       font-family: 'Pacifico', cursive;
@@ -298,17 +309,19 @@
       letter-spacing: 1.3px;
     }
     .edu-timeline-modern {
-      max-width: 660px;
+      max-width: 1060px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 2.7rem;
+      gap: 3.5rem;
       position: relative;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
     }
     .edu-timeline-modern::before {
       content: '';
       position: absolute;
-      left: 90px;
+      left: 118px;
       top: 0;
       width: 4px;
       height: 100%;
@@ -319,14 +332,15 @@
     .edu-item {
       display: flex;
       align-items: flex-start;
-      gap: 2.2rem;
+      gap: 3.2rem;
       position: relative;
       z-index: 1;
       background: #fff;
       border-radius: 20px;
       box-shadow: 0 6px 36px #bae6fd30, 0 2px 6px #1976d211;
-      padding: 1.1rem 1.7rem 1.1rem 1.7rem;
+      padding: 2.1rem 2.7rem 2.1rem 2.7rem;
       transition: box-shadow 0.22s, transform 0.18s;
+      min-height: 180px;
     }
     .edu-item:hover {
       box-shadow: 0 12px 48px #1976d221, 0 4px 16px #1976d215;
@@ -334,8 +348,8 @@
     }
     .edu-logo-box {
       flex-shrink: 0;
-      width: 160px;
-      height: 160px;
+      width: 170px;
+      height: 170px;
       background: #e0f2fe;
       border-radius: 50%;
       box-shadow: 0 4px 18px #bae6fd44;
@@ -351,8 +365,8 @@
     .edu-logo-box.mainz { background: linear-gradient(135deg, #bae6fd 60%, #1976d2 100%);}
     .edu-logo-box.vb { background: linear-gradient(135deg, #ffebc2 50%, #fb8500 100%);}
     .edu-logo-box img {
-      width: 120px;
-      height: 120px;
+      width: 128px;
+      height: 128px;
       border-radius: 30px;
       object-fit: contain;
       background: #fff;
@@ -363,17 +377,18 @@
       display: flex;
       flex-direction: column;
       gap: 0.18rem;
+      min-width: 0;
     }
     .edu-row {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      gap: 1.2em;
+      gap: 2em;
       flex-wrap: wrap;
     }
     .edu-degree {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.13rem;
+      font-size: 1.33rem;
       font-weight: 700;
       color: #0f172a;
       letter-spacing: 0.1px;
@@ -381,7 +396,7 @@
     .edu-major {
       color: #1976d2;
       font-family: 'Pacifico', cursive;
-      font-size: 1.07em;
+      font-size: 1.09em;
       margin-left: 0.08em;
     }
     .edu-year {
@@ -389,17 +404,17 @@
       color: #1976d2;
       background: #e0f2fe;
       border-radius: 7px;
-      font-size: 0.98rem;
-      padding: 2.5px 11px;
+      font-size: 1.07rem;
+      padding: 4px 16px;
       font-weight: 700;
       letter-spacing: 1.3px;
       margin-left: auto;
     }
     .edu-institute {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.02rem;
+      font-size: 1.17rem;
       font-weight: 700;
-      margin-top: 0.2rem;
+      margin-top: 0.24rem;
       letter-spacing: 0.12px;
     }
     .mainz-font { color: #1976d2; }
@@ -407,19 +422,19 @@
     .edu-country {
       font-family: 'Fira Mono', monospace;
       color: #64748b;
-      font-size: 0.97rem;
-      margin-left: 0.7em;
+      font-size: 1.07rem;
+      margin-left: 1.1em;
     }
     .edu-institution,
     .edu-thesis,
     .edu-pis {
       color: #232323;
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.01rem;
+      font-family: 'Outfit', 'Montserrat', Arial, sans-serif;
+      font-size: 1.09rem;
       font-weight: 400;
-      margin-top: 0.09em;
-      margin-bottom: 0.09em;
-      letter-spacing: 0.07px;
+      margin-top: 0.16em;
+      margin-bottom: 0.1em;
+      letter-spacing: 0.09px;
     }
     .edu-institution b, .edu-thesis b, .edu-pis b {
       font-weight: 700;
@@ -428,21 +443,14 @@
       color: #232323;
       margin-right: 0.38em;
     }
-    .edu-link {
-      color: inherit;
-      font-family: inherit;
-      text-decoration: none;
-      font-size: inherit;
-      margin-left: 0.11em;
-      pointer-events: auto;
-    }
+
     /* RESEARCH SECTION */
     .research-section {
       padding: 3rem 1rem 2rem 1rem;
       background: linear-gradient(to right, #f8fafc, #e0f2fe);
       color: #1e293b;
-      max-width: none;
       font-size: 1.19rem;
+      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     .research-section h2 {
       font-size: 2.25rem;
@@ -450,6 +458,7 @@
       margin-bottom: 2rem;
       color: #0f172a;
       text-align: center;
+      font-family: 'Pacifico', cursive;
     }
     .carousel {
       position: relative;
@@ -486,16 +495,19 @@
       text-align: justify;
       padding: 0 0.3rem;
       max-width: 900px;
+      font-family: 'Outfit', 'Montserrat', Arial, sans-serif;
     }
     .carousel-item h3 {
       font-size: 1.28rem;
       margin-bottom: 0.7rem;
       color: #1976d2;
+      font-family: 'Montserrat', sans-serif;
     }
     .carousel-item p {
       font-size: 1.19rem;
       line-height: 1.65;
       color: #475569;
+      font-family: 'Outfit', 'Montserrat', Arial, sans-serif;
     }
     .carousel-button {
       position: absolute;
@@ -512,21 +524,19 @@
       z-index: 10;
       transition: background 0.2s;
     }
-    .carousel-button.prev {
-      left: 0.4rem;
-    }
-    .carousel-button.next {
-      right: 0.4rem;
-    }
+    .carousel-button.prev { left: 0.4rem; }
+    .carousel-button.next { right: 0.4rem; }
     .carousel-button:hover, .carousel-button:focus {
       background: rgba(0, 0, 0, 0.8);
       outline: none;
     }
+
     /* GALLERY SECTION */
     .gallery-section {
       padding: 3rem 1rem 2rem 1rem;
       background: linear-gradient(to right, #f8fafc, #e0f2fe);
       color: #1e293b;
+      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     .gallery-section h2 {
       font-size: 2.2rem;
@@ -534,6 +544,7 @@
       margin-bottom: 1.5rem;
       color: #0f172a;
       font-weight: 700;
+      font-family: 'Pacifico', cursive;
     }
     .gallery-filters {
       display: flex;
@@ -553,6 +564,7 @@
       cursor: pointer;
       transition: background 0.2s, color 0.2s, box-shadow 0.2s;
       box-shadow: 0 2px 8px rgba(30,41,59,0.08);
+      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     .filter-btn.active, .filter-btn:focus {
       background: #38bdf8;
@@ -561,46 +573,51 @@
     }
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.7rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
       margin-top: 2rem;
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .gallery-item {
       position: relative;
       overflow: hidden;
-      border-radius: 12px;
+      border-radius: 16px;
       box-shadow: 0 4px 16px rgba(16,22,41,0.09);
       background: #fff;
       transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      aspect-ratio: 4/3;
     }
     .gallery-item img {
       display: block;
       width: 100%;
-      height: auto;
-      border-radius: 12px;
+      height: 100%;
+      min-height: 200px;
+      object-fit: cover;
+      border-radius: 16px 16px 0 0;
       transition: transform 0.3s;
+      flex: 1 1 auto;
+      background: #fafdff;
     }
     .gallery-item:hover img,
     .gallery-item:focus-within img {
       transform: scale(1.07);
     }
     .caption {
-      position: absolute;
-      bottom: 0;
-      left: 0; right: 0;
-      background: rgba(15,23,42,0.76);
+      background: rgba(15,23,42,0.84);
       color: #fff;
-      padding: 0.7rem 1rem;
-      opacity: 0;
-      transition: opacity 0.3s;
-      font-size: 1.04rem;
-      border-radius: 0 0 12px 12px;
-      pointer-events: none;
-    }
-    .gallery-item:hover .caption,
-    .gallery-item:focus-within .caption {
-      opacity: 1;
-      pointer-events: auto;
+      padding: 0.8rem 1.1rem;
+      font-size: 1.09rem;
+      border-radius: 0 0 16px 16px;
+      text-align: center;
+      font-family: 'Outfit', 'Montserrat', Arial, sans-serif;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     /* GET IN TOUCH + FOOTER */
     .get-in-touch {
@@ -621,11 +638,14 @@
       max-width: none;
       font-size: 1.19rem;
       color: #f8fafc;
+      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
-    .get-in-touch > * {
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
+    .get-in-touch > * { text-align: center; margin-left: auto; margin-right: auto; }
+    .lab-highlight {
+      color: #38bdf8 !important;
+      font-weight: 700;
+      background: none;
+      padding: 1px 0;
     }
     footer {
       margin-top: 1.5rem;
@@ -635,102 +655,44 @@
       color: #94a3b8;
       background-color: #1e293b;
       max-width: none;
+      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
-    @media (max-width: 1024px) {
-      .profile-pic {
-        width: 90vw;
-        max-width: 350px;
-        min-width: 0;
-        margin-top: 1.1rem;
-        margin-bottom: 0.9rem;
-      }
-      .hero-split {
-        flex-direction: column;
-        min-height: unset;
-      }
-      .hero-img-side {
-        min-height: 220px;
-        height: auto;
-        width: 100vw;
-        position: relative;
-        flex-basis: unset;
-        max-width: 100vw;
-      }
-      .social-links.hero-social {
-        margin-top: 1.2rem;
-        margin-bottom: 0.5rem;
-      }
-      .hero-text-side {
-        align-items: center;
-        padding: 2.7rem 7vw 2rem 7vw;
-        text-align: center;
-        min-width: unset;
-        max-width: 100vw;
-        font-size: 1rem;
-      }
-      .hero-text-side h1, .get-in-touch h2, .education-section h2, .research-section h2 {
-        font-size: 1.37rem;
-      }
-      .hero-desc {
-        font-size: 1rem;
-        max-width: 640px;
-      }
-      .carousel-item img {
-        max-width: 95vw;
-      }
-      .get-in-touch, .education-section, .research-section {
-        padding-left: 7vw !important;
-        padding-right: 7vw !important;
-      }
-      .social-links a,
-      .social-links.hero-social a {
-        width: 42px;
-        height: 42px;
-      }
-      .social-links a img,
-      .social-links.hero-social a img {
-        width: 22px;
-        height: 22px;
-      }
+    @media (max-width: 1200px) {
+      .edu-timeline-modern { max-width: 95vw; gap: 2.2rem; }
+      .edu-item { gap: 1.5rem; padding: 1.2rem 1.1rem 1.2rem 1.1rem; }
+      .edu-logo-box { width: 90px; height: 90px; }
+      .edu-logo-box img { width: 60px; height: 60px; }
+      .edu-timeline-modern::before { left: 52px; }
     }
-    @media (max-width: 600px) {
-      .profile-pic {
-        margin-top: 0.7rem;
-        margin-bottom: 0.7rem;
-        width: 98vw;
-        max-width: 98vw;
-        min-width: 0;
-      }
-      .hero-text-side {
-        padding: 1.25rem 4vw 1rem 4vw;
-      }
-      .hero-text-side h1 {
-        font-size: 1.08rem;
-      }
-      .hero-desc {
-        font-size: 0.99rem;
-        max-width: 100vw;
-      }
-      .carousel-item {
-        padding: 0.7rem 0.1rem;
-      }
-      .carousel-button { width: 28px; height: 28px; font-size: 1.1rem; }
-      .social-links, .social-links.hero-social { gap: 0.4rem; }
-      .social-links a, .social-links.hero-social a { width: 30px; height: 30px; }
-      .social-links a img, .social-links.hero-social a img { width: 15px; height: 15px; }
-      .get-in-touch h2, .education-section h2, .research-section h2 {
-        font-size: 1.09rem;
-      }
-      .get-in-touch {
-        padding-left: 3vw;
-        padding-right: 3vw;
-      }
-      .gallery-section h2 { font-size: 1.19rem; }
-      .gallery-grid { gap: 0.7rem; }
-      .edu-timeline-modern::before { left: 30px; }
-      .edu-logo-box { width: 60px; height: 60px; }
-      .edu-logo-box img { width: 40px; height: 40px; }
+    @media (max-width: 900px) {
+      .edu-timeline-modern { max-width: 98vw; }
+      .edu-logo-box { width: 70px; height: 70px; }
+      .edu-logo-box img { width: 46px; height: 46px;}
+      .edu-timeline-modern::before { left: 36px; }
+      .edu-item { gap: 0.7rem; }
+    }
+    @media (max-width: 700px) {
+      .profile-pic { width: 95vw; max-width: 95vw; min-width: 0; }
+      .hero-split { flex-direction: column; min-height: unset; }
+      .hero-img-side { min-height: 220px; height: auto; width: 100vw; position: relative; flex-basis: unset; max-width: 100vw; }
+      .social-links.hero-social { margin-top: 1.2rem; margin-bottom: 0.5rem; }
+      .hero-text-side { align-items: center; padding: 2.7rem 7vw 2rem 7vw; text-align: center; }
+      .hero-text-side h1, .get-in-touch h2, .education-section h2, .research-section h2 { font-size: 1.37rem; }
+      .hero-desc { font-size: 1rem; max-width: 640px; }
+      .carousel-item img { max-width: 95vw; }
+      .get-in-touch, .education-section, .research-section { padding-left: 7vw !important; padding-right: 7vw !important; }
+      .social-links a, .social-links.hero-social a { width: 42px; height: 42px; }
+      .social-links a img, .social-links.hero-social a img { width: 22px; height: 22px; }
+      .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; }
+    }
+    @media (max-width: 500px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .ed-title { font-size: 1.05rem; }
+      .hero-text-side { padding: 1.25rem 2vw 1rem 2vw; }
+      .get-in-touch, .education-section, .research-section { padding-left: 2vw !important; padding-right: 2vw !important; }
       .edu-item { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+      .edu-logo-box { width: 54px; height: 54px; margin: 0 0 0.5em 0;}
+      .edu-logo-box img { width: 34px; height: 34px; }
       .edu-row { flex-direction: column; gap: 0.1em; align-items: flex-start;}
       .edu-year { margin-left: 0; margin-top: 0.1em;}
     }
@@ -876,15 +838,15 @@
     <div class="gallery-grid">
       <div class="gallery-item" data-tags="lab">
         <img src="Retreat.png" alt="Lab work 1" />
-        <div class="caption">Laboratory of Axon Growth and Regeneration: Dr. Ishwariya Venkatesh & Team</div>
+        <div class="caption">Laboratory of Axon Growth and Regeneration: Dr. Ishwariya Venkatesh &amp; Team</div>
       </div>
       <div class="gallery-item" data-tags="lab">
         <img src="JNCASR2.jpg" alt="Lab work 2" />
-        <div class="caption">Chronobiology and Behavioural Neurogenetics Lab: Prof. Dr. Sheeba Basu & Team</div>
+        <div class="caption">Chronobiology and Behavioural Neurogenetics Lab: Prof. Dr. Sheeba Basu &amp; Team</div>
       </div>
       <div class="gallery-item" data-tags="lab">
         <img src="ACTREC.jpg" alt="Lab work 3" />
-        <div class="caption">Autophagy Lab: Dr. Pritha Ray & Team</div>
+        <div class="caption">Autophagy Lab: Dr. Pritha Ray &amp; Team</div>
       </div>
       <div class="gallery-item" data-tags="conferences">
         <img src="IITH.jpg" alt="Conference 1" />
@@ -912,11 +874,7 @@
   <section class="get-in-touch" id="get-in-touch">
     <h2>Get in Touch</h2>
     <p><strong>Email:</strong> arupambiswas007[at]gmail[dot]com</p>
-    <p><strong>Lab:</strong> Prof. Dr. Martin Heine,
-      <a href="https://fnb-idn.biologie.uni-mainz.de/" target="_blank">
-        Functional Neurobiology Lab
-      </a> at JGU
-    </p>
+    <p><strong>Lab:</strong> Prof. Dr. Martin Heine, <span class="lab-highlight">Functional Neurobiology Lab</span> at JGU</p>
     <p><strong>Address:</strong><br>
       Institute for Developmental Biology and Neurobiology (iDN)<br>
       Johannes Gutenberg University Mainz<br>
