@@ -6,7 +6,11 @@
   <title>Arupam Biswas</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Montserrat:wght@500;700&family=Fira+Mono&family=Pacifico&display=swap" rel="stylesheet" />
   <style>
-    html { box-sizing: border-box; }
+    html, body {
+      box-sizing: border-box;
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
     *, *:before, *:after { box-sizing: inherit; }
     body {
       margin: 0;
@@ -14,8 +18,6 @@
       background: #0f172a;
       color: #f8f9fa;
       min-height: 100vh;
-      overflow-x: hidden;
-      max-width: none;
       font-size: 1.13rem;
       letter-spacing: 0.03em;
     }
@@ -49,7 +51,6 @@
     nav ul li {
       font-weight: 600;
       font-size: 1.08rem;
-      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     nav ul li a {
       text-decoration: none;
@@ -58,7 +59,6 @@
       padding: 0.4rem 0.7rem;
       border-radius: 5px;
       display: block;
-      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     nav ul li a:hover, nav ul li a:focus {
       color: #0f172a;
@@ -117,7 +117,6 @@
       background: none;
       transition: background 0.2s, color 0.2s;
       font-weight: 700;
-      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     .nav-links-mobile li a.active {
       background: #38bdf8;
@@ -161,7 +160,6 @@
       width: 100vw;
       max-width: 100vw;
       background: #0f172a;
-      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     .hero-img-side {
       flex: 2.5;
@@ -175,7 +173,7 @@
       min-width: 0;
       width: 100%;
       background: none;
-      padding-top: 0; /* Remove extra top padding */
+      padding-top: 0;
     }
     .profile-pic {
       display: block;
@@ -216,7 +214,6 @@
       min-width: 320px;
       width: 100%;
       max-width: none;
-      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     .hero-text-side h1 {
       font-size: 2.4rem;
@@ -298,7 +295,6 @@
     .education-section {
       background: #fafdff;
       padding: 3.5rem 0 2.5rem 0;
-      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     .ed-title {
       font-family: 'Pacifico', cursive;
@@ -363,7 +359,6 @@
       z-index: 2;
       margin-right: 0.7rem;
       margin-left: 0.2rem;
-      /* Remove gradient backgrounds from classes below */
     }
     .edu-logo-box img {
       width: 90px;
@@ -453,7 +448,6 @@
       background: linear-gradient(to right, #f8fafc, #e0f2fe);
       color: #1e293b;
       font-size: 1.19rem;
-      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     .research-section h2 {
       font-size: 2.25rem;
@@ -504,13 +498,11 @@
       font-size: 1.28rem;
       margin-bottom: 0.7rem;
       color: #1976d2;
-      font-family: 'Montserrat', sans-serif;
     }
     .carousel-item p {
       font-size: 1.19rem;
       line-height: 1.65;
       color: #475569;
-      font-family: 'Outfit', 'Montserrat', Arial, sans-serif;
     }
     .carousel-button {
       position: absolute;
@@ -533,13 +525,12 @@
       background: rgba(0, 0, 0, 0.8);
       outline: none;
     }
-    /* --------- PUBLICATIONS SECTION --------- */
+    /* PUBLICATIONS SECTION */
     .publications-section {
       padding: 3rem 1rem 2rem 1rem;
       background: #fafdff;
       color: #1e293b;
       font-size: 1.17rem;
-      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     .publications-section h2 {
       font-size: 2.1rem;
@@ -567,7 +558,6 @@
     .publication-title {
       font-weight: 700;
       color: #1976d2;
-      font-family: 'Montserrat', sans-serif;
       font-size: 1.11rem;
     }
     .publication-authors {
@@ -580,13 +570,13 @@
       font-size: 0.99rem;
     }
     .publication-link a:hover { text-decoration: underline; }
-    /* --------- SCI-COM SECTION --------- */
+
+    /* SCI-COM SECTION */
     .scicom-section {
       padding: 3rem 1rem 2rem 1rem;
       background: linear-gradient(to right, #e0f2fe, #fafdff);
       color: #1e293b;
       font-size: 1.17rem;
-      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     .scicom-section h2 {
       font-size: 2.1rem;
@@ -614,20 +604,17 @@
     .scicom-title {
       font-weight: 700;
       color: #1976d2;
-      font-family: 'Montserrat', sans-serif;
       font-size: 1.11rem;
     }
     .scicom-desc {
       color: #475569;
       font-family: 'Outfit', 'Montserrat', Arial, sans-serif;
     }
-
     /* GALLERY SECTION */
     .gallery-section {
       padding: 3rem 1rem 2rem 1rem;
       background: linear-gradient(to right, #f8fafc, #e0f2fe);
       color: #1e293b;
-      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     .gallery-section h2 {
       font-size: 2.2rem;
@@ -655,7 +642,6 @@
       cursor: pointer;
       transition: background 0.2s, color 0.2s, box-shadow 0.2s;
       box-shadow: 0 2px 8px rgba(30,41,59,0.08);
-      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     .filter-btn.active, .filter-btn:focus {
       background: #38bdf8;
@@ -726,10 +712,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      max-width: none;
       font-size: 1.19rem;
       color: #f8fafc;
-      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
     .get-in-touch > * { text-align: center; margin-left: auto; margin-right: auto; }
     .lab-highlight {
@@ -746,46 +730,152 @@
       color: #94a3b8;
       background-color: #1e293b;
       max-width: none;
-      font-family: 'Montserrat', 'Outfit', Arial, sans-serif;
     }
-    @media (max-width: 1200px) {
-      .edu-timeline-modern { max-width: 98vw; gap: 2.2rem; }
-      .edu-item { gap: 1.5rem; padding: 1.2rem 1.1rem 1.2rem 1.1rem; }
-      .edu-logo-box { width: 90px; height: 90px; }
-      .edu-logo-box img { width: 60px; height: 60px; }
-      .edu-timeline-modern::before { left: 52px; }
-    }
-    @media (max-width: 900px) {
-      .edu-timeline-modern { max-width: 98vw; }
-      .edu-logo-box { width: 70px; height: 70px; }
-      .edu-logo-box img { width: 46px; height: 46px;}
-      .edu-timeline-modern::before { left: 36px; }
-      .edu-item { gap: 0.7rem; }
-    }
+    /* MOBILE RESPONSIVENESS */
     @media (max-width: 700px) {
-      .profile-pic { width: 95vw; max-width: 95vw; min-width: 0; }
-      .hero-split { flex-direction: column; min-height: unset; }
-      .hero-img-side { min-height: 220px; height: auto; width: 100vw; position: relative; flex-basis: unset; max-width: 100vw; justify-content: center; }
-      .social-links.hero-social { margin-top: 1.2rem; margin-bottom: 0.5rem; }
-      .hero-text-side { align-items: center; padding: 2.7rem 7vw 2rem 7vw; text-align: center; }
-      .hero-text-side h1, .get-in-touch h2, .education-section h2, .research-section h2 { font-size: 1.37rem; }
-      .hero-desc { font-size: 1rem; max-width: 640px; }
-      .carousel-item img { max-width: 95vw; }
-      .get-in-touch, .education-section, .research-section, .publications-section, .scicom-section { padding-left: 7vw !important; padding-right: 7vw !important; }
-      .social-links a, .social-links.hero-social a { width: 42px; height: 42px; }
-      .social-links a img, .social-links.hero-social a img { width: 22px; height: 22px; }
-      .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; }
+      .hero-split {
+        flex-direction: column;
+        min-height: unset;
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+      .hero-img-side {
+        min-height: 220px;
+        height: auto;
+        width: 100vw;
+        position: relative;
+        flex-basis: unset;
+        max-width: 100vw;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+        box-sizing: border-box;
+      }
+      .profile-pic {
+        width: 95vw;
+        max-width: 95vw;
+        min-width: 0;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-text-side {
+        align-items: center;
+        padding: 2.7rem 4vw 2rem 4vw;
+        text-align: center;
+        min-width: 0;
+        width: 100vw;
+        box-sizing: border-box;
+      }
+      .education-section,
+      .research-section,
+      .publications-section,
+      .scicom-section,
+      .get-in-touch {
+        padding-left: 4vw !important;
+        padding-right: 4vw !important;
+        width: 100vw;
+        box-sizing: border-box;
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+      .edu-timeline-modern {
+        max-width: 98vw;
+        gap: 2.2rem;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .edu-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.7rem;
+        padding: 1.2rem 0.6rem 1.2rem 0.6rem;
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .edu-logo-box {
+        width: 54px;
+        height: 54px;
+        margin: 0 0 0.5em 0;
+        align-self: flex-start;
+      }
+      .edu-logo-box img {
+        width: 34px;
+        height: 34px;
+      }
+      .edu-row {
+        flex-direction: column;
+        gap: 0.1em;
+        align-items: flex-start;
+        width: 100%;
+      }
+      .edu-year {
+        margin-left: 0;
+        margin-top: 0.1em;
+      }
+      .carousel-item img {
+        max-width: 95vw;
+        min-width: 0;
+      }
+      .gallery-section {
+        padding-left: 4vw !important;
+        padding-right: 4vw !important;
+        max-width: 100vw;
+        box-sizing: border-box;
+        overflow-x: hidden;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+        max-width: 100vw;
+      }
+      .gallery-item {
+        border-radius: 10px;
+        min-width: 0;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+      }
+      .gallery-item img {
+        border-radius: 10px 10px 0 0;
+        min-width: 0;
+      }
+      .caption {
+        font-size: 0.98rem;
+        min-height: 36px;
+        padding: 0.6rem 0.7rem;
+        border-radius: 0 0 10px 10px;
+      }
+      footer {
+        font-size: 0.95rem;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        box-sizing: border-box;
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
     }
-    @media (max-width: 500px) {
-      .gallery-grid { grid-template-columns: 1fr; }
-      .ed-title { font-size: 1.05rem; }
-      .hero-text-side { padding: 1.25rem 2vw 1rem 2vw; }
-      .get-in-touch, .education-section, .research-section, .publications-section, .scicom-section { padding-left: 2vw !important; padding-right: 2vw !important; }
-      .edu-item { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
-      .edu-logo-box { width: 54px; height: 54px; margin: 0 0 0.5em 0;}
-      .edu-logo-box img { width: 34px; height: 34px; }
-      .edu-row { flex-direction: column; gap: 0.1em; align-items: flex-start;}
-      .edu-year { margin-left: 0; margin-top: 0.1em;}
+    @media (max-width: 400px) {
+      .profile-pic {
+        width: 90vw;
+        max-width: 90vw;
+      }
+      .edu-logo-box {
+        width: 36px;
+        height: 36px;
+      }
+      .edu-logo-box img {
+        width: 24px;
+        height: 24px;
+      }
+      .caption {
+        font-size: 0.91rem;
+        min-height: 26px;
+        padding: 0.5rem 0.5rem;
+      }
     }
   </style>
 </head>
@@ -841,10 +931,8 @@
     <div class="hero-text-side">
       <h1>Hello Everyone!!</h1>
       <div class="hero-desc">
-        My name is Arupam Biswas, and I’m a Neuroscience Researcher exploring how the central nervous system heals, adapts, and thrives. My journey began in India and led me to Germany, where I am c[...]
-        <br><br>
-        Outside of the lab, I love exploring new cuisines, traveling to discover different cultures, and sharing ideas with fellow scientists and enthusiasts. Collaboration and open-mindedness are key[...]
-        <br><br>
+        My name is Arupam Biswas, and I’m a Neuroscience Researcher exploring how the central nervous system heals, adapts, and thrives. My journey began in India and led me to Germany, where I am currently pursuing my doctoral studies. <br><br>
+        Outside of the lab, I love exploring new cuisines, traveling to discover different cultures, and sharing ideas with fellow scientists and enthusiasts. Collaboration and open-mindedness are key to innovation, and I enjoy building bridges across disciplines.<br><br>
         If you are interested in neurobiology, regenerative medicine, or want to collaborate, feel free to get in touch!
       </div>
     </div>
@@ -895,7 +983,7 @@
           <div class="item-info">
             <h3>PhD Topic: Interactive Biomaterials for Neural Regeneration (InteReg)</h3>
             <p>
-              Traumatic CNS injuries and diseases like MS lead to lasting disability due to poor regenerative capacity. Barriers include glial scarring, inhibitory debris, lack of axonal guidance, and[...]
+              Traumatic CNS injuries and diseases like MS lead to lasting disability due to poor regenerative capacity. Barriers include glial scarring, inhibitory debris, lack of axonal guidance, and more. My research focuses on developing smart biomaterials and engineered platforms to support neural repair, enhance regeneration, and restore function.
             </p>
           </div>
         </div>
@@ -904,7 +992,7 @@
           <div class="item-info">
             <h3>Master's Thesis: High-Content Screening for neurite growth analyses</h3>
             <p>
-              This work involved developing automated high-content screening methods to evaluate the effect of genetic and pharmacological treatments on neurite outgrowth in cultured neuronal cells. T[...]
+              This work involved developing automated high-content screening methods to evaluate the effect of genetic and pharmacological treatments on neurite outgrowth in cultured neuronal cells. The goal was to identify new strategies to promote neural regeneration.
             </p>
           </div>
         </div>
@@ -922,7 +1010,7 @@
       <button class="carousel-button next">›</button>
     </div>
   </section>
-  <!-- NEW PUBLICATIONS SECTION -->
+  <!-- PUBLICATIONS SECTION -->
   <section id="publications" class="publications-section">
     <h2>Publications</h2>
     <ul class="publication-list">
@@ -939,7 +1027,7 @@
       <!-- Add more publications as needed -->
     </ul>
   </section>
-  <!-- NEW SCI-COM SECTION -->
+  <!-- SCI-COM SECTION -->
   <section id="scicom" class="scicom-section">
     <h2>Sci-Com</h2>
     <ul class="scicom-list">
@@ -1128,7 +1216,6 @@
           });
         });
       });
-    // ...rest of your code...
     });
   </script>
 </body>
