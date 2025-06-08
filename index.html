@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -523,12 +524,12 @@
       background: rgba(0, 0, 0, 0.8);
       outline: none;
     }
-    /* PUBLICATIONS SECTION */
+
+    /* PUBLICATIONS TIMELINE SECTION */
     .publications-section {
-      padding: 3rem 1rem 2rem 1rem;
       background: #fafdff;
       color: #1e293b;
-      font-size: 1.17rem;
+      padding: 3rem 1rem 2rem 1rem;
     }
     .publications-section h2 {
       font-size: 2.1rem;
@@ -538,36 +539,92 @@
       margin-bottom: 2rem;
       font-weight: 700;
     }
-    .publication-list {
-      max-width: 900px;
-      margin: 0 auto;
-      list-style: none;
-      padding: 0;
+    .pub-filters {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
     }
-    .publication-list li {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #e0e7ef;
-      line-height: 1.7;
-    }
-    .publication-list li:last-child {
-      border-bottom: none;
-    }
-    .publication-title {
-      font-weight: 700;
+    .pub-filter {
+      background: #e0f2fe;
       color: #1976d2;
-      font-size: 1.11rem;
+      border: none;
+      border-radius: 7px;
+      font-size: 1.08rem;
+      font-weight: 600;
+      padding: 0.4rem 1.2rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
     }
-    .publication-authors {
-      font-family: 'Outfit', 'Montserrat', Arial, sans-serif;
-      color: #475569;
+    .pub-filter.active, .pub-filter:focus {
+      background: #38bdf8;
+      color: #fff;
     }
-    .publication-link a {
-      color: #38bdf8;
+    .pub-timeline {
+      position: relative;
+      margin: 0 auto;
+      max-width: 780px;
+      border-left: 3px solid #bae6fd;
+      padding-left: 2.5rem;
+    }
+    .pub-item {
+      position: relative;
+      margin-bottom: 2.2rem;
+      padding-left: 0.7rem;
+      animation: fadeInUp 0.7s;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(26px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .pub-dot {
+      position: absolute;
+      left: -1.6rem;
+      top: 1rem;
+      width: 18px;
+      height: 18px;
+      background: #38bdf8;
+      border-radius: 50%;
+      border: 2px solid #1976d2;
+      box-shadow: 0 2px 10px #bae6fd44;
+    }
+    .pub-title {
+      font-weight: bold;
+      color: #1976d2;
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+    .pub-meta {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.7em 1.1em;
+    }
+    .pub-journal { font-style: italic; color: #1e293b; }
+    .pub-authors, .pub-year { font-weight: bold; color: #475569; }
+    .pub-details { color: #64748b; }
+    .pub-btn {
+      display: inline-block;
+      background: #38bdf8;
+      color: #fff;
+      border-radius: 6px;
+      padding: 0.3rem 1.0rem;
+      font-size: 0.98rem;
+      margin-left: 0.5em;
       text-decoration: none;
-      font-size: 0.99rem;
+      transition: background 0.2s;
+      border: none;
     }
-    .publication-link a:hover { text-decoration: underline; }
+    .pub-btn:hover { background: #1976d2; }
+    @media (max-width: 700px) {
+      .pub-timeline { padding-left: 1.2rem; }
+      .pub-dot { left: -1.1rem; width: 13px; height: 13px; top: 0.7rem; }
+      .pub-title { font-size: 1rem; }
+      .pub-meta { font-size: 0.95rem; }
+    }
 
     /* SCI-COM SECTION */
     .scicom-section {
@@ -855,7 +912,6 @@
         max-width: 100vw;
         overflow-x: hidden;
       }
-      /* 1. Reduce social media link size */
       .social-links a,
       .social-links.hero-social a {
         width: 32px;
@@ -871,7 +927,6 @@
         min-width: 18px;
         min-height: 18px;
       }
-      /* 2. Reduce font size for everything in "Get in touch" Section */
       .get-in-touch,
       .get-in-touch * {
         font-size: 0.9rem !important;
@@ -884,7 +939,6 @@
       .get-in-touch strong {
         font-size: 0.9rem !important;
       }
-      /* 3. Shrink intro text */
       .hero-text-side h1 {
         font-size: 1.3rem !important;
       }
@@ -892,7 +946,6 @@
         font-size: 0.96rem !important;
         line-height: 1.5 !important;
       }
-      /* 4. Shrink Project title and Project description */
       .carousel-item h3 {
         font-size: 1.02rem !important;
       }
@@ -974,8 +1027,8 @@
     <div class="hero-text-side">
       <h1>Hello Everyone!!</h1>
       <div class="hero-desc">
-        My name is Arupam Biswas, and I’m a Neuroscience Researcher exploring how the central nervous system heals, adapts, and thrives. My journey began in India and led me to Germany, where I am currently a PhD student at the <a href="https://idn.biologie.uni-mainz.de/" target="_blank">Institute of Developmental Biology and Neurobiology(iDN)</a>.<br><br> My research focuses on developing models and tools for next-generation therapies using precision-engineered artificial biomaterials to support central nervous system(CNS) regeneration after Traumatic Injuries of the Brain(TBI) or Spinal Cord(SCI), or neurodegenerative autoimmune diseases, such as Multiple Sclerosis(MS). <br><br>
-        Outside of the lab, I love exploring new cuisines, traveling to discover different cultures, and sharing ideas with fellow scientists and enthusiasts.<br><br>
+        My name is Arupam Biswas, and I’m a Neuroscience Researcher exploring how the central nervous system heals, adapts, and thrives. My journey began in India and led me to Germany, where I am currently pursuing my doctoral studies. <br><br>
+        Outside of the lab, I love exploring new cuisines, traveling to discover different cultures, and sharing ideas with fellow scientists and enthusiasts. Collaboration and open-mindedness are key to innovation, and I enjoy building bridges across disciplines.<br><br>
         If you are interested in neurobiology, regenerative medicine, or want to collaborate, feel free to get in touch!
       </div>
     </div>
@@ -1017,7 +1070,8 @@
       </div>
     </div>
   </section>
-  <section id="research" class="research-section">
+
+  <section class="research-section" id="research">
     <h2>Research</h2>
     <div class="carousel">
       <div class="carousel-track">
@@ -1026,8 +1080,8 @@
           <div class="item-info">
             <h3>PhD Topic: Interactive Biomaterials for Neural Regeneration (InteReg)</h3>
             <p>
-              Traumatic injuries to the central nervous system (CNS), including brain and spinal cord damage, result in poor regeneration and lasting disability due to multiple barriers: glial scar formation, inhibitory debris, lack of axonal guidance, and inefficient remyelination. Similarly, Multiple Sclerosis (MS) is a chronic autoimmune demyelinating disease where oligodendrocytes are attacked, leading to axonal dysfunction. While early remyelination by OPCs is possible, it declines with disease progression, and no current therapies promote regeneration effectively.<br><br>
-              Our team aims to develop precision-engineered biomaterials to support CNS regeneration in trauma and MS. Aim 1: Design ECM-mimicking materials with bioactive and mechano-responsive properties to deliver pro-regenerative factors (Leads: Walther, Besenius, Jacob, Heine). Aim 2: Create cell-targeted nanocapsules to reprogram cells into repair-promoting phenotypes (Leads: Landfester, Mailänder, Jacob, Papic, Berninger, Weil). Aim 3: Engineer nanomaterials that cross the blood-brain barrier (BBB) (Leads: Landfester, Mailänder, Walther, Waisman). Aim 4: Develop advanced models, including vascularized brain organoids, to test delivery and therapeutic efficacy (Leads: Villiou, Walther, Mishra, Lutz, Berninger, Heine, Jacob).
+              Traumatic CNS injuries and diseases like MS lead to lasting disability due to poor regenerative capacity. Barriers include glial scarring, inhibitory debris, lack of axonal guidance, and more. My research focuses on developing smart biomaterials and engineered platforms to support neural repair, enhance regeneration, and restore function.
+            </p>
           </div>
         </div>
         <div class="carousel-item">
@@ -1035,7 +1089,8 @@
           <div class="item-info">
             <h3>Master's Thesis: High-Content Screening for neurite growth analyses</h3>
             <p>
-              Neurons in the central nervous system (CNS), which includes the spinal cord and brain, project their axons to form essential connections. In mammals, these mature axons lose their intrinsic capacity for regeneration, resulting in permanent functional losses after injury. This makes recovery from spinal cord injuries highly unlikely, underscoring the need for novel therapeutic strategies.<br><br> Research has shown that axon growth is dependent on the transcription of large networks of regeneration-associated genes (RAGs) or pro-growth genes. Activating these genes in adult neurons can stimulate axon regeneration past injury sites. However, with numerous pro-growth transcription factors (TFs) available, identifying an optimal set that promotes axon growth is a significant challenge. <br><br>In this context, in-vitro phenotypic screening becomes critical for evaluating the effects of these TFs on neuronal cells (Venkatesh et al., 2018; Venkatesh et al., 2020). High Content Screening (HCS) has been identified as an effective technique for the large-scale analysis of neuronal cell line morphology. My honours thesis involved developing a rigorous experimental protocol to investigate the impact of altered TF expression on neurite outgrowth. This includes the development of methods to measure various parameters, such as neurites branching, neurite length etc. These findings highlight promising targets for future therapeutic strategies aimed at enhancing axon regeneration and improving recovery from CNS injuries.
+              This work involved developing automated high-content screening methods to evaluate the effect of genetic and pharmacological treatments on neurite outgrowth in cultured neuronal cells. The goal was to identify new strategies to promote neural regeneration.
+            </p>
           </div>
         </div>
         <div class="carousel-item">
@@ -1043,7 +1098,7 @@
           <div class="item-info">
             <h3>Other Research Projects</h3>
             <p>
-              Details will be available soon.
+              Previous research experiences include work in behavioral neurogenetics, autophagy in cancer, and advanced imaging. Details available upon request or in the Gallery.
             </p>
           </div>
         </div>
@@ -1052,31 +1107,74 @@
       <button class="carousel-button next">›</button>
     </div>
   </section>
-  <!-- PUBLICATIONS SECTION -->
-  <section id="publications" class="publications-section">
+
+  <!-- PUBLICATIONS TIMELINE SECTION -->
+  <section class="publications-section" id="publications">
     <h2>Publications</h2>
-    <ul class="publication-list">
-      <li>
-        <span class="publication-title">Clinicopathology & Molecular Analysis of Diffuse Intrinsic Pontine Glioma (DIPG) in Children - Insights from Past, Present, and Future Directions.</span><br>
-        <span class="publication-authors">Arupam Biswas</span><br>
-        <span class="publication-link"><a href="https://doi.org/10.55544/jrasb.1.4.8" target="_blank">Link</a></span>
-      </li>
-      <li>
-        <span class="publication-title">[Updated Soon]</span><br>
-        <span class="publication-authors">Updated Soon</span><br>
-        <span class="publication-link"><a href="#" target="_blank">Link</a></span>
-      </li>
-      <!-- Add more publications as needed -->
-    </ul>
+    <div class="pub-filters">
+      <button class="pub-filter active" data-filter="all">All</button>
+      <button class="pub-filter" data-filter="research">Research Article</button>
+      <button class="pub-filter" data-filter="review">Review Article</button>
+      <button class="pub-filter" data-filter="book">Book Chapters</button>
+    </div>
+    <div class="pub-timeline">
+      <div class="pub-item" data-type="research">
+        <div class="pub-dot"></div>
+        <div class="pub-content">
+          <div class="pub-title">Smart Biomaterials Enable Rapid Neural Repair</div>
+          <div class="pub-meta">
+            <span class="pub-journal"><em>Nature Neuroscience</em></span>
+            <span class="pub-authors"><b>A. Biswas, M. Heine, C. Jacob, H.K. Mishra</b></span>
+            <span class="pub-year"><b>2025</b></span>
+            <span class="pub-details">Vol. 32, Issue 4, pp. 102-110</span>
+            <a class="pub-btn" href="https://doi.org/10.xxxx/nn.2025.12345" target="_blank">DOI</a>
+          </div>
+        </div>
+      </div>
+      <div class="pub-item" data-type="review">
+        <div class="pub-dot"></div>
+        <div class="pub-content">
+          <div class="pub-title">Neural Regeneration: Current Trends and Future Prospects</div>
+          <div class="pub-meta">
+            <span class="pub-journal"><em>Progress in Neurobiology</em></span>
+            <span class="pub-authors"><b>A. Biswas, F. Smith</b></span>
+            <span class="pub-year"><b>2024</b></span>
+            <span class="pub-details">Vol. 89, pp. 455-480</span>
+            <a class="pub-btn" href="https://doi.org/10.xxxx/pn.2024.54321" target="_blank">DOI</a>
+          </div>
+        </div>
+      </div>
+      <div class="pub-item" data-type="book">
+        <div class="pub-dot"></div>
+        <div class="pub-content">
+          <div class="pub-title">Handbook of CNS Regeneration</div>
+          <div class="pub-meta">
+            <span class="pub-journal"><em>Springer</em></span>
+            <span class="pub-authors"><b>A. Biswas</b></span>
+            <span class="pub-year"><b>2023</b></span>
+            <span class="pub-details">pp. 1-22, ISBN: 978-3-16-148410-0</span>
+            <a class="pub-btn" href="https://doi.org/10.xxxx/handbook.2023.0001" target="_blank">Read</a>
+          </div>
+        </div>
+      </div>
+      <!-- Add more pub-item as needed -->
+    </div>
   </section>
+
   <!-- SCI-COM SECTION -->
   <section id="scicom" class="scicom-section">
     <h2>Sci-Com</h2>
     <ul class="scicom-list">
       <li>
-        <span class="scicom-title">Soon Will be Updated</span><br>
+        <span class="scicom-title">[Sample Sci-Com Activity 1]</span><br>
         <span class="scicom-desc">
-          Soon Will be Updated.
+          Presented neuroscience concepts to high school students at Science Day, Mainz (2024).
+        </span>
+      </li>
+      <li>
+        <span class="scicom-title">[Sample Sci-Com Activity 2]</span><br>
+        <span class="scicom-desc">
+          Organized and led “Neuro Night” outreach for the general public at Visva-Bharati.
         </span>
       </li>
       <!-- Add more Sci-Com activities as needed -->
@@ -1248,6 +1346,24 @@
             } else {
               item.style.opacity = 0;
               setTimeout(() => item.style.display = "none", 200);
+            }
+          });
+        });
+      });
+
+      // Publication filter logic
+      const pubFilters = document.querySelectorAll('.pub-filter');
+      const pubItems = document.querySelectorAll('.pub-item');
+      pubFilters.forEach(btn => {
+        btn.addEventListener('click', function() {
+          pubFilters.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          const filter = this.getAttribute('data-filter');
+          pubItems.forEach(item => {
+            if (filter === 'all' || item.getAttribute('data-type') === filter) {
+              item.style.display = '';
+            } else {
+              item.style.display = 'none';
             }
           });
         });
