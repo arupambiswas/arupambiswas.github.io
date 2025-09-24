@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -449,12 +448,12 @@
       font-size: 1.19rem;
     }
     .research-section h2 {
-    font-size: 2.35rem; /* Slightly increased heading size */
-    font-weight: 700;
-    margin-bottom: 2rem;
-    color: #1976d2; /* Ensures blue heading for contrast */
-    text-align: center;
-    font-family: 'Pacifico', cursive;
+      font-size: 2.35rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #1976d2;
+      text-align: center;
+      font-family: 'Pacifico', cursive;
     }
     .aims-list {
       margin: 1.2em 0 1.5em 1.2em;
@@ -512,8 +511,8 @@
       padding: 0 0.3rem;
       max-width: 900px;
       font-family: 'Outfit', 'Montserrat', Arial, sans-serif;
-      color: #0f172a; /* Improved contrast for carousel text */
-      font-size: 1.15rem; /* Increase font size for better readability */
+      color: #0f172a;
+      font-size: 1.15rem;
     }
     .carousel-item h3 {
       font-size: 1.32rem;
@@ -687,6 +686,7 @@
       color: #475569;
       font-family: 'Outfit', 'Montserrat', Arial, sans-serif;
     }
+
     /* GALLERY SECTION */
     .gallery-section {
       padding: 3rem 1rem 2rem 1rem;
@@ -773,6 +773,7 @@
       align-items: center;
       justify-content: center;
     }
+
     /* GET IN TOUCH + FOOTER */
     .get-in-touch {
       padding: 3.2rem 1rem 2.2rem 1rem;
@@ -808,6 +809,7 @@
       background-color: #1e293b;
       max-width: none;
     }
+
     /* MOBILE CUSTOMIZATIONS */
     @media (max-width: 700px) {
       .hero-split {
@@ -915,10 +917,17 @@
         width: 100%;
         margin: 0 auto;
         box-sizing: border-box;
+        /* Remove aspect-ratio for mobile to prevent cropping */
+        aspect-ratio: unset !important;
+        height: auto !important;
       }
       .gallery-item img {
+        /* Show images fully, not cropped */
+        height: auto !important;
+        min-height: 0 !important;
+        width: 100% !important;
+        object-fit: contain !important;
         border-radius: 10px 10px 0 0;
-        min-width: 0;
       }
       .caption {
         font-size: 0.98rem;
@@ -994,6 +1003,7 @@
         min-height: 26px;
         padding: 0.5rem 0.5rem;
       }
+    }
     @media (max-width: 700px) {
       body { font-size: 1.14rem !important; }
       .hero-text-side h1 { font-size: 1.55rem !important; }
@@ -1062,7 +1072,7 @@
       .get-in-touch h2 { font-size: 1.11rem !important; }
       footer { font-size: 1.01rem !important; }
     }
-  </style>
+</style>
 </head>
 <body>
 <nav>
@@ -1238,8 +1248,8 @@
 <a class="pub-btn" href="https://doi.org/10.55544/jrasb.1.4.8" target="_blank">DOI</a>
 </div>
 </div>
-<!--
 </div>
+<!--
       <div class="pub-item" data-type="book">
         <div class="pub-dot"></div>
         <div class="pub-content">
